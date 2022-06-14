@@ -23,7 +23,8 @@ Route::redirect('/login', '/es/login');
 
 Route::group(['prefix' => '{language}'], function () {
     
-    Route::get('/', function () { return view('index', ['seccion' => "Comerciales"]); })->name('index');
+    Route::get('/', function () { 
+        return view('index', ['seccion' => "Comerciales"]); })->name('index');
 
     Route::get('/street-agency', function () { return view('street', ['seccion' => "Street Agency"]);})->name('street agency');
 

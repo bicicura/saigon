@@ -308,7 +308,16 @@ select {
     background-size: 1em;
 }
 
+.skills-container {
+    background-image: url('/imgs/asset-select-rotate.svg');
+    background-size: .7em;
 
+    padding-right: 2.5rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+}
 
 /* 
 ====================

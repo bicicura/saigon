@@ -15,6 +15,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'saigon-black': '#191818',
+            },
         },
     },
 

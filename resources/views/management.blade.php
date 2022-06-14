@@ -34,7 +34,7 @@
     <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:mt-0 pb-8">
         <div class="grid grid-cols-4 gap-6">
             @foreach ($actores as $actor)
-            <a href="{{ route('management.detail', [app()->getLocale(), $actor->id]) }}">
+            <a href="{{ route('management.detail', ['language' => app()->getLocale(), 'id' => $actor->id]) }}">
                 <div style="height: 26rem" class="w-full">
                     <img class="object-cover object-top w-full h-full rounded-xl" loading="lazy" src="/actors/{{ $actor->thumbnail }}" alt="Fotografía de {{$actor->nombre}}">
                 </div>

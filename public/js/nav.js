@@ -3,8 +3,8 @@ document.addEventListener('alpine:init', () => {
         let body = document.getElementById("body");
         let nav = document.getElementById("nav-header");
         return {
-            open: false,
-            openForm: false,
+            open: true,
+            openForm: true,
             buttonDisabled: false,
             formSubmited: false,
             openBurger: false,
