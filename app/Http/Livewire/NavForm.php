@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Profile;
+use App\Models\Skills;
 use Image;
 
 class NavForm extends Component
@@ -23,10 +24,14 @@ class NavForm extends Component
     public $pantalon = "";
     public $calzado = "";
     public $nacionalidad;
-    public $skills;
+    public $skills = [ 'deportes' => [] , 'bailes' => [], 'musica' => []  ];
     public $link;
     public $cara;
     public $cuerpo;
+
+    public $deportes = true;
+    public $bailes = true;
+    public $musica = true;
 
     protected $rules = 
     [
@@ -44,11 +49,12 @@ class NavForm extends Component
         'calzado' => 'required',
         'cara' => 'required',
         'cuerpo' => 'required',
-        'skills' => 'required|min:3',
+        // 'skills' => 'required',
     ];
 
     public function submit() 
     {
+        // dd($this->storeSkills());
     
         // valido y aviso si hay algún error y salgo de la función
         try {
@@ -78,13 +84,15 @@ class NavForm extends Component
         $Profile->remera = $this->remera;
         $Profile->pantalon = $this->pantalon;
         $Profile->calzado = $this->calzado;
-        $Profile->skills = $this->skills;
+        // $Profile->skills = $this->skills;
         $Profile->link = $this->link;
         $Profile->cara = $caraFileName;
         $Profile->cuerpo = $cuerpoFileName;
 
         // lo guardo en db
         $Profile->save();
+        
+        $this->storeSkills($Profile->id);
 
         // notifico al user que se guardó correctamente su petición
         $this->savedNotification();
@@ -122,6 +130,34 @@ class NavForm extends Component
 
         // devuelvo el nombre del archivo.
         return $file->basename;
+    }
+
+    public function storeSkills($id) {
+        $selectedSkills = array_merge($this->skills['deportes'], $this->skills['bailes'], $this->skills['musica']);
+        foreach ($selectedSkills as $skill) {
+            $Skill = new Skills;
+            $Skill->profiles_id = $id;
+            $Skill->skill_nombre = $skill;
+            $Skill->save();
+        }
+    }
+
+    public function skillClicked($skill) {
+        if ($this->$skill) {
+            $this->skills[$skill] = [];
+        }
+    }
+
+    public function updatedSkillsDeportes($skill) {
+        empty($skill)? $this->deportes = true : $this->deportes = false;
+    }
+
+    public function updatedSkillsBailes($skill) {
+        empty($skill)? $this->bailes = true : $this->bailes = false;
+    }
+
+    public function updatedSkillsMusica($skill) {
+        empty($skill)? $this->musica = true : $this->musica = false;
     }
 
     public function render()

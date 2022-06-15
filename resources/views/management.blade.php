@@ -11,7 +11,7 @@
 <div class="smooth-scroll">
     <section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between mb-12 lg:mb-0">t
         <div class="z-20 flex flex-col items-end gap-4 mt-32 text-right lg:ml-auto lg:gap-8 lg:mt-16">
-            <h1 style="width: min-content;" class="tracking-tight saigon-text-5xl saigon-font-thin saigon-title-line-height">MANAGMENT</h1>
+            <h1 style="width: min-content;" class="tracking-tight saigon-text-5xl saigon-font-thin saigon-title-line-height">MANAGEMENT</h1>
             <div class="w-full text-xl saigon-p-line-height hero-p-w">
                 <p>{{__("Gestionar carreras actorales es un punto de diferencia que está impulsando el crecimiento Saigón.")}}</p>
                 <p>{{__("La meta central es propulsar el potencial de talentos exclusivos - con experiencia y nóveles - para que estén disponibles en los roles y proyectos a su medida.")}}</p>

@@ -12,7 +12,7 @@
             <div class="flex flex-col justify-center pt-6 sm:pt-6">
                 <div class="relative mx-auto sm:max-w-xl">
                     <nav>
-                        <button class="relative w-10 h-10 text-gray-500 focus:outline-none" x-on:click="toggleNav(); openBurger = !openBurger">
+                        <button :class="open? 'text-white' : 'text-black'" class="relative w-10 h-10 focus:outline-none" x-on:click="toggleNav">
                             <span class="sr-only">Abrir menu principal</span>
                             <div class="absolute block w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
                                 <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': openBurger,' -translate-y-1.5': !openBurger }"></span>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="flex flex-col items-end justify-between lg:mt-auto">
-                <span x-on:click="openForm=true; open=true;" class="mt-auto texto-vertical">SUMATE A SAIGON</span> 
+                <span x-on:click="openForm=true; open=true;" class="mt-auto cursor-pointer texto-vertical">SUMATE A SAIGON</span> 
             </div>
 
 
@@ -62,16 +62,16 @@
         >
             <ul :class="open? 'opacity-100' : 'opacity-0' " class="flex flex-col text-right saigon-transition-opacity saigon-text-2xl lg:text-left children-ul nav-ul">
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-color">
-                    <p data-active="castings-comerciales" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d castings-c-p" :class="open? 'saigon-translate-0' : ''"><a href="/#comericales">COMERCIALES</a></p>
+                    <p data-active="castings-comerciales" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d castings-c-p" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="/#comericales">{{ __('Comerciales') }}</a></p>
                 </li>
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
-                    <p data-active="castings-fotografia" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('castings-fotografia', app()->getLocale()) }}">FOTOGRAFÍA</a></p>
+                    <p data-active="castings-fotografia" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('castings-fotografia', app()->getLocale()) }}">{{ __('Fotografía') }}</a></p>
                 </li>
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
                     <p data-active="mini" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('mini', app()->getLocale()) }}">MINI</a></p>
                 </li>
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
-                    <p data-active="ficcion" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('ficcion', app()->getLocale()) }}">FICCIÓN</a></p>
+                    <p data-active="ficcion" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('ficcion', app()->getLocale()) }}">{{ __('Ficción') }}</a></p>
                 </li>
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
                     <p data-active="street-agency" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('street agency', app()->getLocale()) }}" >STREET AGENCY</a></p>

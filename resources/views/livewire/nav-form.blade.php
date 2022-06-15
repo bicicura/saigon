@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submit" class="w-full pb-12 space-y-6 text-xl text-white lg:pb-0 lg:space-y-0 lg:flex lg:justify-between lg:flex-col saigon-font-thin px-7 lg:px-0 lg:mt-12 lg:pr-16 lg:w-full" style="height: calc(100vh - 11rem);">
+<form wire:submit.prevent="submit" class="w-full pb-12 space-y-6 text-xl text-white saigon-text-200 lg:pb-0 lg:space-y-0 lg:flex lg:justify-between lg:flex-col saigon-font-thin px-7 lg:px-0 lg:mt-12 lg:pr-16 lg:w-full" style="height: calc(100vh - 11rem);">
 
     <div class="space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-12 lg:w-full">
         <x-input.nav-input-text :inputContent="['label' => 'Nombre y Apellido', 'model' => 'nombre' ]" />
@@ -33,7 +33,7 @@
     </div>
     
     <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
-        <div class="grid grid-cols-3 col-span-2 gap-12">
+        <div class="grid grid-cols-3 col-span-2 gap-6">
             <x-input.nav-select :inputContent="['label' => 'TALLE REMERA', 'model' => 'remera', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
             <x-input.nav-select :inputContent="['label' => 'TALLE PANTALON', 'model' => 'pantalon', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
             <x-input.nav-select :inputContent="['label' => 'TALLE CALZADO', 'model' => 'calzado', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
@@ -41,7 +41,7 @@
     </div>
     
     <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
-        <div class="grid grid-cols-3 col-span-2 gap-12">
+        <div class="grid grid-cols-3 col-span-2 gap-6">
             <div></div>
             <div></div>
             <div x-data=" { open: false, } ">
@@ -50,6 +50,7 @@
                 type="button"
                 class="w-full text-left text-white bg-transparent bg-right bg-no-repeat border-b border-white skills-container">SKILLS</button>
                 <x-skills-container />
+                    
             </div>
         </div>
     </div>
@@ -63,13 +64,15 @@
         </div>
     </div> --}}
 
-    <div class="gap-12 lg:grid lg:grid-cols-3 lg:pt-6 lg:w-8/12">
+    <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
+        <div class="grid grid-cols-3 col-span-2 gap-6">
         <x-input.nav-file :inputContent="['label' => 'FOTO CARA', 'model' => 'cara']" />
         <x-input.nav-file :inputContent="['label' => 'FOTO CUERPO', 'model' => 'cuerpo']" />
         <button 
         x-bind:disabled="formSubmited"
         class="w-full p-4 py-2 mt-2 text-black transition-colors border-2 border-white lg:mt-0 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">ENVIAR</button>
     </div>
+</div>
     
     {{-- <div class="mt-3 space-y-4 text-sm lg:space-y-0 lg:grid-cols-3 saigon-font-thin lg:grid lg:gap-8 lg:w-8/12">
         <div class="lg:flex lg:gap-3">

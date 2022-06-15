@@ -13,7 +13,7 @@ class ProfileController extends Controller
         return view('panel.inbox');
     }
 
-    public function show($id)
+    public function show($language, $id)
     {
         $interesado = Profile::find($id);
         return view('panel.inbox-detail', ['interesado' => $interesado]); 

@@ -25,7 +25,7 @@ class CreateProfilesTable extends Migration
             $table->string('remera');
             $table->string('pantalon');
             $table->string('calzado');
-            $table->string('skills');
+            // $table->string('skills');
             $table->string('link');
             $table->timestamps();
             $table->text('cara');

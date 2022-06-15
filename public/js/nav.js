@@ -3,8 +3,8 @@ document.addEventListener('alpine:init', () => {
         let body = document.getElementById("body");
         let nav = document.getElementById("nav-header");
         return {
-            open: true,
-            openForm: true,
+            open: false,
+            openForm: false,
             buttonDisabled: false,
             formSubmited: false,
             openBurger: false,
@@ -26,6 +26,7 @@ document.addEventListener('alpine:init', () => {
 
             toggleNav() {
                 this.open = !this.open;
+                this.openBurger = !this.openBurger
                 this.buttonDisabled = true;
                 if (!this.open) this.openForm = false;
                 nav.classList.remove('saigon-bg-black-2');

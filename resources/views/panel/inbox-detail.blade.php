@@ -19,7 +19,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-2xl font-bold leading-7 text-black">Información del Aplicante</h1>
-                    <h3 class="tracking-tight text-gray-500">Posted {{$interesado->created_at->diffForhumans()}}.</h3>
+                    <h3 class="tracking-tight text-gray-500">Publicado {{$interesado->created_at->diffForhumans()}}.</h3>
                 </div>
                 <a href="{{$interesado->link}}" target="_blank" class="flex items-center gap-2 px-4 py-2 text-white transition-all bg-indigo-500 rounded-lg hover:bg-indigo-700 hover:shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-6 h-6 fill-white"><path d="M22.5 34H14Q9.75 34 6.875 31.125Q4 28.25 4 24Q4 19.75 6.875 16.875Q9.75 14 14 14H22.5V17H14Q11 17 9 19Q7 21 7 24Q7 27 9 29Q11 31 14 31H22.5ZM16.25 25.5V22.5H31.75V25.5ZM25.5 34V31H34Q37 31 39 29Q41 27 41 24Q41 21 39 19Q37 17 34 17H25.5V14H34Q38.25 14 41.125 16.875Q44 19.75 44 24Q44 28.25 41.125 31.125Q38.25 34 34 34Z"/></svg>
@@ -76,13 +76,32 @@
                     <p class="text-lg">{{$interesado->calzado}}</p>
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold leading-5 tracking-tight text-left text-gray-500">Skills</h3>
-                    <p class="text-lg">{{$interesado->skills}}</p>
+                    <div x-data="{selected:null}">
+                        <ul>
+                            <li class="relative">
+                                <button type="button" class="w-full text-right" @click="selected !== 1 ? selected = 1 : selected = null">
+                                    <div class="w-full transition-all">
+                                        <h3 class="text-sm font-bold leading-5 tracking-tight text-left text-gray-500" x-text="selected == null? 'Mostrar Skills' : 'Esconder Skills'"></h3>
+                                    </div>
+                                </button>
+                    
+                                <div class="relative overflow-hidden text-gray-500 transition-all duration-700 max-h-0" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                                    <div>
+                                        <ul class="border border-gray-300 rounded-lg">
+                                            @foreach ($interesado->getSkills as $skill)
+                                                <li>{{$skill->skill_nombre}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
+                {{-- <div>
                     <h3 class="text-sm font-bold leading-5 tracking-tight text-left text-gray-500">Link</h3>
                     <p class="text-lg">{{$interesado->link}}</p>
-                </div>
+                </div> --}}
                 <div class="col-span-2">
                     <h3 class="mb-3 text-sm font-bold leading-5 tracking-tight text-left text-gray-500">Archivos adjuntos</h3>
                     <div class="grid grid-cols-1 border border-gray-300 divide-y rounded-lg">
