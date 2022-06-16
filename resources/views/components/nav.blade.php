@@ -2,22 +2,22 @@
     x-data="nav"
     @close-form.window="openForm = false; formSubmited = true; openBurger = false"
     @keydown.escape.window = "open = false; openForm = false; openBurger = false"
-    class="w-full header-desktop lg:w-max lg:pl-4 pb-3.5 lg:py-8 fixed top-0 left-0 z-40 saigon-transition-color saigon-bg-white lg:flex  lg:min-h-screen" 
-    :class="open? 'saigon-text-white' : 'saigon-text-black'">
-        <nav id="nav-header" :class="open? 'border-nav-mov' : 'border-black'" class="pt-3.5 pr-3.5 pl-3.5 lg:pl-0 lg:pt-0 lg:pb-0 lg:pr-4 flex lg:flex-col lg:min-h-full justify-between z-20 lg:border-r saigon-transition-border-color pb-2 lg:border-0">
+    class="w-full header-desktop lg:w-max lg:pl-4 pb-3.5 lg:py-8 fixed top-0 left-0 z-40 saigon-transition-color bg-saigon-white lg:flex  lg:min-h-screen" 
+    :class="open? 'text-saigon-white' : 'text-saigon-black'">
+        <nav id="nav-header" :class="open? 'border-nav-mov' : 'border-saigon-black'" class="pt-3.5 pr-3.5 pl-3.5 lg:pl-0 lg:pt-0 lg:pb-0 lg:pr-4 flex lg:flex-col lg:min-h-full justify-between z-20 lg:border-r saigon-transition-border-color pb-2 lg:border-0">
             <button class="cursor-pointer w-logo" id="logo" x-on:click="toggleNav" x-bind:disabled="buttonDisabled">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93 73" xml:space="preserve" class="saigon-logo-animation-mobile"><path class="saigon-transition-fill " :class="open? 'fill-white' : 'fill-black'" d="M92.4 17 77.2 1.9c-.4-.4-1.1-.4-1.5 0L62.1 15.5c-.3.3-.9.6-1.5 0L46.4 1.3C45.1.1 43.5 0 43.1 0L1.6.1C.2.1-.5 1.8.5 2.8L54 56.2c.7.7.2 1.8-.7 1.8H28.4c-.9 0-1.4 1.1-.7 1.8L40 72.3c.4.4 1.1.4 1.5 0l14.2-14.2 22.7-23.2c.4-.4.4-1.1 0-1.5l-13-13.2c-.9-.9-.4-1.4.7-1.4h25.6c.9 0 1.4-1.1.7-1.8zM50.5 71.2c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5.7-1.5 1.5-1.5c.9.1 1.5.7 1.5 1.5zm-.1 0c0-.7-.6-1.3-1.3-1.3-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3.7 0 1.3-.6 1.3-1.3zm-1.2.1.5.8h-.2l-.5-.8h-.3v.8h-.2v-1.7h.6c.3 0 .5.2.5.5.1.2-.1.4-.4.4zm-.5-.1h.4c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3h-.4v.6z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93 73" xml:space="preserve" class="saigon-logo-animation-mobile"><path class="saigon-transition-fill " :class="open? 'fill-saigon-white' : 'fill-saigon-black'" d="M92.4 17 77.2 1.9c-.4-.4-1.1-.4-1.5 0L62.1 15.5c-.3.3-.9.6-1.5 0L46.4 1.3C45.1.1 43.5 0 43.1 0L1.6.1C.2.1-.5 1.8.5 2.8L54 56.2c.7.7.2 1.8-.7 1.8H28.4c-.9 0-1.4 1.1-.7 1.8L40 72.3c.4.4 1.1.4 1.5 0l14.2-14.2 22.7-23.2c.4-.4.4-1.1 0-1.5l-13-13.2c-.9-.9-.4-1.4.7-1.4h25.6c.9 0 1.4-1.1.7-1.8zM50.5 71.2c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5.7-1.5 1.5-1.5c.9.1 1.5.7 1.5 1.5zm-.1 0c0-.7-.6-1.3-1.3-1.3-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3.7 0 1.3-.6 1.3-1.3zm-1.2.1.5.8h-.2l-.5-.8h-.3v.8h-.2v-1.7h.6c.3 0 .5.2.5.5.1.2-.1.4-.4.4zm-.5-.1h.4c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3h-.4v.6z"/></svg>
             </button>
 
             <div class="flex flex-col justify-center pt-6 sm:pt-6">
                 <div class="relative mx-auto sm:max-w-xl">
                     <nav>
-                        <button :class="open? 'text-white' : 'text-black'" class="relative w-10 h-10 focus:outline-none" x-on:click="toggleNav">
+                        <button :class="open? 'text-saigon-white' : 'text-saigon-black'" class="relative w-10 h-10 focus:outline-none" x-on:click="toggleNav">
                             <span class="sr-only">Abrir menu principal</span>
                             <div class="absolute block w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
-                                <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': openBurger,' -translate-y-1.5': !openBurger }"></span>
-                                <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': openBurger } "></span>
-                                <span aria-hidden="true" class="block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': openBurger, ' translate-y-1.5': !openBurger}"></span>
+                                <span aria-hidden="true" class="block absolute h-0.25 w-6 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': openBurger,' -translate-y-1.5': !openBurger }"></span>
+                                <span aria-hidden="true" class="block absolute  h-0.25 w-6 bg-current   transform transition duration-500 ease-in-out" :class="{'opacity-0': openBurger } "></span>
+                                <span aria-hidden="true" class="block absolute  h-0.25 w-6 bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': openBurger, ' translate-y-1.5': !openBurger}"></span>
                             </div>
                         </button>
                     </nav>
@@ -42,27 +42,25 @@
                         </div>
                     </button>
                 </div>
-                {{-- {{dd( \Request::segment(1))}} --}}
                 <div class="space-x-3 pointer-events-auto lg:flex lg:text-right lg:flex-col lg:gap-1 lg:space-x-0">
-                    {{-- <a href="{{ url()->current() }}">{{ strtoupper(app()->getLocale() === "es" ? 'eng' : 'esp') }}</a> --}}
-                    <a href="{{ route(Route::currentRouteName(), ['language' => app()->getLocale() === 'es' ? 'en' : 'es', 'id' => isset($request->id)]) }}">{{ strtoupper(app()->getLocale() === "es" ? 'eng' : 'esp') }}</a>
+                    <a href="{{ route(Route::currentRouteName(), ['language' => app()->getLocale() === 'es' ? 'en' : 'es', 'id' => isset(Route::current()->parameters['id']) ? Route::current()->parameters['id'] : null]) }}">{{ strtoupper(app()->getLocale() === "es" ? 'eng' : 'esp') }}</a>
                     <a target="_blank" href="https://www.instagram.com/saigonbuenosaires/">IG</a>
                     <a target="_blank" href="https://www.facebook.com/SaigonBuenosAires/">FB</a>
                     <a target="_blank" href="https://twitter.com/saigonBA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">TW</a>
                     <a target="_blank" href="https://vimeo.com/saigonbuenosaires">VM</a>
                 </div>
             </div>
-            <div :class="open? 'opacity-0' : 'opacity-100'" class="absolute bottom-0 mx-auto border-b-2 border-black saigon-transition-opacity lg:hidden" style="width: 93%"></div>
+            <div :class="open? 'opacity-0' : 'opacity-100'" class="absolute bottom-0 mx-auto border-b-2 border-saigon-black saigon-transition-opacity lg:hidden" style="width: 93%"></div>
         </nav>
         <div
         style="visibility:hidden"
         id="nav-list"
         :class="open? 'nav-translate-0' : 'nav-translate-out'" 
-        class="fixed top-0 left-0 flex flex-col justify-between w-full min-h-screen pb-6 overflow-y-scroll lg:overflow-y-auto saigon-font-thin nav-padding saigon-transition-transform saigon-bg-black-2 lg:gap-2 pt-28 lg:pt-3 lg:pb-0 -z-10 lg:right-0"
+        class="fixed top-0 left-0 flex flex-col justify-between w-full min-h-screen pb-6 overflow-y-scroll lg:overflow-y-auto saigon-font-thin nav-padding saigon-transition-transform bg-saigon-black lg:gap-2 pt-28 lg:pt-3 lg:pb-0 -z-10 lg:right-0"
         >
             <ul :class="open? 'opacity-100' : 'opacity-0' " class="flex flex-col text-right saigon-transition-opacity saigon-text-2xl lg:text-left children-ul nav-ul">
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-color">
-                    <p data-active="castings-comerciales" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d castings-c-p" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="/#comericales">{{ __('Comerciales') }}</a></p>
+                    <p data-active="castings-comerciales" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d castings-c-p" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="/">{{ __('Comerciales') }}</a></p>
                 </li>
                 <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
                     <p data-active="castings-fotografia" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('castings-fotografia', app()->getLocale()) }}">{{ __('Fotografía') }}</a></p>

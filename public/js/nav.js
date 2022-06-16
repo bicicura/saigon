@@ -29,18 +29,15 @@ document.addEventListener('alpine:init', () => {
                 this.openBurger = !this.openBurger
                 this.buttonDisabled = true;
                 if (!this.open) this.openForm = false;
-                nav.classList.remove('saigon-bg-black-2');
                 this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
                 setTimeout(() => {this.buttonDisabled = false}, 2000)
             },
 
             toggleForm() {
                 this.openForm = !this.openForm;
-                nav.classList.add('saigon-bg-black-2');
             },
 
             init() {
-                console.log(Livewire)
                 setTimeout(() => {
                     let nav = document.querySelector('#nav-list')
                     nav.style.visibility = "visible";

@@ -23,8 +23,10 @@ Route::redirect('/login', '/es/login');
 
 Route::group(['prefix' => '{language}'], function () {
     
-    Route::get('/', function () { 
-        return view('index', ['seccion' => "Comerciales"]); })->name('index');
+    // para que en el castin player los castings de seccion COMERCIALES redirijan al index al apretar la cruz.
+    Route::redirect('/comerciales', '/');
+
+    Route::get('/', function () {  return view('index', ['seccion' => "Comerciales"]); })->name('index');
 
     Route::get('/street-agency', function () { return view('street', ['seccion' => "Street Agency"]);})->name('street agency');
 

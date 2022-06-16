@@ -34,9 +34,9 @@
     
     <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
         <div class="grid grid-cols-3 col-span-2 gap-6">
-            <x-input.nav-select :inputContent="['label' => 'TALLE REMERA', 'model' => 'remera', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
-            <x-input.nav-select :inputContent="['label' => 'TALLE PANTALON', 'model' => 'pantalon', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
-            <x-input.nav-select :inputContent="['label' => 'TALLE CALZADO', 'model' => 'calzado', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
+            <x-input.nav-select :inputContent="['label' => 'Talle remera', 'model' => 'remera', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
+            <x-input.nav-select :inputContent="['label' => 'Talle pantalon', 'model' => 'pantalon', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
+            <x-input.nav-select :inputContent="['label' => 'Talle calzado', 'model' => 'calzado', 'options' => ['Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', ]]" />
         </div>
     </div>
     
@@ -66,11 +66,11 @@
 
     <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
         <div class="grid grid-cols-3 col-span-2 gap-6">
-        <x-input.nav-file :inputContent="['label' => 'FOTO CARA', 'model' => 'cara']" />
-        <x-input.nav-file :inputContent="['label' => 'FOTO CUERPO', 'model' => 'cuerpo']" />
+        <x-input.nav-file :inputContent="['label' => 'Foto cara', 'model' => 'cara']" />
+        <x-input.nav-file :inputContent="['label' => 'Foto cuerpo', 'model' => 'cuerpo']" />
         <button 
         x-bind:disabled="formSubmited"
-        class="w-full p-4 py-2 mt-2 text-black transition-colors border-2 border-white lg:mt-0 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">ENVIAR</button>
+        class="w-full p-4 py-2 mt-2 text-black uppercase transition-colors border-2 border-white lg:mt-0 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">{{__('Enviar')}}</button>
     </div>
 </div>
     

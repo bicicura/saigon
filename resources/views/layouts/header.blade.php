@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="casting, servicio de casting, productora, publicidad, produccion de publicidades, casting publicidad, representante de actores, management, advertisting, casting services">
     <title>Document</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('/css/app.css?v=2') }}">
@@ -20,5 +21,5 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
 </head>
-<body id="body" class="saigon-bg-white saigon-text-base-mobile">
+<body id="body" class="saigon-bg-white saigon-text-base-mobile text-saigon-black">
     <x-nav />

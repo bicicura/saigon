@@ -17,7 +17,12 @@ module.exports = {
             },
             colors: {
                 'saigon-black': '#191818',
+                'saigon-white': '#F2F2F2',
             },
+            spacing: {
+                '0.25': '0.0625rem',
+                '5.5': '1.35rem',
+              }
         },
     },
 

@@ -25,10 +25,21 @@ class Casting extends Model
         )->orderBy('order');
     }
 
-    // public function getMinis()
-    // {
-    //     return Casting::where('categoria', 'mini')->get();
-    // }
+    public function getWebUrl() {
+
+        $sections = [
+            'Comerciales' => 'comerciales', 
+            'Fotografía' => 'fotografia', 
+            'Ficción' => 'ficcion', 
+            'Mini' => 'mini', 
+            'Street Agency' => 'street-agency',
+        ];
+        $section = $sections[$this->seccion];
+
+        return '/'.app()->getLocale().'/'.$section;
+
+        // return '/'.app()->getLocale().'/mini';
+    }
 
 }
 

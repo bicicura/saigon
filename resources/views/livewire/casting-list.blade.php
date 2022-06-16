@@ -12,7 +12,7 @@
         wire:loading.attr="disabled"
         wire:loading.class="hidden opacity-0"
         wire.target="showMore">
-            <svg id="a" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 34.16 34.4"><path d="M14.88 19.04H0v-4h14.88V0h4.4v15.04h14.88v4H19.28V34.4h-4.4V19.04Z" fill="#191818"/></svg>    
+            <svg id="a" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 34.16 34.4"><path d="M14.88 19.04H0v-4h14.88V0h4.4v15.04h14.88v4H19.28V34.4h-4.4V19.04Z" fill="fill-saigon-black"/></svg>    
         </button>
     
         <div class="flex justify-center mx-auto tex-center" wire:loading wire:target="showMore">
