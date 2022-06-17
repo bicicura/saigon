@@ -8,6 +8,7 @@ document.addEventListener('alpine:init', () => {
             buttonDisabled: false,
             formSubmited: false,
             openBurger: false,
+            skillsFlag: false,
             
             toggleActive() {
                 let location = window.location.pathname;
@@ -28,6 +29,7 @@ document.addEventListener('alpine:init', () => {
                 this.open = !this.open;
                 this.openBurger = !this.openBurger
                 this.buttonDisabled = true;
+                if (this.skillsFlag) this.skillsFlag = false;
                 if (!this.open) this.openForm = false;
                 this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
                 setTimeout(() => {this.buttonDisabled = false}, 2000)

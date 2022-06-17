@@ -58,7 +58,7 @@
             {{-- antes el lg:gap estaba en 8 abajo --}}
             <div class="flex flex-col items-end gap-4 mt-32 text-right lg:ml-auto lg:gap-4 lg:mt-6">
                 <h1 data-scroll-class="scroll-class" data-scroll data-scroll-speed="1.8" class="tracking-tight uppercase custom-vidick saigon-text-5xl saigon-font-thin saigon-title-line-height">{{ __('Comerciales') }}</h1>
-                <div data-scroll-class="scroll-class" data-scroll data-scroll data-scroll-speed="1.4" class="w-full saigon-text-500 saigon-p-line-height hero-p-w custom-vidick">
+                <div data-scroll-class="scroll-class" data-scroll data-scroll data-scroll-speed="1.4" class="w-full saigon-text-400 saigon-p-line-height hero-p-w custom-vidick">
                     <p>{{__('Nos posicionamos como líderes en el mercado publicitario local con gran llegada internacional.')}}</p>
                     <p>{{__('Desde hace más de una década convertimos en realidad las búsquedas más diversas.')}}</p>
                     <p>{{__('Nuestro abordaje es una invitación a descubrir y reclutar talentos con un horizonte inédito en cada producción.')}}</p>

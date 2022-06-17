@@ -35,20 +35,22 @@
 
 {{-- Para activar smooth scroll --}}
 <script>
-    const locoScroll = new LocomotiveScroll({
+    if (document.querySelector('.smooth-scroll') != null) {
+        const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.smooth-scroll'),
         smooth: true,
         multiplier: 1,
     })
-    // para actualizar el locoScroll una vez traída más info.
-    const event = new Event('updateLocoScroll');
-    window.addEventListener('updateLocoScroll', function (e) { locoScroll.update(); }, false);
-    window.dispatchEvent(event);
+        // para actualizar el locoScroll una vez traída más info.
+        const event = new Event('updateLocoScroll');
+        window.addEventListener('updateLocoScroll', function (e) { locoScroll.update(); }, false);
+        window.dispatchEvent(event);
 
-    // cuando carga todo el contenido del DOM le damos a update para que locoScroll tenga en cuenta todo el html a recorrer. 
-    window.addEventListener('load', () => {
-        locoScroll.update();
-    })
+        // cuando carga todo el contenido del DOM le damos a update para que locoScroll tenga en cuenta todo el html a recorrer. 
+        window.addEventListener('load', () => {
+            locoScroll.update();
+        })
+    }
 </script>
 
 </body>

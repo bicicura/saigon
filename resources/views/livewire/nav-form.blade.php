@@ -44,9 +44,9 @@
         <div class="grid grid-cols-3 col-span-2 gap-6">
             <div></div>
             <div></div>
-            <div x-data=" { open: false, } ">
+            <div x-data=" { open: false, } " @close-skills.window="open = false">
                 <button
-                x-on:click="open = true"
+                @click="$dispatch('skills-flag'); open = true;"
                 type="button"
                 class="w-full text-left text-white bg-transparent bg-right bg-no-repeat border-b border-white skills-container">SKILLS</button>
                 <x-skills-container />
@@ -64,7 +64,7 @@
         </div>
     </div> --}}
 
-    <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
+    <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3" :class="skillsFlag? 'opacity-0 -z-10' : ''">
         <div class="grid grid-cols-3 col-span-2 gap-6">
         <x-input.nav-file :inputContent="['label' => 'Foto cara', 'model' => 'cara']" />
         <x-input.nav-file :inputContent="['label' => 'Foto cuerpo', 'model' => 'cuerpo']" />

@@ -1,4 +1,4 @@
-<div x-transition.origin.center.right.duration.400ms x-show="open" class="absolute top-0 left-0 w-full h-full bg-saigon-black lg:pt-12 lg:mb-12">
+<div x-transition.origin.center.right.duration.400ms x-show="open" class="absolute top-0 left-0 w-full h-full bg-saigon-black lg:pt-12">
     <div class="h-full">
         <div class="flex flex-col justify-between h-full lg:w-9/12" style="line-height: 1.36rem;">
             <x-skills-group 
@@ -44,7 +44,7 @@
                 <div></div>
                 <div>
                     <button
-                    x-on:click="open = false"
+                    x-on:click="$dispatch('skills-flag'); open = false"
                     type="button"
                     class="w-full max-w-xs p-4 py-2 mt-2 text-black transition-colors border-2 border-white lg:mt-2 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">Listo</button>
                 </div>

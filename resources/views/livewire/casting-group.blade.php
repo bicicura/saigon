@@ -1,11 +1,12 @@
-<div class="gap-4 mt-4 lg:grid lg:grid-cols-3">
+<div class="gap-4 mt-4 lg:grid lg:grid-cols-3 casting-group-container" x-data="{ shown: false }">
     @foreach ($castings as $item)
-    <section class="pt-4 pb-8 text-right border-t-2 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article">
+    <section class="pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-10' " x-intersect.threshold.25="shown = true">
         <div class="hidden gap-2 mb-2 text-saigon-black lg:flex">
             <h2 class="saigon-text-200">{{$item['nombre']}} — {{$item['director']}} | {{$item['productora']}}</h2>
         </div>
-        {{-- dejamos el aspect video en desktop?? --}}
+
         <a href="{{ route('casting-player', [app()->getLocale(), $item['id']]) }}" class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-96 lg:h-fit lg:py-28 lg:aspect-video rounded-xl" style="background-image: url('/thumbnails/{{$item['thumbnail']}}')">
+            {{-- Headers mobile --}}
             <div class="lg:hidden">
                 <div class="pt-4 pr-4">
                     <h2 class="uppercase saigon-text-5xl">{{$item['nombre']}}</h2>
@@ -22,9 +23,11 @@
                 </div>
             </div>
         </a>
+        
     </section>
     @endforeach
 
+    {{-- Si no hay mas offset en la db, se saca el botón de + --}}
     @if (!$castings->offsetExists($offset))
         <div wire:init="noMoreOffset"></div>
     @endif
