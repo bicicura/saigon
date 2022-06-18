@@ -21,7 +21,7 @@
 <div class="smooth-scroll">
     <section class="px-3.5 lg:pr-16 lg:pl-8 flex flex-col-reverse lg:flex-row justify-between mb-12 w-full">
 
-        <div class="flex flex-col gap-4 mt-32 lg:gap-8 lg:mt-24">
+        <div class="flex flex-col gap-4 mt-32 lg:gap-8 lg:mt-32">
             <h1 class="tracking-tight uppercase saigon-text-5xl saigon-font-thin saigon-title-line-height">{{__("Ficción")}}</h1>
             <div class="flex flex-col w-full gap-5 lg:text-xl hero-p-w">
                 <div>

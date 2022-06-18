@@ -1,6 +1,6 @@
 <div class="gap-4 mt-4 lg:grid lg:grid-cols-3 casting-group-container" x-data="{ shown: false }">
     @foreach ($castings as $item)
-    <section class="pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-10' " x-intersect.threshold.25="shown = true">
+    <section class="pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " x-intersect.threshold.25="shown = true">
         <div class="hidden gap-2 mb-2 text-saigon-black lg:flex">
             <h2 class="saigon-text-200">{{$item['nombre']}} — {{$item['director']}} | {{$item['productora']}}</h2>
         </div>

@@ -51,7 +51,10 @@ main {
             aria-label="Previous slide"
             aria-controls="splide01-track"
           >
-          ←
+          {{-- ← --}}
+          <div class="rotate-180 w-max">
+            <svg viewBox="0 0 24.99 21.91" class="rotate-180"><path class="fill-saigon-black" d="M0 10.35 12.11 0l1.17 1.5c-4 3.34-8.47 6.65-11.3 8.59l.07.22c3.08-.15 8.4-.26 12.55-.26h10.39v1.87H14.61c-4.15 0-9.47-.15-12.51-.33l-.11.26c2.9 2.02 7.3 5.25 11.3 8.62l-1.25 1.43L0 11.6v-1.25Z"/></svg>
+          </div>
           </button>
           <button
           class="splide__arrow splide__arrow--next"
@@ -59,15 +62,18 @@ main {
           aria-label="Next slide"
           aria-controls="splide01-track"
         >
-        →
+        {{-- → --}}
+        <div>
+            <svg class="w-4 h-4" viewBox="0 0 24.95 21.91"><path class="fill-saigon-black" d="M24.95 11.52 12.84 21.91l-1.17-1.5c4-3.34 8.48-6.64 11.3-8.59l-.11-.26c-3.05.18-8.37.29-12.51.29H0V9.98h10.35c4.15 0 9.47.15 12.51.33l.11-.26c-2.9-2.02-7.3-5.25-11.3-8.62L12.92 0l12.04 10.31v1.21Z"/></svg>
+        </div>
         </button>
         </div>
         <div>
-            <div class="splide__track">
+            <div class="splide__track rounded-2xl">
                 <ul class="splide__list">
                 @foreach ($book as $item)
-                    <li style="height: calc(100vh - 9rem);" class="w-full h-full splide__slide">
-                        <img class="object-cover w-full h-full cursor-grab rounded-2xl" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de /actors/{{$actor->nombre}}">
+                    <li style="height: calc(100vh - 10rem);" class="w-full h-full splide__slide">
+                        <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de /actors/{{$actor->nombre}}">
                     </li>
                 @endforeach
                 </ul>
@@ -76,17 +82,12 @@ main {
         
     </div>
 
-    {{-- <div>
-        <div class="w-full h-full">
-            <img class="object-cover object-center w-full text-sm rounded-2xl" src="/actors/{{ $actor->thumbnail }}" alt="Fotografía de {{ $actor->nombre }}">
-            <div class="flex justify-between">
-                <button>←</button>
-                <button>→</button>
-            </div>
+    <div class="flex flex-col items-end text-right">
+        <div class="mb-4 ml-auto">
+            <a href="{{ route('management', app()->getLocale()) }}" class="text-transparent hover:text-saigon-black">
+                <svg class="w-4.5 h-4.5 transition-colors duration-150 ease-in cursor-pointer" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve"><path fill="currentColor" class="stroke-saigon-black hover:stroke-saigon-white" stroke-miterlimit="10" d="M.5.5h22.45v22.45H.5zM16.91 16.91 6.54 6.54M6.54 16.91 16.91 6.54"/></svg>
+            </a>
         </div>
-    </div> --}}
-
-    <div class="text-right">
         <p>{{ $actor->nombre }}</p>
         <p>Edad: {{ $actor->getAge() }}</p>
         <p>Nacionalidad: {{ $actor->nacionalidad }}</p>
@@ -106,7 +107,7 @@ main {
         <div x-data="{selected:null}">
             <ul>
                 <li class="relative">
-                    <button type="button" class="w-full text-right" @click="selected !== 1 ? selected = 1 : selected = null">
+                    <button type="button" class="ml-auto text-right w-max" @click="selected !== 1 ? selected = 1 : selected = null">
                         <div class="w-full transition-all">
                             <span>Bio</span>
                         </div>

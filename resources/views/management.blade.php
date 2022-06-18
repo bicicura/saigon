@@ -31,11 +31,11 @@
     
     </section>
     
-    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:mt-0 pb-8">
-        <div class="grid grid-cols-4 gap-6">
+    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:mt-0 pb-8" x-data="{ shown: false }">
+        <div class="grid grid-cols-4 gap-6 managment-cards-container">
             @foreach ($actores as $actor)
-            <a href="{{ route('management.detail', ['language' => app()->getLocale(), 'id' => $actor->id]) }}">
-                <div style="height: 26rem" class="w-full">
+            <a href="{{ route('management.detail', ['language' => app()->getLocale(), 'id' => $actor->id]) }}" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " class="transition duration-200 ease-in translate-y-4 opacity-0" x-intersect.threshold.25="shown = true">
+                <div class="w-full h-104">
                     <img class="object-cover object-top w-full h-full rounded-xl" loading="lazy" src="/actors/{{ $actor->thumbnail }}" alt="Fotografía de {{$actor->nombre}}">
                 </div>
                 <p class="saigon-text-200">{{ $actor->nombre }}</p>

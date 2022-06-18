@@ -605,18 +605,18 @@ input[type='radio'] {
     writing-mode: vertical-rl;
 }
 
-.casting-group-container section:nth-child(2) { transition-delay: .22s; }
+.casting-group-container section:nth-child(2), .managment-cards-container a:nth-child(2) { transition-delay: .22s; }
 
-.casting-group-container section:nth-child(3) { transition-delay: .33s; }
+.casting-group-container section:nth-child(3), .managment-cards-container a:nth-child(3) { transition-delay: .33s; }
 
-.casting-group-container section:nth-child(4) { transition-delay: .44s; }
+.casting-group-container section:nth-child(4), .managment-cards-container a:nth-child(4) { transition-delay: .44s; }
 
-.casting-group-container section:nth-child(5) { transition-delay: .55s; }
+.casting-group-container section:nth-child(5), .managment-cards-container a:nth-child(5) { transition-delay: .55s; }
 
-.casting-group-container section:nth-child(6) { transition-delay: .66s; }
+.casting-group-container section:nth-child(6), .managment-cards-container a:nth-child(6) { transition-delay: .66s; }
 
-.casting-group-container section:nth-child(7) { transition-delay: .77s; }
+.casting-group-container section:nth-child(7), .managment-cards-container a:nth-child(7) { transition-delay: .77s; }
 
-.casting-group-container section:nth-child(8) { transition-delay: .88s; }
+.casting-group-container section:nth-child(8), .managment-cards-container a:nth-child(8) { transition-delay: .88s; }
 
-.casting-group-container section:nth-child(9) { transition-delay: .99s; }
+.casting-group-container section:nth-child(9), .managment-cards-container a:nth-child(9) { transition-delay: .99s; }
