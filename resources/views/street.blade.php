@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title') {{ '— ' . __('Street Agency') }} @endsection
+
 @section('content')
 
 <style>
@@ -25,7 +27,7 @@
                 <p>{{__("Estamos convencidos de que la comunicación es mucho más efectiva cuando participan personas auténticas y reales.")}}</p>
                 <br>
                 <div>
-                    <p>{{__("Contacto")}}:</p>
+                    <p class="uppercase">{{__("Contacto")}}:</p>
                     <p>Josefina Cúneo  |  jose@streetagency.xyz</p>
                 </div>
             </div>

@@ -40,7 +40,7 @@
                 </div>
                 <h2 class="saigon-text-5xl lg:hidden" id="castings-comerciales">CASTING COMERCIALES</h2>
                 <div class="lg:flex lg:items-end lg:justify-between">
-                    <div style="width: 68ch;" class="lg:w-8/12 lg:text-xl lg:mt-2">
+                    <div class="lg:w-8/12 comerciales-text-container lg:text-xl lg:mt-2">
                         <p class="opacity-0 intro-p">{{__("En Saigón somos un equipo creativo dedicado al diseño y la producción de casting para proyectos locales e internacionales.")}}</p>
                         <p class="opacity-0 transition-delay-33 intro-p">{{__("Nuestro enfoque se apoya en la dinámica y amplitud de opciones que presentamos en cada proyecto.  Para esto contamos con una base de datos de mas de 100.000 talentos, que nos permite realizar casting integral de ficción, publicidad, gráfica, moda y proyectos especiales.")}}</p>
                         <p class="opacity-0 transition-delay-66 intro-p">{{__("Siempre adaptandonos a los nuevos formatos e incorporando nuevas herramientas de casting remotos y presenciales.")}}</p>
@@ -82,6 +82,6 @@
 
 </div>
 
-<script src="/js/intersectionObserver.js?v=2" defer></script>
+<script src="/js/intersectionObserver.js?v=5" defer></script>
 
 @endsection

@@ -1,9 +1,9 @@
-<div class="flex gap-8">
+<div class="flex flex-col justify-center gap-8 py-5 text-left lg:p-0 lg:flex-row">
     <div class="w-40">
         <p class="uppercase">{{$label}}</p>
     </div>
-    <div class="grid w-full grid-cols-4 gap-x-8">
-        <div class="flex items-center col-span-4 gap-2">
+    <div class="grid w-full grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-0 lg:gap-x-6">
+        <div class="flex items-center gap-2 lg:col-span-4">
             <input wire:model="{{$label}}" wire:click="skillClicked('{{$label}}')" class="bg-transparent border-white cursor-pointer lg:order-first border-px focus:ring-0" value="no-{{$label}}" type="checkbox" id="no-{{$label}}">
             <label for="no-{{$label}}" class="uppercase" >{{__($noHace)}}</label>
         </div>

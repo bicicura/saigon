@@ -1,6 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('nav', () => {
-        let body = document.getElementById("body");
+        // let body = document.getElementById("body");
         let nav = document.getElementById("nav-header");
         return {
             open: false,
@@ -31,7 +31,7 @@ document.addEventListener('alpine:init', () => {
                 this.buttonDisabled = true;
                 if (this.skillsFlag) this.skillsFlag = false;
                 if (!this.open) this.openForm = false;
-                this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
+                // this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
                 setTimeout(() => {this.buttonDisabled = false}, 2000)
             },
 

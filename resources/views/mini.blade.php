@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title') {{ '— ' . 'Mini' }} @endsection
+
 @section('content')
 
 <style>
@@ -22,7 +24,7 @@
                 <br>
                 <br>
                 <div>
-                    <p>{{__("Contacto")}}:</p>
+                    <p class="uppercase">{{__("Contacto")}}:</p>
                     <p>Melanie Semhan |  mini@saigonbuenosaires.com</p>
                 </div>
             </div>
@@ -30,10 +32,8 @@
     
     </section>
     
-    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:mt-0">
-    
+    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:pt-8 lg:mt-0">
         @livewire('casting-list', ['seccion' => $seccion])
-    
     </section>
 </div>
 

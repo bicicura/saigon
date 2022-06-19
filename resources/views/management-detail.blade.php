@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title') {{ '— ' . __('Management') }} @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">

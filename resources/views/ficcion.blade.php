@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title') {{ '— ' . __('Ficción') }} @endsection
+
 @section('content')
 
 <x-desktop-nav-fixed />
@@ -40,7 +42,7 @@
                     <p>{{__("La ficción en Saigón es nuestra nueva realidad potenciando nuestra experiencia y pasión.")}}</p>
                 </div>
                 <div>
-                    <p>{{__("Contacto")}}:</p>
+                    <p class="uppercase">{{__("Contacto")}}:</p>
                     <p>Pablo Lapa |  lapa@saigonbuenosaires.com</p>
                 </div>
             </div>

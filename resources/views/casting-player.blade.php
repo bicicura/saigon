@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title') {{ '— ' . 'Player' }} @endsection
+
 @section('content')
 
 <style>

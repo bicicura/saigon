@@ -291,11 +291,11 @@ MEDIA QUERIES
 /* Mobile */
 @media (max-width: 800px) {
 
+    :root { font-size: 1rem; }
+    
     .border-nav-mov {
         border-color: transparent;
     }
-
-    :root { font-size: 1rem; }
 
     .w-logo {
         width: 6.2rem;
@@ -620,3 +620,22 @@ input[type='radio'] {
 .casting-group-container section:nth-child(8), .managment-cards-container a:nth-child(8) { transition-delay: .88s; }
 
 .casting-group-container section:nth-child(9), .managment-cards-container a:nth-child(9) { transition-delay: .99s; }
+
+.comerciales-text-container { width: 68ch; }
+
+.nav-form-height { height: calc(100vh - 11rem); }
+
+@media (max-width: 800px) {
+    .comerciales-text-container { width: 100%; }
+
+    .nav-form-height { height: unset; }
+}
+
+input[type='checkbox'] {
+    accent-color: white;
+    color: white;
+}
+
+  input[type="checkbox"]:focus{
+    outline:0;
+}

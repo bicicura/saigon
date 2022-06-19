@@ -2,6 +2,8 @@
 
 @section('content')
 
+@section('title') {{ '— ' . __('Fotografía') }} @endsection
+
 <x-desktop-nav-fixed />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
