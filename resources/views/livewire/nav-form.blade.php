@@ -1,5 +1,15 @@
 <form wire:submit.prevent="submit" class="w-full pb-12 space-y-6 text-xl text-white saigon-text-200 lg:pb-0 lg:space-y-0 lg:flex lg:justify-between lg:flex-col saigon-font-thin px-7 lg:px-0 lg:mt-12 lg:pr-16 lg:w-full nav-form-height">
 
+    <div class="absolute hidden -top-12 right-24 lg:block">
+        <button type="button" class="relative p-4 focus:outline-none" @click="toggleForm">
+            <span class="sr-only">Cerrar formulario de contacto</span>
+            <div class="absolute block w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+                <span aria-hidden="true" class="block absolute h-0.5 w-12 bg-current transform transition duration-500 ease-in-out rotate-45"></span>
+                <span aria-hidden="true" class="block absolute  h-0.5 w-12 bg-current transform  transition duration-500 ease-in-out -rotate-45"></span>
+            </div>
+        </button>
+    </div>
+
     <div class="space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-12 lg:w-full">
         <x-input.nav-input-text :inputContent="['label' => 'Nombre y Apellido', 'model' => 'nombre' ]" />
         <x-input.nav-input-text :inputContent="['label' => 'Email', 'model' => 'email', 'model' => 'email']" />
@@ -40,7 +50,7 @@
         </div>
     </div>
     
-    <div class="grid gap-12 lg:gap-12 lg:grid-cols-3 lg:pt-3">
+    <div class="grid gap-12 lg:gap-12 lg:grid-cols-3">
         <div class="flex gap-6 lg:col-span-2 lg:grid-cols-3 lg:grid">
             <div class="hidden lg:block"></div>
             <div class="hidden lg:block"></div>
@@ -48,7 +58,7 @@
                 <button
                 @click="$dispatch('skills-flag'); open = !open;"
                 type="button"
-                class="w-full text-left text-white bg-transparent bg-right bg-no-repeat border-b border-white skills-container">SKILLS</button>
+                class="w-full text-left text-white bg-transparent bg-right bg-no-repeat border-b border-white saigon-text-100 skills-container">SKILLS</button>
                 <x-skills-container />            
             </div>
         </div>

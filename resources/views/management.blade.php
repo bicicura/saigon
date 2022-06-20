@@ -49,8 +49,10 @@
                     </div>
                     <p class="saigon-text-200" :class="hover? 'underline' : ''">{{ $actor->nombre }}</p>
                     <div class="absolute inset-0 top-0 bottom-0 left-0 right-0 flex items-center justify-center card-play-button">
-                        <div class="flex items-center gap-2 px-3 py-px rounded-full bg-saigon-black text-saigon-white w-max h-fit">
-                            <svg width="15" height="15" viewBox="0 0 15 15" class="hidden mr-2 lg:block"><g fill="none" fill-rule="evenodd"><path d="M-1-1h18v18H-1z"></path><path class="fill-saigon-white" d="M6 10.875L10.5 7.5 6 4.125v6.75zM7.5 0C3.36 0 0 3.36 0 7.5 0 11.64 3.36 15 7.5 15c4.14 0 7.5-3.36 7.5-7.5C15 3.36 11.64 0 7.5 0zm0 13.5c-3.307 0-6-2.693-6-6s2.693-6 6-6 6 2.693 6 6-2.693 6-6 6z"></path></g></svg>
+                        <div class="flex items-center gap-1 px-3 py-px rounded-full bg-saigon-black text-saigon-white w-max h-fit">
+                            <svg class="hidden w-6 h-6 lg:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
                             <span>{{__('Ver más')}}</span>
                         </div>
                     </div>

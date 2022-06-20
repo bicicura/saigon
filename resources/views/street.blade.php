@@ -5,14 +5,20 @@
 @section('content')
 
 <style>
-    @media (min-width: 40em) { .hero-p-w { width: 76%; } }
+    @media (min-width: 40em) { 
+        .st-video-container {
+            height: calc(100vh - 10rem); 
+            aspect-radio: 9 / 16;
+        }
+        .hero-p-w { width: 43rem; }
+    }
 </style>
 
 <x-desktop-nav-fixed />
 
 <section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between mb-12 lg:mb-0 mt-32 lg:mt-28">
 
-    <div class="mt-4" style="height: calc(100vh - 10rem); width: 115rem;">
+    <div class="mt-4 st-video-container">
         <video class="object-cover w-full h-full max-w-full rounded-lg" src="/contact.mp4"  muted playsinline autoplay loop></video>
     </div>
 
@@ -35,5 +41,19 @@
     </div>
 
 </section>
+
+<script defer>
+    if (window.innerWidth < 800) {
+        let setHeroHeight = () => {
+            let vh = window.innerHeight + 'px'; 
+            let hero = document.querySelector('.st-video-container');
+            
+            hero.style.height = `calc(${vh} - 19rem)`;
+        }
+
+        window.addEventListener('load', setHeroHeight);
+        window.addEventListener('resize', setHeroHeight, { passive: true });
+    }
+</script>
 
 @endsection

@@ -22,6 +22,12 @@
         width: 100%;
         object-fit: cover
     }
+
+    @media (min-width: 40em) {
+        
+        .fotografia-text-hero { width: 35rem; }
+        
+        }
 </style>
 
 <section id="scroll-target" data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24">
@@ -33,8 +39,8 @@
     </div>
 
     <div data-scroll data-scroll-sticky data-scroll-target="#scroll-target" class="flex flex-col items-end gap-4 mt-32 text-right lg:top-12 lg:sticky lg:right-0 lg:gap-10 lg:mt-20 lg:w-8/12 lg:h-fit lg:z-10"">
-        <h1 class="uppercase saigon-text-5xl saigon-font-thin saigon-title-line-height">{{__("Fotografía")}}</h1>
-        <div  class="saigon-text-300 saigon-p-line-height" style="width: 35rem;">
+        <h1 class="tracking-tighter uppercase saigon-text-5xl saigon-font-thin saigon-title-line-height" style="{{ app()->getLocale() == 'en'? 'letter-spacing: -0.025em;' : ''  }}">{{__("Fotografía")}}</h1>
+        <div class="saigon-text-300 saigon-p-line-height fotografia-text-hero">
             <p>{{__("En nuestros casting fotográficos, cubrimos proyectos de moda, publicidad, catalogo, social media, corporativo, branding y todo el campo del medio gráfico y digital.")}}</p>
             <br>
             <p>{{__("Nuestros fotógrafos trabajan optimizando recursos - técnicos y creativos - para lograr los objetivos de cada proyecto.")}}</p>

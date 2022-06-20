@@ -26,7 +26,7 @@
     <section class="pb-6 saigon-bg-white">
         <article class="space-y-6 text-right text-saigon-white lg:text-left lg:flex lg:flex-col-reverse">
             <div class="relative bg-center bg-no-repeat bg-cover saigon-bg-hero rounded-xl lg:mt-8">
-                <img class="invisible rounded-xl lg:hidden" src="/imgs/bg-hero.jpg" alt="">
+                {{-- <img class="invisible rounded-xl lg:hidden" src="/imgs/bg-hero.jpg" alt=""> --}}
                 <img data-scroll data-scroll-speed="1.8" class="hidden w-full rounded-xl aspect-video lg:block bg-hero-desk" src="/imgs/desktop-bg.png" alt="">
                 <div class="absolute right-3 top-6 lg:hidden">
                     <h1 class="saigon-text-5xl">FULL '21 REEL</h1>
@@ -81,6 +81,20 @@
     </div>
 
 </div>
+
+<script defer>
+    if (window.innerWidth < 800) {
+        let setHeroHeight = () => {
+            let vh = window.innerHeight + 'px'; 
+            let hero = document.querySelector('.saigon-bg-hero');
+            
+            hero.style.height = `calc(${vh} - 19rem)`;
+        }
+
+        window.addEventListener('load', setHeroHeight);
+        window.addEventListener('resize', setHeroHeight, { passive: true });
+    }
+</script>
 
 <script src="/js/intersectionObserver.js?v=5" defer></script>
 

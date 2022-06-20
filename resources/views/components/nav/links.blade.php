@@ -18,7 +18,7 @@
         <p data-active="street-agency" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('street agency', app()->getLocale()) }}" >STREET AGENCY</a></p>
     </li>
     <li :class="openForm? 'goTop' : 'saigon-translate-0 overflow-hidden'" class="relative text-nav-d saigon-transition-transform">
-        <p data-active="sumate-a-saigon" @click="toggleForm;" class="tracking-normal menu-translate-p lg:px-0 px-3.5 cursor-pointer" :class="open? 'saigon-translate-0' : ''"><span>SUMATE A SAIGÓN</span></p>
+        <p data-active="sumate-a-saigon" @click="toggleForm;" class="tracking-normal menu-translate-p lg:px-0 px-3.5 cursor-pointer w-max ml-auto lg:ml-0" :class="open? 'saigon-translate-0' : ''"><span>SUMATE A SAIGÓN</span></p>
         <div :class="openForm? 'opacity-100' : 'opacity-0'" class="absolute left-0 w-full pt-6 delay-500 lg:pt-0 text-nav-d z-100 saigon-transition-opacity-delay-300 top-12 lg:top-20">
             <livewire:nav-form />
         </div>

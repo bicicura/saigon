@@ -316,10 +316,10 @@ select {
 
 .skills-container {
     background-image: url('/imgs/asset-select-rotate.svg');
+    background-position-x: calc(100% - 0.5rem);
     background-size: .7em;
 
     padding-right: 2.5rem;
-
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 0.75rem;
@@ -397,10 +397,6 @@ input[type="text"], select {
 }
 
 .nav-ul li p a:hover, .nav-ul li p span:hover { color: #444444; }
-
-@media (max-width: 800px) {
-    .player-height { min-height: 60vh; }
-}
 
 .nav-ul li p.active a { color: #444444; }
 

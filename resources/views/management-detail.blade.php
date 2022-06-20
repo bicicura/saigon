@@ -7,25 +7,38 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 
 <style>
-    @media (min-width: 40em) { .hero-p-w { width: 65%; } }
+
+    .splide__arrow {
+        background: none!important;
+        top: unset!important;
+        bottom: -.5rem!important;
+        color: black!important;
+        width: unset!important;
+    }
+
+    @media (min-width: 40em) { 
+        .hero-p-w { width: 65%; }
+    
+        .splide__slide {
+            height: calc(100vh - 10rem);
+        }
+
+        main {
+            height: calc(100vh - 6rem);
+        }
+    }
+
+    @media(max-width: 800px) {
+        
+        .splide__arrow { bottom: -4rem!important }
+        
+    }
 
     img {
   display: block;
   width: auto;
   height: 90%;
   /* margin: 0 auto; */
-}
-
-main {
-    height: calc(100vh - 6rem);
-}
-
-.splide__arrow {
-    background: none!important;
-    top: unset!important;
-    bottom: -.5rem!important;
-    color: black!important;
-    width: unset!important;
 }
 
 .splide__arrow--prev {
@@ -40,12 +53,12 @@ main {
 
 <x-desktop-nav-fixed />
 
-<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full">
+<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-32 lg:mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full">
 
-   <div class="grid h-full grid-cols-3 ml-auto">
-    <div></div>
+   <div class="flex flex-col lg:ml-auto lg:h-full lg:grid-cols-3 lg:grid">
+    <div class="hidden lg:block"></div>
 
-    <div class="splide">
+    <div class="mb-16 splide lg:mb-0">
         <div class="text-white splide__arrows">
             <button
             class="splide__arrow splide__arrow--prev"
@@ -74,7 +87,7 @@ main {
             <div class="splide__track rounded-2xl">
                 <ul class="splide__list">
                 @foreach ($book as $item)
-                    <li style="height: calc(100vh - 10rem);" class="w-full h-full splide__slide">
+                    <li style="" class="w-full h-full splide__slide">
                         <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de /actors/{{$actor->nombre}}">
                     </li>
                 @endforeach
@@ -150,6 +163,22 @@ main {
 
         splide.mount();
     } );
+</script>
+
+<script>
+    if (window.innerWidth < 800) {
+        let setHeroHeight = () => {
+            let vh = window.innerHeight + 'px'; 
+            let slides = document.querySelectorAll('.splide__slide');
+
+            slides.forEach(slide => {
+                slide.style.height = `calc(${vh} - 19rem)`;    
+            });
+        }
+
+        window.addEventListener('load', setHeroHeight);
+        window.addEventListener('resize', setHeroHeight, { passive: true });
+    }
 </script>
 
 @endsection

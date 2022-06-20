@@ -24,7 +24,13 @@ module.exports = {
                 '4.5': '1.1rem',
                 '5.5': '1.35rem',
                 '104' : '26rem',
-              }
+              },
+            screens: {
+                '3xl': '1600px',
+            },
+            fontSize: {
+                'tiny': '0.925rem'
+            }
         },
     },
 

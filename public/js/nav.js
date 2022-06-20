@@ -46,6 +46,20 @@ document.addEventListener('alpine:init', () => {
                 }, 1000)
                 this.toggleActive();
             },
+
+            setNavHeight() {
+                if (window.innerWidth < 800) {
+                    let setHeroHeight = () => {
+                        let vh = window.innerHeight + 'px'; 
+                        let hero = document.querySelector('.st-video-container');
+                        
+                        hero.style.height = `calc(${vh} - 19rem)`;
+                    }
+            
+                    window.addEventListener('load', setHeroHeight);
+                    window.addEventListener('resize', setHeroHeight, { passive: true });
+                }
+            }
         }
     });
 });
