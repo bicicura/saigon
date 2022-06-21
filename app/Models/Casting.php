@@ -37,8 +37,6 @@ class Casting extends Model
         $section = $sections[$this->seccion];
 
         return '/'.app()->getLocale().'/'.$section;
-
-        // return '/'.app()->getLocale().'/mini';
     }
 
 }

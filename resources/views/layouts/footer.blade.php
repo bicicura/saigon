@@ -47,9 +47,11 @@
         window.dispatchEvent(event);
 
         // cuando carga todo el contenido del DOM le damos a update para que locoScroll tenga en cuenta todo el html a recorrer. 
-        window.addEventListener('load', () => {
-            locoScroll.update();
-        })
+        // if (!window.location.pathname.includes('castings-fotografia')) {
+            window.addEventListener('load', () => {
+                locoScroll.update();
+            })
+        // }
     }
 </script>
 

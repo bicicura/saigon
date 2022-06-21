@@ -11,4 +11,3 @@
     type="text" 
     class="w-full text-right text-white bg-transparent lg:text-left focus:ring-0">
 </div>
-

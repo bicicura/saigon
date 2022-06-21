@@ -56,19 +56,24 @@ class EditFotografias extends Component
 
     public function saveImgs() {
 
+        if ($this->table === 'book') {
+            $width = 600;
+            $height= 800;
+        } else { 
+            $width = 1500;
+            $height= 1000;
+        }
+
         $orderMaxValue = $this->findMaxOrderValue();
         
         foreach ($this->uploadedImg as $photo) {
-
-            // $filename = $photo->store('/', $this->directorio);
-
             $file = Image::make($photo);
             // hago q mantenga su orientacion original
             $file->orientate()
             // la convertimos a jpg y reducimos la calidad al 80
             ->encode('jpg', 80)
             // la resizeamos, manteniendo el aspect ratio y prevenir que se amplíe.
-            ->resize(600, 800, function($contraint) {
+            ->resize($width, $height, function($contraint) {
                 $contraint->aspectRatio();
                 $contraint->upsize();
             });

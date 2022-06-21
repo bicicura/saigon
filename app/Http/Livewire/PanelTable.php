@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Casting;
+use Illuminate\Support\Facades\Storage;
 use Livewire\WithPagination;
 
 class PanelTable extends Component
@@ -19,6 +20,36 @@ class PanelTable extends Component
     public $perfilId = null;
     public $deleteModal = null;
     protected $listeners = ['refreshTable' => '$refresh'];
+
+    public function deleteThumbnail($thumbnail) {
+        Storage::disk('thumbnails')->delete($thumbnail);
+    }
+
+    public function deleteFotografias($casting) {
+        $imgs = $casting->getFotografias;
+        foreach ($imgs as $img) {
+            Storage::disk('fotos')->delete($img->img);
+        }
+    }
+
+    public function deleteProfile() {
+        // busco el casting en db.
+        $Casting = Casting::find($this->perfilId);
+        // borro las imgs del disco
+        if ($Casting->seccion === "Fotografía") {
+            $this->deleteFotografias($Casting);
+        } else {
+            $this->deleteThumbnail($Casting['thumbnail']);
+        }
+        // borro el registro de la tabla de Castings
+        $Casting->delete();
+        // oculto el modal en el front
+        $this->deleteModal = false;
+        // emito la notificación de Casting guardado.
+        $this->dispatchBrowserEvent('notify', ['message' => '🗑️ Casting eliminado', 'status' => 'error']);
+        // refresco el componente.
+        $this->emit('refreshTable');
+    }
 
     public function render()
     {

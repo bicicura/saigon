@@ -30,14 +30,14 @@
         }
 </style>
 
-<section id="scroll-target" data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24">
+<section data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24">
     
     <div class="mt-20 space-y-20 lg:space-y-10 lg:mt-28 lg:w-10/12">
-        @foreach ($castings as $item)
-            <x-fotografia-slider :item="$item" />
+        @foreach ($castings as $casting)
+            <x-fotografia-slider :casting="$casting" />
         @endforeach
     </div>
-
+    <div id="scroll-target"></div>
     <div data-scroll data-scroll-sticky data-scroll-target="#scroll-target" class="flex flex-col items-end gap-4 mt-32 text-right lg:top-12 lg:sticky lg:right-0 lg:gap-10 lg:mt-20 lg:w-8/12 lg:h-fit lg:z-10"">
         <h1 class="tracking-tighter uppercase saigon-text-5xl saigon-font-thin saigon-title-line-height" style="{{ app()->getLocale() == 'en'? 'letter-spacing: -0.025em;' : ''  }}">{{__("Fotografía")}}</h1>
         <div class="saigon-text-300 saigon-p-line-height fotografia-text-hero">
@@ -52,9 +52,9 @@
             @endif
             <br>
             <div>
-                <p class="uppercase">{{__("Contacto")}}:</p>
-                <p>Andi di Napoli  |  andi@saigonbuenosaires.com</p>
-                <p>Javier Daniel  |  javier@saigonbuenosaires.com</p>
+                <p class="uppercase">{{__('Contacto')}}:</p>
+                <p><span class="block lg:inline">Andi di Napoli</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">andi@saigonbuenosaires.com</span></p>
+                <p><span class="block lg:inline">Javier Daniel</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">javier@saigonbuenosaires.com</span></p>
             </div>
         </div>
     </div>

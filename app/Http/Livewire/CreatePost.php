@@ -7,6 +7,7 @@ use Livewire\WithFileUploads;
 use App\Models\Casting;
 use App\Models\Fotografia;
 use Illuminate\Support\Facades\Storage;
+use Image;
 
 class CreatePost extends Component
 {
@@ -35,8 +36,8 @@ class CreatePost extends Component
             'nombre' => 'required',
             'director' => 'required',
             'productora' => 'required',
-            'categoria' => 'required',
-            'video_url' => 'required',
+            // 'categoria' => 'required',
+            // 'video_url' => 'required',
         ];
 
         // si el user esta editando un perfil || si el user esta creando un nuevo perfil.
@@ -55,22 +56,59 @@ class CreatePost extends Component
             'nombre' => 'required',
             'productora' => 'required',
             'director' => 'required',
-            'categoria' => 'required',
+            // 'categoria' => 'required',
         ];
 
         $this->validate($inputsToValidate);
         
     }
 
-    public function saveFotografias($CastingId) {
+    // public function saveFotografias($CastingId) {
+    //     $n = 0;
+    //     foreach ($this->fotografias as $photo) {
+    //         $filename = $photo->store('/', 'fotos');
+    //         $Fotografia = new Fotografia;
+    //         $Fotografia->casting_id = $CastingId;
+    //         $Fotografia->order = $n;
+    //         $Fotografia->img = $filename;
+    //         $Fotografia->save();
+    //         $n++;
+    //     }
+    // }
+
+    public function saveFile($source_file) {
+        $file = Image::make($source_file);
+        // hago q mantenga su orientacion original
+        $file->orientate()
+        // la convertimos a jpg y reducimos la calidad al 80
+        ->encode('jpg', 80)
+        // la resizeamos, manteniendo el aspect ratio y prevenir que se amplíe.
+        ->resize(1500, 1000, function($contraint) {
+            $contraint->aspectRatio();
+            $contraint->upsize();
+        });
+        //guardamos en directorio
+        $file->save(storage_path('app/fotos/'.$file->filename.'.jpg'));
+
+        // devuelvo el nombre del archivo + extensión.
+        return $file->filename.'.jpg'; 
+    }
+
+    public function saveBook($castingId) {
         $n = 0;
         foreach ($this->fotografias as $photo) {
-            $filename = $photo->store('/', 'fotos');
+            $fileName = $this->saveFile($photo);
+            // Creo instancia de Book
             $Fotografia = new Fotografia;
-            $Fotografia->casting_id = $CastingId;
+            // Le asigno el id del actor
+            $Fotografia->casting_id = $castingId;
+            // Le asigno un nro de orden
             $Fotografia->order = $n;
-            $Fotografia->img = $filename;
+            // le agrego el nombre del archivo
+            $Fotografia->img = $fileName;
+            // guardo en db
             $Fotografia->save();
+            // incremento el numero d orden +1
             $n++;
         }
     }
@@ -89,20 +127,24 @@ class CreatePost extends Component
 
         $fileName = null;
 
-        if ($this->seccion != 'Castings Fotografía') $fileName = $this->storeAvatar();  
+        if ($this->seccion != 'Fotografía') $fileName = $this->storeAvatar();  
         
         $Casting = new Casting;
         
         $CastingId = $this->assignCastingValues($Casting, $fileName);
 
+        if ($this->seccion === "Fotografía") {
+            $this->saveBook($CastingId);
+        }
+
         $Casting->save();
 
-        if ($this->seccion === 'Castings Fotografía') $this->saveFotografias($CastingId);
+        // if ($this->seccion === 'Castings Fotografía') $this->saveFotografias($CastingId);
 
         // notificación de éxito
         session()->flash('success', 'Casting creado exitosamente! ❤️');
         //redireccionar
-        return redirect()->to('/dashboard/castings');
+        return redirect()->to('/es/dashboard/castings');
         
     }
 
@@ -115,7 +157,7 @@ class CreatePost extends Component
 
     public function executeValidation() {
 
-        if ($this->seccion === "Castings Fotografía") {
+        if ($this->seccion === "Fotografía") {
             try {
                 $this->formValidationFotografia();
             } catch (\Illuminate\Validation\ValidationException $e) {

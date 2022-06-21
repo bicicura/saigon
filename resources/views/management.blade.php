@@ -6,6 +6,10 @@
 
 <style>
     @media (min-width: 40em) { .hero-p-w { width: 60%; } }
+
+    @media(max-width: 800px) {
+        section + section { border-top: none }
+    }
 </style>
 
 <x-desktop-nav-fixed />
@@ -25,14 +29,14 @@
                 </div>
                 <br>
                 <div>
-                    <p class="uppercase">{{__("Contacto")}}:</p>
-                    <p>Julian Krakov |  julian@saigonbuenosaires.com</p>
+                    <p class="uppercase">{{__('Contacto')}}:</p>
+                    <p><span class="block lg:inline">Julian Krakov</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">julian@saigonbuenosaires.com</span></p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-20 lg:mt-0 pb-8" x-data="{ shown: false }">
+    <section class="px-3.5 lg:pr-16 lg:pl-10 pt-4 lg:pt-20 lg:mt-0 pb-8" x-data="{ shown: false }">
         <div class="flex flex-col gap-6 lg:grid lg:grid-cols-4 managment-cards-container">
             @foreach ($actores as $actor)
                 <a 
@@ -45,7 +49,7 @@
                     x-intersect.threshold.25="shown = true"
                 >
                     <div class="w-full h-104">
-                        <img class="object-cover object-top w-full h-full rounded-xl" loading="lazy" src="/actors/{{ $actor->thumbnail }}" alt="Fotografía de {{$actor->nombre}}">
+                        <img class="object-cover object-top w-full h-full rounded-xl" loading="lazy" src="/actors/{{ $actor->getBook[0]->img }}" alt="Fotografía de {{$actor->nombre}}">
                     </div>
                     <p class="saigon-text-200" :class="hover? 'underline' : ''">{{ $actor->nombre }}</p>
                     <div class="absolute inset-0 top-0 bottom-0 left-0 right-0 flex items-center justify-center card-play-button">

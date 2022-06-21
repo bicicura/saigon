@@ -49,7 +49,6 @@ class NavForm extends Component
         'calzado' => 'required',
         'cara' => 'required',
         'cuerpo' => 'required',
-        // 'skills' => 'required',
     ];
 
     public function submit() 

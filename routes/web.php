@@ -56,9 +56,9 @@ Route::group(['prefix' => '{language}'], function () {
 
     // Castings
     Route::get('/dashboard/castings', [CastingController::class, 'showAll'])->middleware(['auth'])->name('castings');
-    Route::get('/dashboard/create', [CastingController::class, 'create'])->middleware(['auth'])->name('dashboard.create');
+    Route::get('/dashboard/create', [CastingController::class, 'create'])->middleware(['auth'])->name('castings.create');
     Route::get('/castings/edit/{id}', [CastingController::class, 'edit'])->middleware(['auth'])->name('castings.edit');
-    Route::get('/fotografias/edit/{id}', [CastingController::class, 'editarFotografias'])->middleware(['auth'])->name('castings.edit');
+    Route::get('/fotografias/edit/{id}', [CastingController::class, 'editarFotografias'])->middleware(['auth'])->name('castings.edit-fotografias');
 
     // Inbox
     Route::get('/dashboard/inbox', [ProfileController::class, 'showAll'])->middleware(['auth'])->name('dashboard.inbox');

@@ -38,7 +38,7 @@
     </div>
 
     <div class="space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-12">
-        <x-input.nav-input-text x-mask="99/99/9999" placeholder="MM/DD/YYYY" :inputContent="['label' => 'FECHA DE NACIMIENTO', 'model' => 'nacimiento']" />
+        <x-input.nav-input-text x-mask="99/99/9999" placeholder="YYYY/MM/DD" :inputContent="['label' => 'FECHA DE NACIMIENTO', 'model' => 'nacimiento']" />
         <x-input.nav-input-text :inputContent="['label' => 'Altura', 'model' => 'altura']" />
     </div>
     

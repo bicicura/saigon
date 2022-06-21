@@ -3,7 +3,7 @@
         <div>
             <x-input.text-input :inputContent="['label' => 'Nombre', 'model' => 'nombre', 'placeholder' => 'Nombre']"/>
 
-            <x-input.text-input :inputContent="['label' => 'Edad', 'model' => 'date_of_birth', 'placeholder' => 'Edad']"/>
+            <x-input.text-input x-mask="99/99/9999" :inputContent="['label' => 'Fecha de Nacimiento', 'model' => 'date_of_birth', 'placeholder' => 'AAAA/MM/DD']"/>
                 
             <x-input.text-input :inputContent="['label' => 'Nacionalidad', 'model' => 'nacionalidad', 'placeholder' => 'Nacionalidad']"/>
 
@@ -75,9 +75,9 @@
                 Saved!</span>
                 
                 <span class="inline-flex rounded-md shadow-sm">
-                    <button type="button" class="px-4 py-2 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800">
+                    <a href="{{ route('dashboard.management', app()->getLocale()) }}" class="px-4 py-2 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800">
                         Cancelar
-                    </button>
+                    </a>
                 </span>
 
                 <span class="inline-flex ml-3 rounded-md shadow-sm">

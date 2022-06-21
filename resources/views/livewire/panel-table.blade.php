@@ -20,7 +20,7 @@
 
     <div class="relative max-w-xl mx-auto min-w-xl">
         <div class="absolute -top-6 -right-8" title="crear nuevo modelx">
-            <a href="/dashboard/create">
+            <a href="{{ route('castings.create', app()->getLocale()) }}">
                 <button type="button" class="flex items-center justify-center w-12 h-12 mb-2 mr-2 text-white transition duration-150 ease-in-out bg-green-700 rounded-full hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 hover:-translate-y-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 24 24"><path fill="#F3F4F6" d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                 </button>
@@ -71,7 +71,7 @@
                         </span>
                     </td>
                     <td class="flex items-center justify-end gap-6 px-6 py-6">
-                        <a href="/castings/edit/{{ $casting->id }}" title="Editar">
+                        <a href="{{ route('castings.edit', [app()->getLocale(), $casting->id]) }}" title="Editar">
                             <svg xmlns="http://www.w3.org/2000/svg" class="fill-indigo-600 hover:fill-indigo-900" width="24" height="24" xml:space="preserve"><path fill="none" d="M0 0h24v24H0V0z"/><path d="m14.1 9 .9.9L5.9 19H5v-.9L14.1 9m3.6-6c-.3 0-.5.1-.7.3l-1.8 1.8L19 8.9 20.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.2-.2-.5-.3-.7-.3zm-3.6 3.2L3 17.3V21h3.8l11-11.1-3.7-3.7z"/></svg>
                         </a>
                         <div class="cursor-pointer" @click="deleteModal = true; perfilId = {{$casting->id}}, perfilNombre = '{{$casting->nombre}}'" title="Eliminar">

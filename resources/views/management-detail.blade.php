@@ -53,8 +53,11 @@
 
 <x-desktop-nav-fixed />
 
-<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-32 lg:mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full">
-
+<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-32 lg:mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full"
+    x-data=" { navOpenFlag: false } "
+    @nav-toggled.window="$event.detail.state? navOpenFlag = true : navOpenFlag = false;"
+    @keydown.escape.window = "navOpenFlag? navOpenFlag : $refs.backBtn.click() "
+>
    <div class="flex flex-col lg:ml-auto lg:h-full lg:grid-cols-3 lg:grid">
     <div class="hidden lg:block"></div>
 
@@ -99,12 +102,12 @@
 
     <div class="flex flex-col items-end text-right">
         <div class="mb-4 ml-auto">
-            <a href="{{ route('management', app()->getLocale()) }}" class="text-transparent hover:text-saigon-black">
+            <a x-ref="backBtn" href="{{ route('management', app()->getLocale()) }}" class="text-transparent hover:text-saigon-black">
                 <svg class="w-4.5 h-4.5 transition-colors duration-150 ease-in cursor-pointer" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve"><path fill="currentColor" class="stroke-saigon-black hover:stroke-saigon-white" stroke-miterlimit="10" d="M.5.5h22.45v22.45H.5zM16.91 16.91 6.54 6.54M6.54 16.91 16.91 6.54"/></svg>
             </a>
         </div>
         <p>{{ $actor->nombre }}</p>
-        <p>Edad: {{ $actor->getAge() }}</p>
+        <p>Edad: {{ $actor->getAge() }} años</p>
         <p>Nacionalidad: {{ $actor->nacionalidad }}</p>
         <p>Altura: {{ $actor->altura }} cm</p>
         <p>
@@ -165,19 +168,20 @@
     } );
 </script>
 
-<script>
+<script defer>
     if (window.innerWidth < 800) {
         let setHeroHeight = () => {
-            let vh = window.innerHeight + 'px'; 
-            let slides = document.querySelectorAll('.splide__slide');
+            let vh = window.innerHeight;
+            let hh = document.querySelector('header').offsetHeight;
+            let height = (vh - hh) + 'px';
 
+            let slides = document.querySelectorAll('.splide__slide');
+            
             slides.forEach(slide => {
-                slide.style.height = `calc(${vh} - 19rem)`;    
+                slide.style.height = `calc(${height} - 3rem)`;
             });
         }
-
         window.addEventListener('load', setHeroHeight);
-        window.addEventListener('resize', setHeroHeight, { passive: true });
     }
 </script>
 

@@ -28,8 +28,8 @@
                 <br>
                 <br>
                 <div>
-                    <p class="uppercase">{{__("Contacto")}}:</p>
-                    <p>Melanie Semhan |  mini@saigonbuenosaires.com</p>
+                    <p class="uppercase">{{__('Contacto')}}:</p>
+                    <p><span class="block lg:inline">Melanie Semhan</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">mini@saigonbuenosaires.com</span></p>
                 </div>
             </div>
         </div>

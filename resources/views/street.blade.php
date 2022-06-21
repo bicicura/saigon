@@ -33,8 +33,8 @@
                 <p>{{__("Estamos convencidos de que la comunicación es mucho más efectiva cuando participan personas auténticas y reales.")}}</p>
                 <br>
                 <div>
-                    <p class="uppercase">{{__("Contacto")}}:</p>
-                    <p>Josefina Cúneo  |  jose@streetagency.xyz</p>
+                    <p class="uppercase">{{__('Contacto')}}:</p>
+                    <p><span class="block lg:inline">Josefina Cúneo</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">jose@streetagency.xyz</span></p>
                 </div>
             </div>
         </div>
@@ -45,14 +45,16 @@
 <script defer>
     if (window.innerWidth < 800) {
         let setHeroHeight = () => {
-            let vh = window.innerHeight + 'px'; 
+            let vh = window.innerHeight;
+            let hh = document.querySelector('header').offsetHeight;
+            let height = (vh - hh) + 'px';
             let hero = document.querySelector('.st-video-container');
             
-            hero.style.height = `calc(${vh} - 19rem)`;
+            hero.style.height = `calc(${height} - 3rem)`;
         }
 
         window.addEventListener('load', setHeroHeight);
-        window.addEventListener('resize', setHeroHeight, { passive: true });
+        // window.addEventListener('resize', setHeroHeight, { passive: true });
     }
 </script>
 

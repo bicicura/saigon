@@ -2,7 +2,7 @@
     <form wire:submit.prevent="{{$type}}">
         <div class="">
 
-            <x-input.select :inputContent="['label' => 'Sección', 'model' => 'seccion', 'placeholder' => 'Seleccione una sección de la web', 'opciones' => [['value' => 'Comerciales', 'text' => 'Comerciales'], ['value' => 'Fotografía', 'text' => 'Castings Fotografía'], ['value' => 'Mini', 'text' => 'Mini'], ['value' => 'Ficción', 'text' => 'Ficción'], ['value' => 'Street Agency', 'text' => 'Street Agency']]]"/>
+            <x-input.select :inputContent="['label' => 'Sección', 'model' => 'seccion', 'placeholder' => 'Seleccione una sección de la web', 'opciones' => [['value' => 'Comerciales', 'text' => 'Comerciales'], ['value' => 'Fotografía', 'text' => 'Fotografía'], ['value' => 'Mini', 'text' => 'Mini'], ['value' => 'Ficción', 'text' => 'Ficción'], ['value' => 'Street Agency', 'text' => 'Street Agency']]]"/>
 
             <x-input.text-input :inputContent="['label' => 'Nombre', 'model' => 'nombre', 'placeholder' => 'Nombre']"/>
 
@@ -10,15 +10,15 @@
 
             <x-input.text-input :inputContent="['label' => 'Director', 'model' => 'director', 'placeholder' => 'Director/es']"/>
 
-            <x-input.select :inputContent="['label' => 'Categoría', 'model' => 'categoria', 'placeholder' => 'Seleccione una categoría', 'opciones' => [['value' => 's', 'text' => 'Small'], ['value' => 'm', 'text' => 'Medium'], ['value' => 'l', 'text' => 'Large']]]"/>
+            @if ($seccion !== 'Fotografía')
+            <x-input.select :inputContent="['label' => 'Categoría', 'model' => 'categoria', 'placeholder' => 'Seleccione una categoría', 'opciones' => [['value' => 'Small', 'text' => 'Small'], ['value' => 'Medium', 'text' => 'Medium'], ['value' => 'Large', 'text' => 'Large']]]"/>
 
-            @if ($seccion !== 'Castings Fotografía')
-                <x-input.text-input :inputContent="['label' => 'Vimeo URL', 'model' => 'video_url', 'placeholder' => 'https://player.vimeo.com/video/694544533?h=42c9936f17']"/>
+            <x-input.text-input :inputContent="['label' => 'Vimeo URL', 'model' => 'video_url', 'placeholder' => 'https://player.vimeo.com/video/694544533?h=42c9936f17']"/>
             @endif
                 
 
             @if ($seccion === 'Fotografía' && $type === 'save')
-            <x-input.filepond wire:model="fotografias" id="fotografias" :label="'Fotografías'" data-preview="true" multiple/>
+            <x-input.filepond wire:model="fotografias" id="fotografias" :label="'Fotografías'" multiple/>
             @elseif ($seccion === 'Fotografía' && $type === 'update')
             
             <x-input.input-w-edit-btn :label="'Fotografías'" :id="$casting->id"  />

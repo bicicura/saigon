@@ -32,6 +32,14 @@ class CreateActor extends Component
     public $actor;
     public $avatarActual;
 
+    protected $rules = 
+    [
+        'nombre' => 'required',
+        'nacionalidad' => 'required',
+        'date_of_birth' => 'required|date',
+        'altura' => 'required|integer|between:100,230',
+    ];
+
     public function saveFile($source_file) {
         $file = Image::make($source_file);
         // hago q mantenga su orientacion original
@@ -90,7 +98,12 @@ class CreateActor extends Component
     public function create() {
         
         // validar
-        // $this->executeValidation();
+        try {
+            $this->validate();
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->dispatchBrowserEvent('notify', ['message' => 'ERROR Revise los campos.', 'status' => 'error']);
+            $this->validate();
+        }
 
         // fileName
         $fileName = $this->saveFile($this->newThumbnail);

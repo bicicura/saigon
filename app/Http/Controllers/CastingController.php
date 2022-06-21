@@ -24,12 +24,12 @@ class CastingController extends Controller
         return view('panel.create'); 
     }
 
-    public function edit($id) {
+    public function edit($lang, $id) {
         $casting = Casting::find($id);    
         return view('panel.edit', ['casting' => $casting]); 
     }
 
-    public function editarFotografias($id) {
+    public function editarFotografias($lang, $id) {
         $casting = Casting::find($id);
         $fotografias = $casting->getFotografias;
         return view('panel.fotografias-edit', ['imgs' => $fotografias, 'casting_id' => $id, 'label' => 'Editando Fotografias de '.$casting->nombre, 'table' => 'fotografias', 'directorio' => 'fotos']);

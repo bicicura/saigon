@@ -42,8 +42,8 @@
                     <p>{{__("La ficción en Saigón es nuestra nueva realidad potenciando nuestra experiencia y pasión.")}}</p>
                 </div>
                 <div>
-                    <p class="uppercase">{{__("Contacto")}}:</p>
-                    <p>Pablo Lapa |  lapa@saigonbuenosaires.com</p>
+                    <p class="uppercase">{{__('Contacto')}}:</p>
+                    <p><span class="block lg:inline">Pablo Lapa</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">lapa@saigonbuenosaires.com</span></p>
                 </div>
             </div>
         </div>

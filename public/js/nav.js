@@ -31,6 +31,7 @@ document.addEventListener('alpine:init', () => {
                 this.buttonDisabled = true;
                 if (this.skillsFlag) this.skillsFlag = false;
                 if (!this.open) this.openForm = false;
+                window.dispatchEvent(new CustomEvent('nav-toggled', { detail: { 'state': this.open }, bubbles: true }))
                 // this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
                 setTimeout(() => {this.buttonDisabled = false}, 2000)
             },

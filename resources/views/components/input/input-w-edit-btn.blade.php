@@ -6,11 +6,19 @@
     <div class="mt-2 sm:mt-0 sm:col-span-2"">
         <div class="flex items-center">
             <span class="rounded-md shadow-sm">
+                @if ($label === 'Book')
                 <a href="{{ route('dashboard.management-edit-book', [app()->getLocale(), $id]) }} ">
                     <div class="px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md cursor-pointer hover:text-gray-500 active:bg-gray-50 active:text-gray-800">
                         Editar
                     </div>
                 </a>
+                @else
+                <a href="{{ route('castings.edit-fotografias', [app()->getLocale(), $id]) }} ">
+                    <div class="px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md cursor-pointer hover:text-gray-500 active:bg-gray-50 active:text-gray-800">
+                        Editar
+                    </div>
+                </a>
+                @endif
             </span>
         </div>
     </div>
