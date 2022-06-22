@@ -14,7 +14,7 @@
 
 <x-desktop-nav-fixed />
 
-<div class="smooth-scroll">
+<div class="smooth-scroll lg:fixed">
     <section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between mb-12 lg:mb-0">
         <div class="z-20 flex flex-col items-end gap-4 mt-32 text-right lg:ml-auto lg:gap-8 lg:mt-16">
             <h1 style="width: min-content;" class="tracking-tight saigon-text-5xl saigon-font-thin saigon-title-line-height">MANAGEMENT</h1>

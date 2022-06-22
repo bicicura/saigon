@@ -150,7 +150,7 @@ class CreatePost extends Component
 
     public function savedNotification() {
         //evento del browser
-        $this->dispatchBrowserEvent('notify', ['message' => 'Perfil guardado ❤️', 'status' => 'success']);
+        $this->dispatchBrowserEvent('notify', ['message' => 'Casting editado exitosamente! ❤️', 'status' => 'success']);
         //evento de livewire
         $this->emitSelf('notify-saved');
     }
@@ -189,8 +189,10 @@ class CreatePost extends Component
 
         $this->assignCastingValues($this->casting, $avatarFileName);
 
-        $this->savedNotification();
-
+        // notificación de éxito
+        session()->flash('success', 'Casting editado exitosamente! ❤️');
+        //redireccionar
+        return redirect()->to('/es/dashboard/castings');
     }
 
     public function assignCastingValues($Casting, $avatarFileName = null) { 

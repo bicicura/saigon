@@ -9,7 +9,7 @@ class ActorController extends Controller
 {
 
     public function index() {
-        $actores = Actor::get(['id', 'nombre', 'thumbnail']);
+        $actores = Actor::inRandomOrder()->get(['id', 'nombre', 'thumbnail']);
         return view('management', ['actores' => $actores]);
     }
 

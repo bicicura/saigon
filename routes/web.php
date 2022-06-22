@@ -21,7 +21,9 @@ use App\Http\Controllers\ActorController;
 Route::redirect('/', '/es');
 Route::redirect('/login', '/es/login');
 
+
 Route::group(['prefix' => '{language}'], function () {
+    // Route::get('/tum', [CastingController::class, 'getThumbnail']);
     
     // para que en el castin player los castings de seccion COMERCIALES redirijan al index al apretar la cruz.
     Route::redirect('/comerciales', '/');
@@ -33,7 +35,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/management', [ActorController::class, 'index'])->name('management');
     Route::get('/management/{id}', [ActorController::class, 'detail'])->name('management.detail');
 
-    Route::get('/castings-fotografia', function () {
+    Route::get('/fotografia', function () {
         $castings = Casting::where('seccion', 'Fotografía')->get();
         return view('fotografia', ['castings' => $castings]);
     })->name('castings-fotografia');
@@ -76,6 +78,7 @@ Route::group(['prefix' => '{language}'], function () {
     });
 
 });
+
 
 
 require __DIR__.'/auth.php';

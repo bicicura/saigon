@@ -17,11 +17,11 @@
                     <x-nav-link :href="route('castings', app()->getLocale())" :active="request()->routeIs('castings')">
                         Castings
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard.inbox', app()->getLocale())" :active="request()->routeIs('dashboard.inbox')">
-                        Inbox
-                    </x-nav-link>
                     <x-nav-link :href="route('dashboard.management', app()->getLocale())" :active="request()->routeIs('dashboard.management')">
                         Management
+                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard.inbox', app()->getLocale())" :active="request()->routeIs('dashboard.inbox')">
+                        Inbox
                     </x-nav-link>
                 </div>
             </div>

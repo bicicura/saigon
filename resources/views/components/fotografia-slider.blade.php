@@ -1,7 +1,7 @@
 
-<div class="splide" x-data x-init="$dispatch('updateLocoScroll')">
+<div class="splide">
     <div class="flex items-center justify-between mb-2 saigon-text-500 splide__arrows">
-        <p class="leading-none"><span class="uppercase">{{$casting['nombre']}}</span> — {{$casting['director']}} | {{$casting['productora']}}</p>
+        <p class="leading-none transition lg:line-clamp-1 lg:hover:line-clamp-none"><span class="uppercase">{{$casting['nombre']}}</span><span> — {{$casting['director']}}</span><span> | {{$casting['productora']}}</span></p>
         <div class="flex ml-auto w-max">
             <button style="position: static" class="splide__arrow splide__arrow--prev saigon-font-light">
                 <
@@ -16,10 +16,8 @@
           <ul class="splide__list">
                 @foreach ($casting->getFotografias as $foto)
                 <li class="splide__slide">
-                    <div>
-                        <img class="object-cover w-full h-full cursor-grab rounded-2xl carusel-img" src="/fotos/{{ $foto->img }}" alt="">
-                    </div>
-                  </li>
+                    <img class="object-contain object-center w-full h-full cursor-grab rounded-2xl carusel-img" src="/fotos/{{ $foto->img }}" alt="">
+                </li>
                 @endforeach
           </ul>
     </div>

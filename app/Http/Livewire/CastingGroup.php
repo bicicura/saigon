@@ -26,7 +26,7 @@ class CastingGroup extends Component
 
     public function render()
     {
-        $castings = Casting::where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->get();
+        $castings = Casting::where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->orderBy('created_at', 'desc')->get();
         return view('livewire.casting-group', ['castings' => $castings]);
     }
 }

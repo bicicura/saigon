@@ -23,6 +23,7 @@ module.exports = {
                 '0.25': '0.0625rem',
                 '4.5': '1.1rem',
                 '5.5': '1.35rem',
+                '26': '6.9rem',
                 '104' : '26rem',
               },
             screens: {
@@ -34,5 +35,8 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/line-clamp'),
+    ],
 };

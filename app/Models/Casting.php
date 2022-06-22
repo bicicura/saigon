@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Fotografia;
+use Illuminate\Support\Facades\Http;
 
 
 class Casting extends Model
@@ -37,6 +38,13 @@ class Casting extends Model
         $section = $sections[$this->seccion];
 
         return '/'.app()->getLocale().'/'.$section;
+    }
+
+    public function getThumbnail() {
+        
+        $url = 'https://vimeo.com/581208956';
+        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+        return $response['thumbnail_url'];
     }
 
 }

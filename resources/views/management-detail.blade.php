@@ -53,7 +53,7 @@
 
 <x-desktop-nav-fixed />
 
-<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-32 lg:mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full"
+<section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse mt-32 lg:mt-24 lg:flex-row justify-between mb-12 lg:mb-0 saigon-text-300 h-full overflow-y-hidden"
     x-data=" { navOpenFlag: false } "
     @nav-toggled.window="$event.detail.state? navOpenFlag = true : navOpenFlag = false;"
     @keydown.escape.window = "navOpenFlag? navOpenFlag : $refs.backBtn.click() "
@@ -91,7 +91,7 @@
                 <ul class="splide__list">
                 @foreach ($book as $item)
                     <li style="" class="w-full h-full splide__slide">
-                        <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de /actors/{{$actor->nombre}}">
+                        <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de {{$actor->nombre}}">
                     </li>
                 @endforeach
                 </ul>
@@ -132,7 +132,7 @@
                     </button>
         
                     <div class="relative overflow-hidden text-gray-500 transition-all duration-700 max-h-0" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                        <div style="max-width: 35ch; margin-left: auto;" class="py-2 text-right h-fit saigon-text-200">
+                        <div style="max-width: 35ch; margin-left: auto;" class="py-2 pr-2 text-right lg:overflow-y-auto h-fit lg:h-104 saigon-text-200">
                             {{ $actor->bio }}
                         </div>
                     </div>

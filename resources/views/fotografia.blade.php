@@ -30,7 +30,7 @@
         }
 </style>
 
-<section data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24">
+<section data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24 lg:fixed">
     
     <div class="mt-20 space-y-20 lg:space-y-10 lg:mt-28 lg:w-10/12">
         @foreach ($castings as $casting)

@@ -6,18 +6,8 @@
 <style>
 
     html {
-        scroll-padding-top: 1200px!important;
+        scroll-padding-top: 3000px!important;
     }
-    
-/* 
-    .casting-article {
-        transition:all .3s cubic-bezier(.23,1,.32,1);
-    }
-
-    .casting-article:hover {
-        transform: translateY(-2.5%);
-        filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.06)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.3));
-    } */
 
     @media (min-width: 40em) {
             .hero-p-w { width: 77%; }
@@ -25,7 +15,7 @@
 </style>
 <x-desktop-nav-fixed />
 {{-- Index Container --}}
-<div class="px-3.5 lg:px-8 mt-28 lg:mt-0 space-y-3 smooth-scroll">
+<div class="px-3.5 lg:px-8 mt-28 lg:mt-0 space-y-3 smooth-scroll lg:fixed">
     {{-- separador para mobile --}}
     <div class="w-full p-px saigon-bg-black lg:hidden"></div>
     <section id="castings-comerciales" class="pb-6 saigon-bg-white">
@@ -56,8 +46,8 @@
         </article>
     </section>
 
-    <div class="relative z-20" id="comerciales">
-        <div class="absolute left-0 -top-24"></div>
+    <div class="relative z-20">
+        <div id="comerciales" class="absolute left-0 -top-36"></div>
         <div class="mb-12">
             {{-- antes el lg:gap estaba en 8 abajo --}}
             <div class="flex flex-col items-end gap-4 mt-0 text-right lg:ml-auto lg:gap-4 lg:mt-6">
@@ -101,6 +91,6 @@
     }
 </script>
 
-<script src="/js/intersectionObserver.js?v=6" defer></script>
+<script src="/js/intersectionObserver.js?v=7" defer></script>
 
 @endsection
