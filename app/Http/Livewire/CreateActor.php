@@ -154,6 +154,7 @@ class CreateActor extends Component
         $Actor->nombre = $this->nombre;
         $Actor->date_of_birth = $this->date_of_birth;
         $Actor->nacionalidad = $this->nacionalidad;
+        $Actor->slug = null;
         $Actor->altura = $this->altura;
         $Actor->imdb = $this->imdb;
         $Actor->ig = $this->ig;

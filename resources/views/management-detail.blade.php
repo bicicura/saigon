@@ -89,7 +89,7 @@
         <div>
             <div class="splide__track rounded-2xl">
                 <ul class="splide__list">
-                @foreach ($book as $item)
+                @foreach ($actor->getBook as $item)
                     <li style="" class="w-full h-full splide__slide">
                         <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de {{$actor->nombre}}">
                     </li>
@@ -132,7 +132,7 @@
                     </button>
         
                     <div class="relative overflow-hidden text-gray-500 transition-all duration-700 max-h-0" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                        <div style="max-width: 35ch; margin-left: auto;" class="py-2 pr-2 text-right lg:overflow-y-auto h-fit lg:h-104 saigon-text-200">
+                        <div style="max-width: 35ch; margin-left: auto;" class="py-2 pr-2 text-right lg:overflow-y-auto h-fit lg:max-h-104 saigon-text-200">
                             {{ $actor->bio }}
                         </div>
                     </div>

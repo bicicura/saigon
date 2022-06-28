@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Fotografia;
 use Illuminate\Support\Facades\Http;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Http;
 
 class Casting extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $table = 'castings';
     protected $primaryKey = 'id';
@@ -40,11 +41,25 @@ class Casting extends Model
         return '/'.app()->getLocale().'/'.$section;
     }
 
-    public function getThumbnail() {
+    // public function getThumbnail() {
         
-        $url = 'https://vimeo.com/581208956';
-        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-        return $response['thumbnail_url'];
+    //     $url = 'https://vimeo.com/581208956';
+    //     $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+    //     return $response['thumbnail_url'];
+    // }
+
+     /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nombre'
+            ]
+        ];
     }
 
 }

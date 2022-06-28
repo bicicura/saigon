@@ -199,6 +199,8 @@ class CreatePost extends Component
 
         $Casting->seccion = $this->seccion;
         $Casting->nombre = $this->nombre;
+        // por si cambió el nombre del casting.
+        $Casting->slug = null;
         $Casting->director = $this->director;
         $Casting->productora = $this->productora;
         $Casting->thumbnail = $avatarFileName;

@@ -9,15 +9,14 @@ class ActorController extends Controller
 {
 
     public function index() {
-        $actores = Actor::inRandomOrder()->get(['id', 'nombre', 'thumbnail']);
+        $actores = Actor::with('getBook')->inRandomOrder()->get(['id', 'nombre', 'thumbnail', 'slug']);
         return view('management', ['actores' => $actores]);
     }
 
     // uso el request porque sino me tomaba el parametro language de la url como el id, ahora lo especifico al parametro.
-    public function detail($language, Request $request) {
-        $actor = Actor::find($request->id);
-        $book = $actor->getBook;
-        return view('management-detail', ['actor' => $actor, 'book' => $book]);
+    public function detail($language, $slug) {
+        $actor = Actor::with('getBook')->where('slug', $slug)->firstOrFail();
+        return view('management-detail', ['actor' => $actor]);
     }
 
     public function showAll() {

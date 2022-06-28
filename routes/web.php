@@ -6,48 +6,27 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\ActorController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Para redirigir a un lenguage predeterminado
+// Para redirigir a un lenguage predeterminado.
 Route::redirect('/', '/es');
 Route::redirect('/login', '/es/login');
 
-
+// Los controllers van a tener como 1er param $lang para saber en que idioma deben devolver la vista.
 Route::group(['prefix' => '{language}'], function () {
-    // Route::get('/tum', [CastingController::class, 'getThumbnail']);
     
     // para que en el castin player los castings de seccion COMERCIALES redirijan al index al apretar la cruz.
-    Route::redirect('/comerciales', '/');
+    Route::redirect('/comerciales', '/#comerciales');
 
-    Route::get('/', function () {  return view('index', ['seccion' => "Comerciales"]); })->name('index');
-
-    Route::get('/street-agency', function () { return view('street', ['seccion' => "Street Agency"]);})->name('street agency');
+    Route::get('/', [CastingController::class, 'index'])->name('index');
+    Route::get('/street-agency', [CastingController::class, 'streetagency'])->name('street-agency');
+    Route::get('/mini', [CastingController::class, 'mini'])->name('mini');
+    Route::get('/fotografia', [CastingController::class, 'fotografia'])->name('castings-fotografia');
+    Route::get('/ficcion', [CastingController::class, 'ficcion'])->name('ficcion');
+    Route::get('/player/{slug}', [CastingController::class, 'player'])->name('casting-player');    
 
     Route::get('/management', [ActorController::class, 'index'])->name('management');
-    Route::get('/management/{id}', [ActorController::class, 'detail'])->name('management.detail');
+    Route::get('/management/{slug}', [ActorController::class, 'detail'])->name('management.detail');
 
-    Route::get('/fotografia', function () {
-        $castings = Casting::where('seccion', 'Fotografía')->get();
-        return view('fotografia', ['castings' => $castings]);
-    })->name('castings-fotografia');
 
-    Route::get('/mini', function () { return view('mini', ['seccion' => "Mini"]); })->name('mini');
-
-    Route::get('/ficcion', function () { return view('ficcion', ['seccion' => 'Ficción']); })->name('ficcion');
-
-    Route::get('/casting-player/{id}', function ($language, $id) {
-        $casting = Casting::find($id);
-        return view('casting-player', ['casting' => $casting]);
-    })->name('casting-player');
     
     // ======================
     // PANEL DE ADMINISTRADOR 
@@ -79,8 +58,4 @@ Route::group(['prefix' => '{language}'], function () {
 
 });
 
-
-
 require __DIR__.'/auth.php';
-
-

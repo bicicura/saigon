@@ -3,7 +3,7 @@
         <p data-active="castings-comerciales" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d castings-c-p" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('index', app()->getLocale()) . '#comerciales' }}">{{ __('Comerciales') }}</a></p>
     </li>
     <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
-        <p data-active="castings-fotografia" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('castings-fotografia', app()->getLocale()) }}">{{ __('Fotografía') }}</a></p>
+        <p data-active="fotografia" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a class="uppercase" href="{{ route('castings-fotografia', app()->getLocale()) }}">{{ __('Fotografía') }}</a></p>
     </li>
     <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
         <p data-active="mini" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('mini', app()->getLocale()) }}">MINI</a></p>
@@ -15,7 +15,7 @@
         <p data-active="management" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('management', app()->getLocale()) }}">MANAGEMENT</a></p>
     </li>
     <li :class="openForm? 'opacity-0 pointer-events-none' : ''" class="overflow-hidden saigon-transition-opacity">
-        <p data-active="street-agency" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('street agency', app()->getLocale()) }}" >STREET AGENCY</a></p>
+        <p data-active="street-agency" class="tracking-normal menu-translate-p lg:px-0 px-3.5 text-nav-d" :class="open? 'saigon-translate-0' : ''"><a href="{{ route('street-agency', app()->getLocale()) }}" >STREET AGENCY</a></p>
     </li>
     <li :class="openForm? 'goTop' : 'saigon-translate-0 overflow-hidden'" class="relative text-nav-d saigon-transition-transform">
         <p data-active="sumate-a-saigon" @click="toggleForm;" class="tracking-normal menu-translate-p lg:px-0 px-3.5 cursor-pointer w-max ml-auto lg:ml-0" :class="open? 'saigon-translate-0' : ''"><span>SUMATE A SAIGÓN</span></p>

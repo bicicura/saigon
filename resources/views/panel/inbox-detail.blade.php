@@ -9,7 +9,7 @@
     <section class="pt-10 pb-20 space-y-10">
         
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <a href="/dashboard/inbox" class="flex items-center gap-1.5 text-gray-500 w-full">
+            <a href="{{ route('dashboard.inbox', app()->getLocale()) }}" class="flex items-center gap-1.5 text-gray-500 w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5 fill-gray-500"><path d="M24 40 8 24 24 8 26.1 10.1 13.7 22.5H40V25.5H13.7L26.1 37.9Z"/></svg>
                 <span>Volver</span>
             </a>

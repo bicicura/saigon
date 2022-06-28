@@ -4,14 +4,49 @@
 
 @section('content')
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+
+@livewire('casting-carusel', ['seccion' => $seccion])
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
 <x-desktop-nav-fixed />
 
 <style>
+    .splide__arrow {
+        background: none
+    }
+
+    .splide__arrow { 
+        height: fit-content;
+        transform: translate(0%)
+    }
+
     .carusel-img {
         min-height: 28rem;
         width: 100%;
         object-fit: cover
     }
+
+    .splide__arrow {
+        position: static!important;
+        display: flex!important;
+        justify-content: center!important;
+        background: none!important;
+        top: unset!important;
+        bottom: -.5rem!important;
+        color: black!important;
+        width: unset!important;
+    }
+
+    .splide__arrow--prev {
+    left: 0!important
+}
+
+.splide__arrow--next {
+    right: 0!important
+}
+
 
     @media (min-width: 40em) { 
         
@@ -59,7 +94,21 @@
     
     <div class="px-3.5 lg:pr-16 lg:pl-10 lg:mt-0">
         @livewire('casting-list', ['seccion' => $seccion])
-    </div>
+    </div>    
+    
 </div>
+
+<script defer>
+    window.addEventListener('build', function (e) { 
+        console.log('se disparo')
+        var splide = new Splide( '.splide', {
+            perPage: 1,
+            arrows: true,
+            pagination: false,
+        } );
+        
+        splide.mount();
+     }, false);
+</script>
 
 @endsection

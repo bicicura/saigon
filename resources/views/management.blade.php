@@ -43,7 +43,7 @@
                     x-data="{ hover: false }" 
                     x-on:mouseover="hover = true" 
                     x-on:mouseleave="hover = false" 
-                    href="{{ route('management.detail', ['language' => app()->getLocale(), 'id' => $actor->id]) }}" 
+                    href="{{ route('management.detail', [app()->getLocale(), $actor->slug]) }}" 
                     :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " 
                     class="relative transition duration-200 ease-in translate-y-4 opacity-0" 
                     x-intersect.threshold.25="shown = true"

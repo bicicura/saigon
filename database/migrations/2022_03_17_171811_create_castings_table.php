@@ -17,6 +17,7 @@ class CreateCastingsTable extends Migration
             $table->id();
             $table->string('seccion');
             $table->string('nombre');
+            $table->string('slug')->nullable();
             $table->string('productora')->nullable();
             $table->string('director')->nullable();
             $table->string('categoria')->nullable();

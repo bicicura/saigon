@@ -4,11 +4,6 @@
 
 
 <style>
-
-    html {
-        scroll-padding-top: 3000px!important;
-    }
-
     @media (min-width: 40em) {
             .hero-p-w { width: 77%; }
         }
@@ -21,8 +16,9 @@
     <section id="castings-comerciales" class="pb-6 saigon-bg-white">
         <article class="space-y-6 text-right text-saigon-white lg:text-left lg:flex lg:flex-col-reverse">
             <div class="relative bg-center bg-no-repeat bg-cover saigon-bg-hero rounded-xl lg:mt-8">
-                {{-- <img class="invisible rounded-xl lg:hidden" src="/imgs/bg-hero.jpg" alt=""> --}}
-                <img data-scroll data-scroll-speed="1.8" class="hidden w-full rounded-xl aspect-video lg:block bg-hero-desk" src="/imgs/desktop-bg.png" alt="">
+                <a href="{{ route('casting-player', [app()->getLocale(), 56]) }}" class="hidden lg:block" data-scroll data-scroll-speed="1.8" href="/">
+                    <img class="w-full rounded-xl aspect-video bg-hero-desk" src="/imgs/desktop-bg.png" alt="">
+                </a>
                 <div class="absolute right-3 top-6 lg:hidden">
                     <h1 class="saigon-text-5xl">FULL '21 REEL</h1>
                     <h4 class="pt-3">Click to see full movie</h4>
@@ -91,6 +87,6 @@
     }
 </script>
 
-<script src="/js/intersectionObserver.js?v=7" defer></script>
+<script src="/js/intersectionObserver.js?v=8" defer></script>
 
 @endsection
