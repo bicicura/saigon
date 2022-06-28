@@ -56,7 +56,7 @@ class PanelTable extends Component
         return view('livewire.panel-table', [
             'castings' => Casting::
             where('nombre', 'like', '%'.$this->search.'%')
-            ->paginate(5)
+            ->paginate(6)
         ]);
     }
 }

@@ -101,7 +101,7 @@ class CreateActor extends Component
         try {
             $this->validate();
         } catch (\Illuminate\Validation\ValidationException $e) {
-            $this->dispatchBrowserEvent('notify', ['message' => 'ERROR Revise los campos.', 'status' => 'error']);
+            $this->dispatchBrowserEvent('notify', ['message' => '❌ ERROR Revise los campos.', 'status' => 'error']);
             $this->validate();
         }
 

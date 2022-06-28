@@ -42,9 +42,12 @@
         multiplier: 1,
     })
         // para actualizar el locoScroll una vez traída más info.
-        const event = new Event('updateLocoScroll');
         window.addEventListener('updateLocoScroll', function (e) { locoScroll.update(); }, false);
-        window.dispatchEvent(event);
+        
+
+        window.addEventListener('indexScrollTo', function (e) { 
+            locoScroll.scrollTo(e.detail.vidick, 0, 250); 
+        }, false);
 
         // cuando carga todo el contenido del DOM le damos a update para que locoScroll tenga en cuenta todo el html a recorrer. 
         // if (!window.location.pathname.includes('castings-fotografia')) {

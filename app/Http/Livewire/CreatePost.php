@@ -63,19 +63,6 @@ class CreatePost extends Component
         
     }
 
-    // public function saveFotografias($CastingId) {
-    //     $n = 0;
-    //     foreach ($this->fotografias as $photo) {
-    //         $filename = $photo->store('/', 'fotos');
-    //         $Fotografia = new Fotografia;
-    //         $Fotografia->casting_id = $CastingId;
-    //         $Fotografia->order = $n;
-    //         $Fotografia->img = $filename;
-    //         $Fotografia->save();
-    //         $n++;
-    //     }
-    // }
-
     public function saveFile($source_file) {
         $file = Image::make($source_file);
         // hago q mantenga su orientacion original

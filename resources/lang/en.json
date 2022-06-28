@@ -49,6 +49,7 @@
     "Femenino": "Female",
     "Masculino": "Male",
     "Otro": "Other",
+    "(El número no debe incluír guiones ni puntos. Ej: 302002009)": "(The number can not include dashes or dots. Ex: 302002009)",
 
     "Futbol": "Football",
     "Basket": "Basketball",
@@ -95,5 +96,14 @@
     "Armonica": "Harmonic",
     "Arpa": "Harp",
 
-    "Ver más": "See more"
+    "Ver más": "See more",
+
+    "Sumate a Saigón": "Join Saigon",
+
+    "El campo es obligatorio": "The field is required",
+    "El formato de email es incorrecto": "The Email Address format is not valid",
+    "El campo debe contener al menos :min caracteres" : "The must be at least :min characters",
+    "El campo deber ser un número": "The field must be a number.",
+    "El campo no es una fecha válida" : "The field is not a valid date",
+    "El campo debe estar entre :min y :max": "The field must be between :min and :max"
 }

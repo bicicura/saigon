@@ -2,8 +2,14 @@
 
     {{-- {{dd($castings)}} --}}
 
-    <div class="max-w-xl mx-auto min-w-lg">
-        <div class="relative">
+    <div class="flex justify-between max-w-xl gap-4 mx-auto min-w-lg">
+        <a href="{{ route('castings.reel', app()->getLocale()) }}" class="inline-flex items-center justify-center gap-1 px-4 py-2 text-sm font-bold leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+            <div class="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-full h-full fill-white hover:fill-indigo-900"xml:space="preserve"><path fill="none" d="M0 0h24v24H0V0z"/><path d="m14.1 9 .9.9L5.9 19H5v-.9L14.1 9m3.6-6c-.3 0-.5.1-.7.3l-1.8 1.8L19 8.9 20.7 7c.4-.4.4-1 0-1.4l-2.3-2.3c-.2-.2-.5-.3-.7-.3zm-3.6 3.2L3 17.3V21h3.8l11-11.1-3.7-3.7z"/></svg>
+            </div>
+            <span>Reel</span>
+        </a>
+        <div class="relative w-full">
             <div class="absolute top-0 bottom-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd"
@@ -15,11 +21,11 @@
                 id="search"
                 class="block w-full py-2 pl-12 pr-3 leading-5 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:shadow-outline-blue sm:text-sm"
                 placeholder="Buscar por nombre..." type="search">
-        </div>
+            </div>
     </div>
 
     <div class="relative max-w-xl mx-auto min-w-xl">
-        <div class="absolute -top-6 -right-8" title="crear nuevo modelx">
+        <div class="absolute -top-6 -right-8" title="crear nuevo casting">
             <a href="{{ route('castings.create', app()->getLocale()) }}">
                 <button type="button" class="flex items-center justify-center w-12 h-12 mb-2 mr-2 text-white transition duration-150 ease-in-out bg-green-700 rounded-full hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 hover:-translate-y-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 24 24"><path fill="#F3F4F6" d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>

@@ -35,7 +35,7 @@ class NavForm extends Component
 
     protected $rules = 
     [
-        'nombre' => 'required|min:6',
+        'nombre' => 'required|min:2',
         'email' => 'required|email',
         'celular' => 'required|min:6',
         'nacionalidad' => 'required|min:6',
@@ -54,13 +54,14 @@ class NavForm extends Component
     public function submit() 
     {
         // dd($this->storeSkills());
+
     
         // valido y aviso si hay algún error y salgo de la función
         try {
-            $this->validate();
+            $this->validateForm();
         } catch (\Illuminate\Validation\ValidationException $e) {
             $this->dispatchBrowserEvent('notify', ['message' => 'ERROR Revise los campos.', 'status' => 'error']);
-            $this->validate();
+            $this->validateForm();
         }
 
         // uplodeo los archivos de CARA y CUERPO y obtengo los nombres.
@@ -98,13 +99,13 @@ class NavForm extends Component
     }   
 
     public function updatedCara() {
-        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:5000']);
+        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:8000']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cara']);
     }
 
     public function updatedCuerpo() {
-        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:5000']);
+        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:8000']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cuerpo']);
     }
@@ -170,5 +171,35 @@ class NavForm extends Component
         // muestro notificacion de enviado
         $this->dispatchBrowserEvent('notify', ['message' => 'Formulario enviado exitosamente', 'status' => 'success']);
 
+    }
+
+    public function validateForm() {
+        $this->validate(
+            [
+                'email' => 'required|email', 
+                'nombre' => 'required|min:2',
+                'celular' => 'required|min:6',
+                'nacionalidad' => 'required|min:6',
+                'dni' => 'required|numeric',
+                'cuit' => 'required|numeric',
+                'sexo' => 'required',
+                'nacimiento' => 'required|date',
+                'altura' => 'required|numeric|between:100,230',
+                'remera' => 'required',
+                'pantalon' => 'required',
+                'calzado' => 'required',
+                'cara' => 'required',
+                'cuerpo' => 'required',
+
+            ],
+            [
+                'required' => __('El campo es obligatorio'),
+                'min' => __('El campo debe contener al menos :min caracteres'),
+                'email' => __('El formato de email es incorrecto'),
+                'numeric' => __('El campo deber ser un número'),
+                'date' => __('El campo no es una fecha válida'),
+                'between.numeric' => __('El campo debe estar entre :min y :max'),
+            ],
+        );
     }
 }

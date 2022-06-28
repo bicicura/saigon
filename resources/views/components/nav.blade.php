@@ -19,7 +19,7 @@
 
         {{-- Sumate a Saigon --}}
         <div class="flex-col items-end justify-between hidden md:flex lg:mt-auto">
-            <span x-on:click="openForm=true; open=true;" class="mt-auto cursor-pointer texto-vertical" x-text="skillsFlag? 'SKILLS' : 'SUMATE A SAIGÓN'"></span> 
+            <span x-on:click="openForm=true; open=true;" class="mt-auto uppercase cursor-pointer texto-vertical" x-text="skillsFlag? 'SKILLS' : '{{ __('Sumate a Saigón') }}'"></span> 
         </div>
 
         {{-- Hamburguesa 2 --}}

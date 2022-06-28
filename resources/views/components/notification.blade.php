@@ -9,7 +9,7 @@
         x-transition:enter.duration.300ms
         x-transition:leave.duration.200ms
         :class="status === 'error'? 'bg-red-300' : 'bg-green-300'"
-        class="w-full max-w-sm bg-green-300 rounded-lg shadow-lg pointer-events-auto"
+        class="w-full max-w-sm rounded-lg shadow-lg pointer-events-auto"
     >
         <div class="overflow-hidden rounded-lg shadow-xs">
             <div class="p-4">

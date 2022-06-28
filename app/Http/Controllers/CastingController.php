@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Casting;
+use App\Models\Reel;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +18,8 @@ class CastingController extends Controller
 
     public function index($lang) {
         $seccion = 'Comerciales';
-        return view('index', ['seccion' => $seccion]);
+        $Reel = Reel::first();
+        return view('index', ['seccion' => $seccion, 'Reel' => $Reel]);
     }
 
     public function fotografia($lang) {
@@ -55,6 +57,11 @@ class CastingController extends Controller
         return view('panel.edit', ['casting' => $casting]); 
     }
 
+    public function reel($lang) {
+        $Reel =  Reel::first();
+        return view('panel.reel', ['Reel' => $Reel]);
+    }
+
     public function editarFotografias($lang, $id) {
         $casting = Casting::find($id);
         $fotografias = $casting->getFotografias;
@@ -68,9 +75,20 @@ class CastingController extends Controller
     }
 
     public function player($lang, $slug) {
-        $params = '';
-        $casting = Casting::where('slug', $slug)->firstOrFail();
+        if ($slug === "reel") {
+            $casting = Reel::first();    
+        } else {
+            $casting = Casting::where('slug', $slug)->firstOrFail();
+        }
         return view('casting-player', ['casting' => $casting]);
     }
+
+    // public function api() {
+    //     $response = Http::post('https://casting.saigonbuenosaires.com/api/params.php?', [
+    //         'USER' => 'websaigon',
+    //         'PASS' => 'AvrpE36@',
+    //     ]);
+    //     dd($response);
+    // }
 
 }

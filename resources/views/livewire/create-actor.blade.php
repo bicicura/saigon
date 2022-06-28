@@ -45,6 +45,11 @@
                             <input @focus="focused = true" @blur="focused = false" type="file" class="sr-only" id="newThumbnail" wire:model="newThumbnail">
                             @error('newThumbnail') <div class="mt-1 text-sm text-red-500">{{ $message }}</div> @enderror
                         </span>
+                        <div wire:loading wire:target="newThumbnail">
+                            <div class="ml-3 la-ball-clip-rotate">
+                                <div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,20 +65,12 @@
 
         <div class="pt-5 mt-5 border-t border-gray-200">
             <div class="flex items-center justify-end space-x-3">
-                <span 
-                x-data=" { open: false } "
-                x-init="
-                @this.on('notify-saved', () => {
-                    setTimeout(() => { open = false }, 3000)
-                    open = true;
-                })"
-                x-show="open"
-                x-transition:enter.duration.300ms
-                x-transition:leave.duration.200ms
-                style="display: none"
-                class="text-gray-500">
-                Saved!</span>
-                
+                <div wire:loading wire:target="{{ $type }}">
+                    <div class="la-ball-clip-rotate">
+                        <div></div>
+                    </div>
+                </div>
+
                 <span class="inline-flex rounded-md shadow-sm">
                     <a href="{{ route('dashboard.management', app()->getLocale()) }}" class="px-4 py-2 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800">
                         Cancelar
@@ -85,6 +82,7 @@
                         Guardar
                     </button>
                 </span>
+                
             </div>
         </div>
     </form>

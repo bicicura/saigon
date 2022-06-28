@@ -26,6 +26,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/management', [ActorController::class, 'index'])->name('management');
     Route::get('/management/{slug}', [ActorController::class, 'detail'])->name('management.detail');
 
+    // Route::get('/', [CastingController::class, 'api'])->name('api');
 
     
     // ======================
@@ -39,6 +40,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/dashboard/castings', [CastingController::class, 'showAll'])->middleware(['auth'])->name('castings');
     Route::get('/dashboard/create', [CastingController::class, 'create'])->middleware(['auth'])->name('castings.create');
     Route::get('/castings/edit/{id}', [CastingController::class, 'edit'])->middleware(['auth'])->name('castings.edit');
+    Route::get('/castings/reel', [CastingController::class, 'reel'])->middleware(['auth'])->name('castings.reel');
     Route::get('/fotografias/edit/{id}', [CastingController::class, 'editarFotografias'])->middleware(['auth'])->name('castings.edit-fotografias');
 
     // Inbox
