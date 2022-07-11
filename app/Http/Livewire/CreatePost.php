@@ -7,6 +7,8 @@ use Livewire\WithFileUploads;
 use App\Models\Casting;
 use App\Models\Fotografia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 use Image;
 
 class CreatePost extends Component
@@ -16,6 +18,8 @@ class CreatePost extends Component
 
     public $type;
 
+    public $thumbnailProvider = "vimeo";
+
     public $seccion = '';
     public $newThumbnail;
     public $nombre;
@@ -23,12 +27,15 @@ class CreatePost extends Component
     public $director;
     public $categoria = '';
     public $video_url;
+    public $reel = 0;
+    public $newReelVideo;
 
     public $fotografias = [];
 
     // para cuando editas un casting.
     public $casting;
     public $avatarActual;
+    public $reelActual;
 
     public function formValidation() {
         
@@ -41,7 +48,7 @@ class CreatePost extends Component
         ];
 
         // si el user esta editando un perfil || si el user esta creando un nuevo perfil.
-        if ($this->newThumbnail || !$this->newThumbnail && !$this->avatarActual) {
+        if (($this->newThumbnail || !$this->newThumbnail && !$this->avatarActual) && $this->thumbnailProvider === 'custom') {
             $newAvatarValidation = ['newThumbnail' => 'image|max:1000'];
             $inputsToValidate = array_merge($inputsToValidate, $newAvatarValidation);
         }
@@ -113,8 +120,12 @@ class CreatePost extends Component
         $this->executeValidation();
 
         $fileName = null;
-
-        if ($this->seccion != 'Fotografía') $fileName = $this->storeAvatar();  
+        // if ($this->seccion != 'Fotografía') $fileName = $this->storeAvatar();
+        if ($this->thumbnailProvider === "vimeo") {
+            $fileName = $this->getThumbnailFromProvider();
+        } elseif ($this->thumbnailProvider === "custom") {
+            $fileName = $this->storeAvatar();
+        }
         
         $Casting = new Casting;
         
@@ -174,7 +185,22 @@ class CreatePost extends Component
             Storage::disk('thumbnails')->delete($this->avatarActual);
         }
 
-        $this->assignCastingValues($this->casting, $avatarFileName);
+        // El seteo reelName a null o al nombre del reel actual
+        $reelName = $this->reelActual;
+
+        // si se subió un  nuevo video para el reel
+        if ($this->newReelVideo) {
+            // se borra el anterior en caso de haber otro video ya establecido como reel
+            if ($this->reelActual) { Storage::disk('reel')->delete($this->reelActual); }
+            // se guarda el reel en el directorio reel
+            $reelName = $this->newReelVideo->store('/', 'reel');
+            // en caso de querer sacar el casting del reel, se borra el video que había
+        } else if (!$this->newReelVideo && $this->reelActual && !$this->reel) {
+            Storage::disk('reel')->delete($this->reelActual);
+            $reelName = null;
+        }
+
+        $this->assignCastingValues($this->casting, $avatarFileName, $reelName);
 
         // notificación de éxito
         session()->flash('success', 'Casting editado exitosamente! ❤️');
@@ -182,7 +208,7 @@ class CreatePost extends Component
         return redirect()->to('/es/dashboard/castings');
     }
 
-    public function assignCastingValues($Casting, $avatarFileName = null) { 
+    public function assignCastingValues($Casting, $avatarFileName = null, $reelName = null) { 
 
         $Casting->seccion = $this->seccion;
         $Casting->nombre = $this->nombre;
@@ -193,10 +219,27 @@ class CreatePost extends Component
         $Casting->thumbnail = $avatarFileName;
         $Casting->categoria = $this->categoria;
         $Casting->url = $this->video_url;
+        $Casting->reel = $this->reel;
+        $Casting->reel_video = $reelName;
 
         $Casting->save();
 
         return $Casting->id;
+    }
+
+    // para subir thumbnail directo de Vimeo con el id del vid.
+    public function getThumbnailFromProvider() {
+        $url = 'https://vimeo.com/'.$this->video_url;
+        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+        $thumbnail_url = $response['thumbnail_url'];
+
+        $response = Http::get($thumbnail_url);
+
+        $img = $response->body();
+        $fileName = Str::random(50).'.jpg';
+
+        file_put_contents('thumbnails/'.$fileName, $img);
+        return $fileName;
     }
 
     public function render()

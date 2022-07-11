@@ -18,11 +18,6 @@ document.addEventListener('alpine:init', () => {
                         element.classList.add('active');
                     }
                 });
-
-                // cambiar esto
-                if (document.querySelector('#castings-comerciales') != null) {
-                    document.querySelector('.castings-c-p').classList.add('active')
-                }
             },
 
             toggleNav() {
@@ -32,7 +27,6 @@ document.addEventListener('alpine:init', () => {
                 if (this.skillsFlag) this.skillsFlag = false;
                 if (!this.open) this.openForm = false;
                 window.dispatchEvent(new CustomEvent('nav-toggled', { detail: { 'state': this.open }, bubbles: true }))
-                // this.open? body.classList.add('overflow-hidden') : body.classList.remove('overflow-hidden')
                 setTimeout(() => {this.buttonDisabled = false}, 2000)
             },
 
@@ -77,4 +71,5 @@ document.addEventListener('alpine:init', () => {
     		}
         }
     });
+
 });

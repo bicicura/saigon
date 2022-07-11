@@ -14,9 +14,10 @@ Route::redirect('/login', '/es/login');
 Route::group(['prefix' => '{language}'], function () {
     
     // para que en el castin player los castings de seccion COMERCIALES redirijan al index al apretar la cruz.
-    Route::redirect('/comerciales', '/#comerciales');
+    // Route::redirect('/comerciales', '/#comerciales');
 
     Route::get('/', [CastingController::class, 'index'])->name('index');
+    Route::get('/comerciales', [CastingController::class, 'comerciales'])->name('comerciales');
     Route::get('/street-agency', [CastingController::class, 'streetagency'])->name('street-agency');
     Route::get('/mini', [CastingController::class, 'mini'])->name('mini');
     Route::get('/fotografia', [CastingController::class, 'fotografia'])->name('castings-fotografia');
@@ -40,8 +41,10 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/dashboard/castings', [CastingController::class, 'showAll'])->middleware(['auth'])->name('castings');
     Route::get('/dashboard/create', [CastingController::class, 'create'])->middleware(['auth'])->name('castings.create');
     Route::get('/castings/edit/{id}', [CastingController::class, 'edit'])->middleware(['auth'])->name('castings.edit');
-    Route::get('/castings/reel', [CastingController::class, 'reel'])->middleware(['auth'])->name('castings.reel');
     Route::get('/fotografias/edit/{id}', [CastingController::class, 'editarFotografias'])->middleware(['auth'])->name('castings.edit-fotografias');
+    
+    // Reels
+    Route::get('/dashboard/reel', [CastingController::class, 'showReel'])->middleware(['auth'])->name('dashboard.reel');
 
     // Inbox
     Route::get('/dashboard/inbox', [ProfileController::class, 'showAll'])->middleware(['auth'])->name('dashboard.inbox');
@@ -53,10 +56,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/dashboard/management/edit/{id}', [ActorController::class, 'edit'])->middleware(['auth'])->name('dashboard.management-edit');
     Route::get('/dashboard/management/edit/book/{id}', [ActorController::class, 'editBook'])->middleware(['auth'])->name('dashboard.management-edit-book');
 
-    Route::get('/test', function () {
-        $castings = Casting::where('seccion', 'Castings Comerciales')->get();
-        return view('test', ['castings' => $castings]);
-    });
+    Route::get('/test', [CastingController::class, 'test'])->name('test');
 
 });
 

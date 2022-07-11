@@ -16,5 +16,7 @@
             'categoria' => $casting['categoria'],
             'video_url' => $casting['url'],
             'avatarActual' => $casting['thumbnail'],
+            'reel' => $casting['reel'],
+            'reelActual' => $casting['reel_video'],
         ]);
 </x-app-layout>

@@ -74,6 +74,14 @@ return [
             'visibility' => 'public',
         ],
 
+        'reel' => [
+            'driver' => 'local',
+            'root' => public_path('reel'),
+            'url' => env('APP_URL').'/reel',
+            'visibility' => 'public',
+        ],
+
+
         'perfiles' => [
             'driver' => 'local',
             'root' => public_path('perfiles'),
@@ -95,10 +103,10 @@ return [
     */
 
     'links' => [
-        public_path('thumbnails') => storage_path('app/thumbnails'),
-        public_path('fotos') => storage_path('app/fotos'),
-        public_path('perfiles') => storage_path('app/perfiles'),
-        public_path('actors') => storage_path('app/actors'),
+        public_path('reel') => storage_path('app/reel'),
+        // public_path('fotos') => storage_path('app/fotos'),
+        // public_path('perfiles') => storage_path('app/perfiles'),
+        // public_path('actors') => storage_path('app/actors'),
     ],
 
 ];

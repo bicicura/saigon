@@ -8,14 +8,14 @@
     <meta name="description" content="Hacemos casting. Representamos actores. Producimos ideas.">
     <title>{{ config('app.name', 'Saigón') }}  @yield('title')</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/css/app.css?v=9') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css?v=10') }}">
     <link rel="stylesheet" href="https://use.typekit.net/lkn8zik.css">
-    <link rel="stylesheet" href="/css/estilos.css?v=9">
+    <link rel="stylesheet" href="/css/estilos.css?v=10">
     @livewireStyles
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     
     <!-- Scripts -->
-    <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    {{-- <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script> --}}
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script src="{{ asset('js/app.js?v=9') }}" defer></script>

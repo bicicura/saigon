@@ -5,15 +5,15 @@
             {{-- el absolute en hover es para cuando el titulo sea mas largo que una linea, y este en hover, no afecte al resto del layout --}}
             <div wire:click="$emit('castingClicked', {{$item}})" x-data=" { hover: false } " :class="hover? 'lg:absolute' : '' " x-on:mouseover="hover = true;" x-on:mouseleave="hover = false;">
                 <div class="hidden gap-2 mb-2 text-saigon-black lg:flex" :class="hover? 'underline' : '' ">
-                    <h2 class="saigon-text-200 lg:line-clamp-1 lg:hover:line-clamp-none ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
+                    <h2 class="saigon-text-100 lg:line-clamp-1 lg:hover:line-clamp-none ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
                 </div>
                 <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
                     <img class="object-cover w-full h-full rounded-xl" loading="lazy" src="/fotos/{{$item->getFotografias[0]->img}}" alt="">
                     <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden">
                         <div class="">
                             <div class="pt-4 pr-4">
-                                <h2 class="uppercase saigon-text-5xl">{{$item['nombre']}}</h2>
-                                <h4 class="mt-2">{{$item['director']}} — {{$item['productora']}}</h4>
+                                <h2 class="text-3xl uppercse">{{$item['nombre']}}</h2>
+                                <h4 class="">{{$item['director']}} — {{$item['productora']}}</h4>
                             </div>
                         </div>
                         <div class="w-12 mt-auto mb-6 ml-auto mr-4 lg:hidden">
@@ -34,17 +34,17 @@
         @foreach ($castings as $item)
         <section class="relative pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " x-intersect.threshold.25="shown = true">
             {{-- el absolute en hover es para cuando el titulo sea mas largo que una linea, y este en hover, no afecte al resto del layout --}}
-            <a href="{{ route('casting-player', [app()->getLocale(), $item->slug,]) }}" x-data=" { hover: false } " :class="hover? 'lg:absolute' : '' " x-on:mouseover="hover = true;" x-on:mouseleave="hover = false;">
+            <a href="{{ route('casting-player', [app()->getLocale(), $item->slug,]) }}" x-data=" { hover: false } " :class="hover? '' : '' " x-on:mouseover="hover = true;" x-on:mouseleave="hover = false;">
                 <div class="hidden gap-2 mb-2 text-saigon-black lg:flex" :class="hover? 'underline' : '' ">
-                    <h2 class="saigon-text-200 lg:line-clamp-1 lg:hover:line-clamp-none ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
+                    <h2 class="saigon-text-100 lg:line-clamp-1 ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
                 </div>
                 <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
                     <img class="object-cover w-full h-full rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="">
                     <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden">
                         <div class="">
                             <div class="pt-4 pr-4">
-                                <h2 class="uppercase saigon-text-5xl">{{$item['nombre']}}</h2>
-                                <h4 class="mt-2">{{$item['director']}} — {{$item['productora']}}</h4>
+                                <h2 class="text-3xl uppercase">{{$item['nombre']}}</h2>
+                                <h4 class="">{{$item['director']}} — {{$item['productora']}}</h4>
                             </div>
                         </div>
                         <div class="w-12 mt-auto mb-6 ml-auto mr-4 lg:hidden">

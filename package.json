@@ -22,6 +22,9 @@
     },
     "dependencies": {
         "@alpinejs/persist": "^3.10.2",
+        "@splidejs/splide": "^4.0.7",
+        "@splidejs/splide-extension-intersection": "^0.2.0",
+        "@splidejs/splide-extension-video": "^0.7.1",
         "@tailwindcss/line-clamp": "^0.4.0",
         "npm-watch": "^0.11.0"
     }

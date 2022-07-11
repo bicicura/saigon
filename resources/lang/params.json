@@ -1,0 +1,2481 @@
+{
+    "nacionalidades": {
+        "1": {
+            "comun": "0",
+            "nombre": "Santahelena",
+            "val": "1"
+        },
+        "2": {
+            "comun": "0",
+            "nombre": "Virgenense",
+            "val": "2"
+        },
+        "3": {
+            "comun": "0",
+            "nombre": "Guadalupeña",
+            "val": "3"
+        },
+        "4": {
+            "comun": "0",
+            "nombre": "Congolésa",
+            "val": "4"
+        },
+        "5": {
+            "comun": "0",
+            "nombre": "Sanvincentina",
+            "val": "5"
+        },
+        "6": {
+            "comun": "0",
+            "nombre": "Virgenense británica",
+            "val": "6"
+        },
+        "7": {
+            "comun": "0",
+            "nombre": "Turcochipriota",
+            "val": "7"
+        },
+        "8": {
+            "comun": "0",
+            "nombre": "Normariana",
+            "val": "8"
+        },
+        "9": {
+            "comun": "0",
+            "nombre": "Centroafricano",
+            "val": "9"
+        },
+        "10": {
+            "comun": "0",
+            "nombre": "Sancristobaleña",
+            "val": "10"
+        },
+        "11": {
+            "comun": "0",
+            "nombre": "Emiratí",
+            "val": "11"
+        },
+        "12": {
+            "comun": "0",
+            "nombre": "Turcocaiqueña",
+            "val": "12"
+        },
+        "13": {
+            "comun": "0",
+            "nombre": "Santotomense",
+            "val": "13"
+        },
+        "14": {
+            "comun": "0",
+            "nombre": "Dominicana",
+            "val": "14"
+        },
+        "15": {
+            "comun": "0",
+            "nombre": "Sanpedrina",
+            "val": "15"
+        },
+        "16": {
+            "comun": "0",
+            "nombre": "Bosnia",
+            "val": "16"
+        },
+        "17": {
+            "comun": "0",
+            "nombre": "Congoleño",
+            "val": "17"
+        },
+        "18": {
+            "comun": "0",
+            "nombre": "Vaticana",
+            "val": "18"
+        },
+        "19": {
+            "comun": "0",
+            "nombre": "Papú",
+            "val": "19"
+        },
+        "20": {
+            "comun": "0",
+            "nombre": "Francopolinesia",
+            "val": "20"
+        },
+        "21": {
+            "comun": "0",
+            "nombre": "Antiguana",
+            "val": "21"
+        },
+        "22": {
+            "comun": "0",
+            "nombre": "Trinitense",
+            "val": "22"
+        },
+        "23": {
+            "comun": "0",
+            "nombre": "Curazoleña",
+            "val": "23"
+        },
+        "24": {
+            "comun": "0",
+            "nombre": "Ecuatoguineana",
+            "val": "24"
+        },
+        "25": {
+            "comun": "0",
+            "nombre": "Chagosianos",
+            "val": "25"
+        },
+        "26": {
+            "comun": "0",
+            "nombre": "Francoguyanesa",
+            "val": "26"
+        },
+        "27": {
+            "comun": "0",
+            "nombre": "Birmana",
+            "val": "27"
+        },
+        "28": {
+            "comun": "0",
+            "nombre": "Samoana",
+            "val": "28"
+        },
+        "29": {
+            "comun": "0",
+            "nombre": "Marfileño",
+            "val": "29"
+        },
+        "30": {
+            "comun": "0",
+            "nombre": "Checa",
+            "val": "30"
+        },
+        "31": {
+            "comun": "0",
+            "nombre": "Norcoreano",
+            "val": "31"
+        },
+        "32": {
+            "comun": "0",
+            "nombre": "Walisiana",
+            "val": "32"
+        },
+        "33": {
+            "comun": "0",
+            "nombre": "Neocaledonia",
+            "val": "33"
+        },
+        "34": {
+            "comun": "0",
+            "nombre": "Malvinense",
+            "val": "34"
+        },
+        "35": {
+            "comun": "0",
+            "nombre": "De la Isla Ascensión",
+            "val": "35"
+        },
+        "36": {
+            "comun": "0",
+            "nombre": "Saudí",
+            "val": "36"
+        },
+        "37": {
+            "comun": "0",
+            "nombre": "Timorense",
+            "val": "37"
+        },
+        "38": {
+            "comun": "0",
+            "nombre": "Marshalés",
+            "val": "38"
+        },
+        "39": {
+            "comun": "0",
+            "nombre": "Estadounidense",
+            "val": "39"
+        },
+        "40": {
+            "comun": "0",
+            "nombre": "Sursudanesa",
+            "val": "40"
+        },
+        "41": {
+            "comun": "0",
+            "nombre": "Yibutiana",
+            "val": "41"
+        },
+        "42": {
+            "comun": "0",
+            "nombre": "Liechtenstena",
+            "val": "42"
+        },
+        "43": {
+            "comun": "0",
+            "nombre": "Salomonense",
+            "val": "43"
+        },
+        "44": {
+            "comun": "0",
+            "nombre": "Surcoreano",
+            "val": "44"
+        },
+        "45": {
+            "comun": "0",
+            "nombre": "Neozelandés",
+            "val": "45"
+        },
+        "46": {
+            "comun": "0",
+            "nombre": "Caimanesa",
+            "val": "46"
+        },
+        "47": {
+            "comun": "0",
+            "nombre": "Sanmartinense",
+            "val": "47"
+        },
+        "48": {
+            "comun": "0",
+            "nombre": "Burkinesa",
+            "val": "48"
+        },
+        "49": {
+            "comun": "0",
+            "nombre": "Sierraleonés",
+            "val": "49"
+        },
+        "50": {
+            "comun": "0",
+            "nombre": "Bisauguineana",
+            "val": "50"
+        },
+        "51": {
+            "comun": "0",
+            "nombre": "Turkmena",
+            "val": "51"
+        },
+        "52": {
+            "comun": "0",
+            "nombre": "Holandesa",
+            "val": "52"
+        },
+        "53": {
+            "comun": "0",
+            "nombre": "Puertoriqueña",
+            "val": "53"
+        },
+        "54": {
+            "comun": "0",
+            "nombre": "Santaluciana",
+            "val": "54"
+        },
+        "55": {
+            "comun": "0",
+            "nombre": "Groenlandés",
+            "val": "55"
+        },
+        "56": {
+            "comun": "0",
+            "nombre": "Salvadoreña",
+            "val": "56"
+        },
+        "57": {
+            "comun": "0",
+            "nombre": "Keniata",
+            "val": "57"
+        },
+        "58": {
+            "comun": "0",
+            "nombre": "Suazi",
+            "val": "58"
+        },
+        "59": {
+            "comun": "0",
+            "nombre": "Feroesa",
+            "val": "59"
+        },
+        "60": {
+            "comun": "0",
+            "nombre": "Bielorrusa",
+            "val": "60"
+        },
+        "61": {
+            "comun": "0",
+            "nombre": "Británica",
+            "val": "61"
+        },
+        "62": {
+            "comun": "0",
+            "nombre": "Montserratense",
+            "val": "62"
+        },
+        "63": {
+            "comun": "0",
+            "nombre": "Costarricense",
+            "val": "63"
+        },
+        "64": {
+            "comun": "0",
+            "nombre": "Mauritano",
+            "val": "64"
+        },
+        "65": {
+            "comun": "0",
+            "nombre": "Caboverdiano",
+            "val": "65"
+        },
+        "66": {
+            "comun": "0",
+            "nombre": "Seychelense",
+            "val": "66"
+        },
+        "67": {
+            "comun": "0",
+            "nombre": "Mozambiqueño",
+            "val": "67"
+        },
+        "68": {
+            "comun": "0",
+            "nombre": "Malgache",
+            "val": "68"
+        },
+        "69": {
+            "comun": "0",
+            "nombre": "Luxemburguesa",
+            "val": "69"
+        },
+        "70": {
+            "comun": "0",
+            "nombre": "Sanmarinense",
+            "val": "70"
+        },
+        "71": {
+            "comun": "0",
+            "nombre": "Montenegrina",
+            "val": "71"
+        },
+        "72": {
+            "comun": "0",
+            "nombre": "Eslovaca",
+            "val": "72"
+        },
+        "73": {
+            "comun": "0",
+            "nombre": "Tayika",
+            "val": "73"
+        },
+        "74": {
+            "comun": "0",
+            "nombre": "Azerbaiyano",
+            "val": "74"
+        },
+        "75": {
+            "comun": "0",
+            "nombre": "Kirguís",
+            "val": "75"
+        },
+        "76": {
+            "comun": "0",
+            "nombre": "Uzbeco",
+            "val": "76"
+        },
+        "77": {
+            "comun": "0",
+            "nombre": "Cookiana",
+            "val": "77"
+        },
+        "78": {
+            "comun": "0",
+            "nombre": "Micronesia",
+            "val": "78"
+        },
+        "79": {
+            "comun": "0",
+            "nombre": "Afgano",
+            "val": "79"
+        },
+        "80": {
+            "comun": "0",
+            "nombre": "Kazaja",
+            "val": "80"
+        },
+        "81": {
+            "comun": "0",
+            "nombre": "Martiniquesa",
+            "val": "81"
+        },
+        "82": {
+            "comun": "0",
+            "nombre": "Guatemalteca",
+            "val": "82"
+        },
+        "83": {
+            "comun": "0",
+            "nombre": "Nicaragüense",
+            "val": "83"
+        },
+        "84": {
+            "comun": "0",
+            "nombre": "Marroquí",
+            "val": "84"
+        },
+        "85": {
+            "comun": "0",
+            "nombre": "Gibraltareña",
+            "val": "85"
+        },
+        "86": {
+            "comun": "0",
+            "nombre": "Finlandesa",
+            "val": "86"
+        },
+        "87": {
+            "comun": "0",
+            "nombre": "Eslovena",
+            "val": "87"
+        },
+        "88": {
+            "comun": "0",
+            "nombre": "Macedonia",
+            "val": "88"
+        },
+        "89": {
+            "comun": "0",
+            "nombre": "Hongkonesa",
+            "val": "89"
+        },
+        "90": {
+            "comun": "0",
+            "nombre": "Bangladesí",
+            "val": "90"
+        },
+        "91": {
+            "comun": "0",
+            "nombre": "Palestina",
+            "val": "91"
+        },
+        "92": {
+            "comun": "1",
+            "nombre": "Argentina",
+            "val": "92"
+        },
+        "93": {
+            "comun": "1",
+            "nombre": "Venezolana",
+            "val": "93"
+        },
+        "94": {
+            "comun": "0",
+            "nombre": "Sudafricano",
+            "val": "94"
+        },
+        "95": {
+            "comun": "0",
+            "nombre": "Danesa",
+            "val": "95"
+        },
+        "96": {
+            "comun": "0",
+            "nombre": "Ceilandés",
+            "val": "96"
+        },
+        "97": {
+            "comun": "0",
+            "nombre": "Australiano",
+            "val": "97"
+        },
+        "98": {
+            "comun": "0",
+            "nombre": "Indionisio",
+            "val": "98"
+        },
+        "99": {
+            "comun": "0",
+            "nombre": "Filipino",
+            "val": "99"
+        },
+        "100": {
+            "comun": "0",
+            "nombre": "Tailandés",
+            "val": "100"
+        },
+        "101": {
+            "comun": "0",
+            "nombre": "Bermudeña",
+            "val": "101"
+        },
+        "102": {
+            "comun": "0",
+            "nombre": "Barbadense",
+            "val": "102"
+        },
+        "103": {
+            "comun": "0",
+            "nombre": "Dominiguesa",
+            "val": "103"
+        },
+        "104": {
+            "comun": "0",
+            "nombre": "Hondureña",
+            "val": "104"
+        },
+        "105": {
+            "comun": "0",
+            "nombre": "Paraguaya",
+            "val": "105"
+        },
+        "106": {
+            "comun": "0",
+            "nombre": "Mauriciano",
+            "val": "106"
+        },
+        "107": {
+            "comun": "0",
+            "nombre": "Tanzano",
+            "val": "107"
+        },
+        "108": {
+            "comun": "0",
+            "nombre": "Zimbabuense",
+            "val": "108"
+        },
+        "109": {
+            "comun": "0",
+            "nombre": "Botsuanesa",
+            "val": "109"
+        },
+        "110": {
+            "comun": "0",
+            "nombre": "Portuguesa",
+            "val": "110"
+        },
+        "111": {
+            "comun": "0",
+            "nombre": "Islandesa",
+            "val": "111"
+        },
+        "112": {
+            "comun": "0",
+            "nombre": "Búlgara",
+            "val": "112"
+        },
+        "113": {
+            "comun": "0",
+            "nombre": "Lituana",
+            "val": "113"
+        },
+        "114": {
+            "comun": "0",
+            "nombre": "Moldava",
+            "val": "114"
+        },
+        "115": {
+            "comun": "0",
+            "nombre": "Maldivo",
+            "val": "115"
+        },
+        "116": {
+            "comun": "0",
+            "nombre": "Jordano",
+            "val": "116"
+        },
+        "117": {
+            "comun": "0",
+            "nombre": "Mongól",
+            "val": "117"
+        },
+        "118": {
+            "comun": "0",
+            "nombre": "Kiribatiano",
+            "val": "118"
+        },
+        "119": {
+            "comun": "0",
+            "nombre": "Colombiana",
+            "val": "119"
+        },
+        "121": {
+            "comun": "0",
+            "nombre": "Alemana",
+            "val": "121"
+        },
+        "122": {
+            "comun": "0",
+            "nombre": "Pakistani",
+            "val": "122"
+        },
+        "123": {
+            "comun": "0",
+            "nombre": "Singapurense",
+            "val": "123"
+        },
+        "124": {
+            "comun": "0",
+            "nombre": "Bahameña",
+            "val": "124"
+        },
+        "125": {
+            "comun": "0",
+            "nombre": "Anguilense",
+            "val": "125"
+        },
+        "126": {
+            "comun": "0",
+            "nombre": "Granadina",
+            "val": "126"
+        },
+        "127": {
+            "comun": "0",
+            "nombre": "Jamaiquina",
+            "val": "127"
+        },
+        "128": {
+            "comun": "0",
+            "nombre": "Abjasia",
+            "val": "128"
+        },
+        "129": {
+            "comun": "0",
+            "nombre": "Thuraya",
+            "val": "129"
+        },
+        "130": {
+            "comun": "0",
+            "nombre": "Boliviana",
+            "val": "130"
+        },
+        "131": {
+            "comun": "0",
+            "nombre": "Ecuatoriana",
+            "val": "131"
+        },
+        "132": {
+            "comun": "0",
+            "nombre": "Surinamesa",
+            "val": "132"
+        },
+        "133": {
+            "comun": "1",
+            "nombre": "Uruguaya",
+            "val": "133"
+        },
+        "134": {
+            "comun": "0",
+            "nombre": "Argelina",
+            "val": "134"
+        },
+        "135": {
+            "comun": "0",
+            "nombre": "Senegalés",
+            "val": "135"
+        },
+        "136": {
+            "comun": "0",
+            "nombre": "Liberiano",
+            "val": "136"
+        },
+        "137": {
+            "comun": "0",
+            "nombre": "Nigeriana",
+            "val": "137"
+        },
+        "138": {
+            "comun": "0",
+            "nombre": "Camerunés",
+            "val": "138"
+        },
+        "139": {
+            "comun": "0",
+            "nombre": "Etíope",
+            "val": "139"
+        },
+        "140": {
+            "comun": "0",
+            "nombre": "Somalí",
+            "val": "140"
+        },
+        "141": {
+            "comun": "0",
+            "nombre": "Burundesa",
+            "val": "141"
+        },
+        "142": {
+            "comun": "0",
+            "nombre": "Mayotesa",
+            "val": "142"
+        },
+        "143": {
+            "comun": "0",
+            "nombre": "Namibio",
+            "val": "143"
+        },
+        "144": {
+            "comun": "0",
+            "nombre": "Comorense",
+            "val": "144"
+        },
+        "145": {
+            "comun": "0",
+            "nombre": "Eritrea",
+            "val": "145"
+        },
+        "146": {
+            "comun": "0",
+            "nombre": "Irlandesa",
+            "val": "146"
+        },
+        "147": {
+            "comun": "0",
+            "nombre": "Albanesa",
+            "val": "147"
+        },
+        "148": {
+            "comun": "0",
+            "nombre": "Letona",
+            "val": "148"
+        },
+        "149": {
+            "comun": "0",
+            "nombre": "Estonia",
+            "val": "149"
+        },
+        "150": {
+            "comun": "0",
+            "nombre": "Armenio",
+            "val": "150"
+        },
+        "151": {
+            "comun": "0",
+            "nombre": "Andorrana",
+            "val": "151"
+        },
+        "152": {
+            "comun": "0",
+            "nombre": "Ucraniana",
+            "val": "152"
+        },
+        "153": {
+            "comun": "0",
+            "nombre": "Croata",
+            "val": "153"
+        },
+        "154": {
+            "comun": "0",
+            "nombre": "Camboyano",
+            "val": "154"
+        },
+        "155": {
+            "comun": "0",
+            "nombre": "Georgiano",
+            "val": "155"
+        },
+        "156": {
+            "comun": "0",
+            "nombre": "Norfolkense",
+            "val": "156"
+        },
+        "157": {
+            "comun": "0",
+            "nombre": "Vanuatuense",
+            "val": "157"
+        },
+        "158": {
+            "comun": "0",
+            "nombre": "Tokelauense",
+            "val": "158"
+        },
+        "159": {
+            "comun": "0",
+            "nombre": "Belga",
+            "val": "159"
+        },
+        "160": {
+            "comun": "0",
+            "nombre": "Francesa",
+            "val": "160"
+        },
+        "161": {
+            "comun": "0",
+            "nombre": "Húngara",
+            "val": "161"
+        },
+        "162": {
+            "comun": "0",
+            "nombre": "Rumana",
+            "val": "162"
+        },
+        "163": {
+            "comun": "0",
+            "nombre": "Austríaca",
+            "val": "163"
+        },
+        "164": {
+            "comun": "0",
+            "nombre": "Noruega",
+            "val": "164"
+        },
+        "165": {
+            "comun": "0",
+            "nombre": "Polaca",
+            "val": "165"
+        },
+        "166": {
+            "comun": "0",
+            "nombre": "Vietnamita",
+            "val": "166"
+        },
+        "167": {
+            "comun": "0",
+            "nombre": "Malayo",
+            "val": "167"
+        },
+        "168": {
+            "comun": "0",
+            "nombre": "Beliceña",
+            "val": "168"
+        },
+        "169": {
+            "comun": "0",
+            "nombre": "Panameña",
+            "val": "169"
+        },
+        "170": {
+            "comun": "0",
+            "nombre": "Guyanesa",
+            "val": "170"
+        },
+        "171": {
+            "comun": "0",
+            "nombre": "Gambiana",
+            "val": "171"
+        },
+        "172": {
+            "comun": "0",
+            "nombre": "Guineana",
+            "val": "172"
+        },
+        "173": {
+            "comun": "0",
+            "nombre": "Angoleña",
+            "val": "173"
+        },
+        "174": {
+            "comun": "0",
+            "nombre": "Ruandés",
+            "val": "174"
+        },
+        "175": {
+            "comun": "0",
+            "nombre": "Ugandés",
+            "val": "175"
+        },
+        "176": {
+            "comun": "0",
+            "nombre": "Zambiano",
+            "val": "176"
+        },
+        "177": {
+            "comun": "0",
+            "nombre": "Malauí",
+            "val": "177"
+        },
+        "178": {
+            "comun": "0",
+            "nombre": "Lesotense",
+            "val": "178"
+        },
+        "179": {
+            "comun": "0",
+            "nombre": "Chipriota",
+            "val": "179"
+        },
+        "180": {
+            "comun": "0",
+            "nombre": "Monegasca",
+            "val": "180"
+        },
+        "181": {
+            "comun": "0",
+            "nombre": "Serbia",
+            "val": "181"
+        },
+        "182": {
+            "comun": "0",
+            "nombre": "Kosovar",
+            "val": "182"
+        },
+        "183": {
+            "comun": "0",
+            "nombre": "Taiwanesa",
+            "val": "183"
+        },
+        "184": {
+            "comun": "0",
+            "nombre": "Libanés",
+            "val": "184"
+        },
+        "185": {
+            "comun": "0",
+            "nombre": "Kuwaití",
+            "val": "185"
+        },
+        "186": {
+            "comun": "0",
+            "nombre": "Israelí",
+            "val": "186"
+        },
+        "187": {
+            "comun": "0",
+            "nombre": "Bareiní",
+            "val": "187"
+        },
+        "188": {
+            "comun": "0",
+            "nombre": "Bruneano",
+            "val": "188"
+        },
+        "189": {
+            "comun": "0",
+            "nombre": "Palauana",
+            "val": "189"
+        },
+        "190": {
+            "comun": "0",
+            "nombre": "Tuvaluano",
+            "val": "190"
+        },
+        "191": {
+            "comun": "0",
+            "nombre": "Mexicana",
+            "val": "191"
+        },
+        "192": {
+            "comun": "1",
+            "nombre": "Brasileña",
+            "val": "192"
+        },
+        "193": {
+            "comun": "0",
+            "nombre": "Egipcia",
+            "val": "193"
+        },
+        "194": {
+            "comun": "0",
+            "nombre": "Griega",
+            "val": "194"
+        },
+        "195": {
+            "comun": "0",
+            "nombre": "Española",
+            "val": "195"
+        },
+        "196": {
+            "comun": "0",
+            "nombre": "Italiana",
+            "val": "196"
+        },
+        "197": {
+            "comun": "0",
+            "nombre": "Sueca",
+            "val": "197"
+        },
+        "198": {
+            "comun": "0",
+            "nombre": "Canadiense",
+            "val": "198"
+        },
+        "199": {
+            "comun": "0",
+            "nombre": "Hawaiana",
+            "val": "199"
+        },
+        "200": {
+            "comun": "0",
+            "nombre": "Arubana",
+            "val": "200"
+        },
+        "201": {
+            "comun": "0",
+            "nombre": "Haitiana",
+            "val": "201"
+        },
+        "202": {
+            "comun": "0",
+            "nombre": "Tunecino",
+            "val": "202"
+        },
+        "203": {
+            "comun": "0",
+            "nombre": "Libio",
+            "val": "203"
+        },
+        "204": {
+            "comun": "0",
+            "nombre": "Nigeriano",
+            "val": "204"
+        },
+        "205": {
+            "comun": "0",
+            "nombre": "Beninesa",
+            "val": "205"
+        },
+        "206": {
+            "comun": "0",
+            "nombre": "Ghanesa",
+            "val": "206"
+        },
+        "207": {
+            "comun": "0",
+            "nombre": "Gabonesa",
+            "val": "207"
+        },
+        "208": {
+            "comun": "0",
+            "nombre": "Sudanés",
+            "val": "208"
+        },
+        "209": {
+            "comun": "0",
+            "nombre": "Maltesa",
+            "val": "209"
+        },
+        "210": {
+            "comun": "0",
+            "nombre": "Macaense",
+            "val": "210"
+        },
+        "211": {
+            "comun": "0",
+            "nombre": "Sirio",
+            "val": "211"
+        },
+        "212": {
+            "comun": "0",
+            "nombre": "Jemení",
+            "val": "212"
+        },
+        "213": {
+            "comun": "0",
+            "nombre": "Katarí",
+            "val": "213"
+        },
+        "214": {
+            "comun": "0",
+            "nombre": "Butanésa",
+            "val": "214"
+        },
+        "215": {
+            "comun": "0",
+            "nombre": "Nepales",
+            "val": "215"
+        },
+        "216": {
+            "comun": "0",
+            "nombre": "Nauruano",
+            "val": "216"
+        },
+        "217": {
+            "comun": "0",
+            "nombre": "Tongano",
+            "val": "217"
+        },
+        "218": {
+            "comun": "0",
+            "nombre": "Samoano",
+            "val": "218"
+        },
+        "219": {
+            "comun": "0",
+            "nombre": "Chilena",
+            "val": "219"
+        },
+        "220": {
+            "comun": "0",
+            "nombre": "Suiza",
+            "val": "220"
+        },
+        "221": {
+            "comun": "0",
+            "nombre": "Japonés",
+            "val": "221"
+        },
+        "222": {
+            "comun": "0",
+            "nombre": "Chino",
+            "val": "222"
+        },
+        "223": {
+            "comun": "0",
+            "nombre": "Indio",
+            "val": "223"
+        },
+        "224": {
+            "comun": "0",
+            "nombre": "Rusa",
+            "val": "224"
+        },
+        "225": {
+            "comun": "0",
+            "nombre": "Guameña",
+            "val": "225"
+        },
+        "226": {
+            "comun": "0",
+            "nombre": "Maliense",
+            "val": "226"
+        },
+        "227": {
+            "comun": "0",
+            "nombre": "Togolés",
+            "val": "227"
+        },
+        "228": {
+            "comun": "0",
+            "nombre": "Chadiano",
+            "val": "228"
+        },
+        "229": {
+            "comun": "0",
+            "nombre": "Laosiano",
+            "val": "229"
+        },
+        "230": {
+            "comun": "0",
+            "nombre": "Iraquí",
+            "val": "230"
+        },
+        "231": {
+            "comun": "0",
+            "nombre": "Omanés",
+            "val": "231"
+        },
+        "232": {
+            "comun": "0",
+            "nombre": "Fiyiana",
+            "val": "232"
+        },
+        "233": {
+            "comun": "0",
+            "nombre": "Niuano",
+            "val": "233"
+        },
+        "234": {
+            "comun": "0",
+            "nombre": "Cubana",
+            "val": "234"
+        },
+        "235": {
+            "comun": "0",
+            "nombre": "Peruana",
+            "val": "235"
+        },
+        "236": {
+            "comun": "0",
+            "nombre": "Iraní",
+            "val": "236"
+        }
+    },
+    "skills": {
+        "dancing": [
+            {
+                "nombre": "NO BAILA",
+                "nombre_eng": "NO DANCING",
+                "val": "1111"
+            },
+            {
+                "nombre": "DANZA",
+                "nombre_eng": "DANCING",
+                "val": "85"
+            },
+            {
+                "nombre": "DANZA AEREA",
+                "nombre_eng": "AERIAL DANCING",
+                "val": "82"
+            },
+            {
+                "nombre": "BAILE PROFESIONAL",
+                "nombre_eng": "PRO DANCING",
+                "val": "25"
+            },
+            {
+                "nombre": "BREAKDANCE",
+                "nombre_eng": "BREAKDANCE",
+                "val": "10"
+            },
+            {
+                "nombre": "FLAMENCO",
+                "nombre_eng": "FLAMENCO",
+                "val": "15"
+            },
+            {
+                "nombre": "HIP-HOP",
+                "nombre_eng": "HIP-HOP",
+                "val": "20"
+            },
+            {
+                "nombre": "HOUSE",
+                "nombre_eng": "HOUSE",
+                "val": "30"
+            },
+            {
+                "nombre": "JAZZ",
+                "nombre_eng": "JAZZ",
+                "val": "35"
+            },
+            {
+                "nombre": "LOCKING",
+                "nombre_eng": "LOCKING",
+                "val": "40"
+            },
+            {
+                "nombre": "POLE DANCE",
+                "nombre_eng": "POLE DANCE",
+                "val": "45"
+            },
+            {
+                "nombre": "POPPING",
+                "nombre_eng": "POPPING",
+                "val": "50"
+            },
+            {
+                "nombre": "SALSA",
+                "nombre_eng": "SALSA",
+                "val": "55"
+            },
+            {
+                "nombre": "TANGO",
+                "nombre_eng": "TANGO",
+                "val": "60"
+            },
+            {
+                "nombre": "TAP",
+                "nombre_eng": "TAP",
+                "val": "65"
+            },
+            {
+                "nombre": "VOGUE",
+                "nombre_eng": "VOGUE",
+                "val": "70"
+            }
+        ],
+        "music": [
+            {
+                "nombre": "NO PRACTICA MUSICA",
+                "nombre_eng": "NO MUSIC SKILLS",
+                "val": "1111"
+            },
+            {
+                "nombre": "VOZ",
+                "nombre_eng": "SINGER",
+                "val": "10"
+            },
+            {
+                "nombre": "GUITARRA ACUSTICA",
+                "nombre_eng": "ACOUSTIC GUITAR",
+                "val": "12"
+            },
+            {
+                "nombre": "GUITARRA ELECTRICA",
+                "nombre_eng": "ELECTRIC GUITAR",
+                "val": "15"
+            },
+            {
+                "nombre": "BAJO",
+                "nombre_eng": "BASS",
+                "val": "20"
+            },
+            {
+                "nombre": "BATERIA",
+                "nombre_eng": "DRUMS",
+                "val": "22"
+            },
+            {
+                "nombre": "CAJON",
+                "nombre_eng": "BOX DRUM",
+                "val": "25"
+            },
+            {
+                "nombre": "PIANO",
+                "nombre_eng": "PIANO",
+                "val": "30"
+            },
+            {
+                "nombre": "ORGANO",
+                "nombre_eng": "ORGAN",
+                "val": "32"
+            },
+            {
+                "nombre": "CONTRABAJO",
+                "nombre_eng": "DOUBLE BASS",
+                "val": "35"
+            },
+            {
+                "nombre": "VIOLIN",
+                "nombre_eng": "FIDDLE",
+                "val": "40"
+            },
+            {
+                "nombre": "CELLO",
+                "nombre_eng": "CELLO",
+                "val": "42"
+            },
+            {
+                "nombre": "TROMPETA",
+                "nombre_eng": "TRUMPET",
+                "val": "45"
+            },
+            {
+                "nombre": "FLAUTA",
+                "nombre_eng": "FLUTE",
+                "val": "50"
+            },
+            {
+                "nombre": "FLAUTA TRAVERSA",
+                "nombre_eng": "TRANSVERSE FLUTE",
+                "val": "52"
+            },
+            {
+                "nombre": "TUBA",
+                "nombre_eng": "TUBA",
+                "val": "55"
+            },
+            {
+                "nombre": "ACORDEON",
+                "nombre_eng": "ACCORDION",
+                "val": "60"
+            },
+            {
+                "nombre": "SAXO",
+                "nombre_eng": "SAXOPHONE",
+                "val": "62"
+            },
+            {
+                "nombre": "ARMONICA",
+                "nombre_eng": "HARMONIC",
+                "val": "65"
+            },
+            {
+                "nombre": "UKELELE",
+                "nombre_eng": "UKELELE",
+                "val": "70"
+            },
+            {
+                "nombre": "BONGO",
+                "nombre_eng": "BONGO",
+                "val": "72"
+            },
+            {
+                "nombre": "GÜIRO",
+                "nombre_eng": "GÜIRO",
+                "val": "75"
+            },
+            {
+                "nombre": "CASTAÑUELAS",
+                "nombre_eng": "CASTANETS",
+                "val": "80"
+            },
+            {
+                "nombre": "ARPA",
+                "nombre_eng": "HARP",
+                "val": "82"
+            }
+        ],
+        "sports": [
+            {
+                "nombre": "NO HACE DEPORTE",
+                "nombre_eng": "NO SPORTS",
+                "val": "1111"
+            },
+            {
+                "nombre": "FUTBOL",
+                "nombre_eng": "SOCCER",
+                "val": "10"
+            },
+            {
+                "nombre": "BASKET",
+                "nombre_eng": "BASKET",
+                "val": "15"
+            },
+            {
+                "nombre": "TENIS",
+                "nombre_eng": "TENNIS",
+                "val": "20"
+            },
+            {
+                "nombre": "HOCKEY",
+                "nombre_eng": "HOCKEY",
+                "val": "30"
+            },
+            {
+                "nombre": "VOLEY",
+                "nombre_eng": "VOLLEY",
+                "val": "35"
+            },
+            {
+                "nombre": "HANDBALL",
+                "nombre_eng": "HANDBALL",
+                "val": "24"
+            },
+            {
+                "nombre": "GOLF",
+                "nombre_eng": "GOLF",
+                "val": "12"
+            },
+            {
+                "nombre": "RUGBY",
+                "nombre_eng": "RUGBY",
+                "val": "40"
+            },
+            {
+                "nombre": "BOXEO",
+                "nombre_eng": "BOXING",
+                "val": "45"
+            },
+            {
+                "nombre": "SUMO",
+                "nombre_eng": "SUMO",
+                "val": "46"
+            },
+            {
+                "nombre": "NATACION",
+                "nombre_eng": "SWIMMING",
+                "val": "50"
+            },
+            {
+                "nombre": "ROLLERS",
+                "nombre_eng": "ROLLERS",
+                "val": "22"
+            },
+            {
+                "nombre": "PATIN ARTISTICO",
+                "nombre_eng": "ARTISTIC SKATE",
+                "val": "33"
+            },
+            {
+                "nombre": "PATIN SOBRE HIELO",
+                "nombre_eng": "ICE SKATE",
+                "val": "23"
+            },
+            {
+                "nombre": "SKATE",
+                "nombre_eng": "SKATEBOARDING",
+                "val": "32"
+            },
+            {
+                "nombre": "LONGBOARD",
+                "nombre_eng": "LONGBOARDING",
+                "val": "42"
+            },
+            {
+                "nombre": "SURF",
+                "nombre_eng": "SURF",
+                "val": "52"
+            },
+            {
+                "nombre": "KITESURF",
+                "nombre_eng": "KITESURF",
+                "val": "63"
+            },
+            {
+                "nombre": "WAKEBOARD",
+                "nombre_eng": "WAKEBOARDING",
+                "val": "53"
+            },
+            {
+                "nombre": "SNOWBOARD",
+                "nombre_eng": "SNOWBOARD",
+                "val": "54"
+            },
+            {
+                "nombre": "ESQUI",
+                "nombre_eng": "SKI",
+                "val": "73"
+            },
+            {
+                "nombre": "EQUITACION",
+                "nombre_eng": "HORSE RIDING",
+                "val": "55"
+            },
+            {
+                "nombre": "POLO",
+                "nombre_eng": "POLO",
+                "val": "56"
+            },
+            {
+                "nombre": "GIMNASIA",
+                "nombre_eng": "GIMNASTICS",
+                "val": "60"
+            },
+            {
+                "nombre": "RUNNING",
+                "nombre_eng": "RUNNING",
+                "val": "65"
+            },
+            {
+                "nombre": "CICLISTA",
+                "nombre_eng": "CYCLING",
+                "val": "70"
+            },
+            {
+                "nombre": "BMX",
+                "nombre_eng": "BMX",
+                "val": "13"
+            },
+            {
+                "nombre": "YOGA",
+                "nombre_eng": "YOGA",
+                "val": "75"
+            },
+            {
+                "nombre": "PILATES",
+                "nombre_eng": "PILATES",
+                "val": "80"
+            },
+            {
+                "nombre": "CROSSFIT",
+                "nombre_eng": "CROSSFIT",
+                "val": "90"
+            },
+            {
+                "nombre": "FUNCIONAL",
+                "nombre_eng": "FUNCTIONAL",
+                "val": "95"
+            },
+            {
+                "nombre": "ACROBACIA EN PISO",
+                "nombre_eng": "ACROBATICS",
+                "val": "14"
+            },
+            {
+                "nombre": "REMO",
+                "nombre_eng": "ROWING",
+                "val": "26"
+            },
+            {
+                "nombre": "PARKOUR",
+                "nombre_eng": "PARKOUR",
+                "val": "93"
+            },
+            {
+                "nombre": "ESGRIMA",
+                "nombre_eng": "FENCING",
+                "val": "83"
+            },
+            {
+                "nombre": "ARTES MARCIALES",
+                "nombre_eng": "MARTIAL ARTS",
+                "val": "43"
+            },
+            {
+                "nombre": "TIRO CON ARCO",
+                "nombre_eng": "ARCHERY",
+                "val": "44"
+            }
+        ]
+    },
+    "talles": {
+        "calzado": [
+            {
+                "inc": "1",
+                "nombre": "-",
+                "tipo": "calzado",
+                "val": "0",
+                "valid": "0"
+            },
+            {
+                "inc": "0",
+                "nombre": "16",
+                "tipo": "calzado",
+                "val": "16",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "18",
+                "tipo": "calzado",
+                "val": "18",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "19",
+                "tipo": "calzado",
+                "val": "19",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "20",
+                "tipo": "calzado",
+                "val": "20",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "21",
+                "tipo": "calzado",
+                "val": "21",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "22",
+                "tipo": "calzado",
+                "val": "22",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "23",
+                "tipo": "calzado",
+                "val": "23",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "24",
+                "tipo": "calzado",
+                "val": "24",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "25",
+                "tipo": "calzado",
+                "val": "25",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "26",
+                "tipo": "calzado",
+                "val": "26",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "27",
+                "tipo": "calzado",
+                "val": "27",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "28",
+                "tipo": "calzado",
+                "val": "28",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "29",
+                "tipo": "calzado",
+                "val": "29",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "30",
+                "tipo": "calzado",
+                "val": "30",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "31",
+                "tipo": "calzado",
+                "val": "31",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "32",
+                "tipo": "calzado",
+                "val": "32",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "33",
+                "tipo": "calzado",
+                "val": "33",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "34",
+                "tipo": "calzado",
+                "val": "34",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "35",
+                "tipo": "calzado",
+                "val": "35",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "36",
+                "tipo": "calzado",
+                "val": "36",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "37",
+                "tipo": "calzado",
+                "val": "37",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "38",
+                "tipo": "calzado",
+                "val": "38",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "39",
+                "tipo": "calzado",
+                "val": "39",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "40",
+                "tipo": "calzado",
+                "val": "40",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "41",
+                "tipo": "calzado",
+                "val": "41",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "42",
+                "tipo": "calzado",
+                "val": "42",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "43",
+                "tipo": "calzado",
+                "val": "43",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "44",
+                "tipo": "calzado",
+                "val": "44",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "45",
+                "tipo": "calzado",
+                "val": "45",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "46",
+                "tipo": "calzado",
+                "val": "46",
+                "valid": "1"
+            }
+        ],
+        "pantalon": [
+            {
+                "inc": "1",
+                "nombre": "-",
+                "tipo": "pantalon",
+                "val": "0",
+                "valid": "0"
+            },
+            {
+                "inc": "0",
+                "nombre": "3meses",
+                "tipo": "pantalon",
+                "val": "110",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "6meses",
+                "tipo": "pantalon",
+                "val": "115",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "9meses",
+                "tipo": "pantalon",
+                "val": "120",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "12meses",
+                "tipo": "pantalon",
+                "val": "125",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "2",
+                "tipo": "pantalon",
+                "val": "2",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "3",
+                "tipo": "pantalon",
+                "val": "3",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "4",
+                "tipo": "pantalon",
+                "val": "4",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "5",
+                "tipo": "pantalon",
+                "val": "5",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "6",
+                "tipo": "pantalon",
+                "val": "6",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "7",
+                "tipo": "pantalon",
+                "val": "7",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "8",
+                "tipo": "pantalon",
+                "val": "8",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "9",
+                "tipo": "pantalon",
+                "val": "9",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "10",
+                "tipo": "pantalon",
+                "val": "10",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "11",
+                "tipo": "pantalon",
+                "val": "11",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "12",
+                "tipo": "pantalon",
+                "val": "12",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "13",
+                "tipo": "pantalon",
+                "val": "13",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "14",
+                "tipo": "pantalon",
+                "val": "14",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "15",
+                "tipo": "pantalon",
+                "val": "15",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "16",
+                "tipo": "pantalon",
+                "val": "16",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "17",
+                "tipo": "pantalon",
+                "val": "17",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "18",
+                "tipo": "pantalon",
+                "val": "18",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "19",
+                "tipo": "pantalon",
+                "val": "19",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "20",
+                "tipo": "pantalon",
+                "val": "20",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "21",
+                "tipo": "pantalon",
+                "val": "21",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "22",
+                "tipo": "pantalon",
+                "val": "22",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "23",
+                "tipo": "pantalon",
+                "val": "23",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "24",
+                "tipo": "pantalon",
+                "val": "24",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "25",
+                "tipo": "pantalon",
+                "val": "25",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "26",
+                "tipo": "pantalon",
+                "val": "26",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "27",
+                "tipo": "pantalon",
+                "val": "27",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "28",
+                "tipo": "pantalon",
+                "val": "28",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "29",
+                "tipo": "pantalon",
+                "val": "29",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "30",
+                "tipo": "pantalon",
+                "val": "30",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "31",
+                "tipo": "pantalon",
+                "val": "31",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "32",
+                "tipo": "pantalon",
+                "val": "32",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "33",
+                "tipo": "pantalon",
+                "val": "33",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "34",
+                "tipo": "pantalon",
+                "val": "34",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "35",
+                "tipo": "pantalon",
+                "val": "35",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "36",
+                "tipo": "pantalon",
+                "val": "36",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "37",
+                "tipo": "pantalon",
+                "val": "37",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "38",
+                "tipo": "pantalon",
+                "val": "38",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "39",
+                "tipo": "pantalon",
+                "val": "39",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "40",
+                "tipo": "pantalon",
+                "val": "40",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "41",
+                "tipo": "pantalon",
+                "val": "41",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "42",
+                "tipo": "pantalon",
+                "val": "42",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "43",
+                "tipo": "pantalon",
+                "val": "43",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "44",
+                "tipo": "pantalon",
+                "val": "44",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "45",
+                "tipo": "pantalon",
+                "val": "45",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "46",
+                "tipo": "pantalon",
+                "val": "46",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "47",
+                "tipo": "pantalon",
+                "val": "47",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "48",
+                "tipo": "pantalon",
+                "val": "48",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "49",
+                "tipo": "pantalon",
+                "val": "49",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "50",
+                "tipo": "pantalon",
+                "val": "50",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "51",
+                "tipo": "pantalon",
+                "val": "51",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "52",
+                "tipo": "pantalon",
+                "val": "52",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "53",
+                "tipo": "pantalon",
+                "val": "53",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "54",
+                "tipo": "pantalon",
+                "val": "54",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "55",
+                "tipo": "pantalon",
+                "val": "55",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "56",
+                "tipo": "pantalon",
+                "val": "56",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "57",
+                "tipo": "pantalon",
+                "val": "57",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "58",
+                "tipo": "pantalon",
+                "val": "58",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "59",
+                "tipo": "pantalon",
+                "val": "59",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "60",
+                "tipo": "pantalon",
+                "val": "60",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "61",
+                "tipo": "pantalon",
+                "val": "61",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "62",
+                "tipo": "pantalon",
+                "val": "62",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "63",
+                "tipo": "pantalon",
+                "val": "63",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "64",
+                "tipo": "pantalon",
+                "val": "64",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "65",
+                "tipo": "pantalon",
+                "val": "65",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "66",
+                "tipo": "pantalon",
+                "val": "66",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "67",
+                "tipo": "pantalon",
+                "val": "67",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "68",
+                "tipo": "pantalon",
+                "val": "68",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "69",
+                "tipo": "pantalon",
+                "val": "69",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "70",
+                "tipo": "pantalon",
+                "val": "70",
+                "valid": "1"
+            }
+        ],
+        "remera": [
+            {
+                "inc": "1",
+                "nombre": "-",
+                "tipo": "remera",
+                "val": "0",
+                "valid": "0"
+            },
+            {
+                "inc": "0",
+                "nombre": "3meses",
+                "tipo": "remera",
+                "val": "10",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "6meses",
+                "tipo": "remera",
+                "val": "15",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "12meses",
+                "tipo": "remera",
+                "val": "20",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "1",
+                "tipo": "remera",
+                "val": "40",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "2",
+                "tipo": "remera",
+                "val": "45",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "3",
+                "tipo": "remera",
+                "val": "50",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "4",
+                "tipo": "remera",
+                "val": "55",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "6",
+                "tipo": "remera",
+                "val": "60",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "8",
+                "tipo": "remera",
+                "val": "65",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "10",
+                "tipo": "remera",
+                "val": "70",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "12",
+                "tipo": "remera",
+                "val": "75",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "14",
+                "tipo": "remera",
+                "val": "80",
+                "valid": "1"
+            },
+            {
+                "inc": "0",
+                "nombre": "16",
+                "tipo": "remera",
+                "val": "85",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XXS",
+                "tipo": "remera",
+                "val": "100",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XS",
+                "tipo": "remera",
+                "val": "105",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "S",
+                "tipo": "remera",
+                "val": "110",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "M",
+                "tipo": "remera",
+                "val": "115",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "L",
+                "tipo": "remera",
+                "val": "120",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XL",
+                "tipo": "remera",
+                "val": "125",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XXL",
+                "tipo": "remera",
+                "val": "130",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XXXL",
+                "tipo": "remera",
+                "val": "135",
+                "valid": "1"
+            },
+            {
+                "inc": "1",
+                "nombre": "XXXXL",
+                "tipo": "remera",
+                "val": "140",
+                "valid": "1"
+            }
+        ]
+    }
+}

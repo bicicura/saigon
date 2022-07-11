@@ -19,7 +19,9 @@ class PanelTable extends Component
     public $deleteId;
     public $perfilId = null;
     public $deleteModal = null;
+    public $reel = false;
     protected $listeners = ['refreshTable' => '$refresh'];
+    
 
     public function deleteThumbnail($thumbnail) {
         Storage::disk('thumbnails')->delete($thumbnail);
@@ -51,12 +53,23 @@ class PanelTable extends Component
         $this->emit('refreshTable');
     }
 
+    public function query() {
+        $query = Casting::where('nombre', 'like', '%'.$this->search.'%');
+
+        if ($this->reel) {
+            $query->where('reel', 1);
+            return $castings = $query->paginate(20);
+        }
+
+        return $castings = $query->paginate(6);
+    }
+
     public function render()
     {
+        $castings = $this->query();
+
         return view('livewire.panel-table', [
-            'castings' => Casting::
-            where('nombre', 'like', '%'.$this->search.'%')
-            ->paginate(6)
+            'castings' => $castings
         ]);
     }
 }

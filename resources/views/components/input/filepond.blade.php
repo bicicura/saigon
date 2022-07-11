@@ -14,8 +14,8 @@
             pond = FilePond.create($refs.input);
             pond.setOptions({
                 allowMultiple: {{ isset($attributes['multiple']) ? 'true' : 'false' }},
-                maxFileSize: '5MB',
-                labelMaxFileSize: `El tamaño máximo de archivo es 5MB`,
+                maxFileSize: '50MB',
+                labelMaxFileSize: `El tamaño máximo de archivo es 50MB`,
                 labelMaxFileSizeExceeded: 'El archivo es muy pesado',
                 server: {
                     process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => { @this.upload('{{ $attributes['wire:model'] }}', file, load, error, (event) => { progress(event.lengthComputable, event.loaded, event.total) }) },

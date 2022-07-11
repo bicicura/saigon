@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Casting;
 use App\Models\Reel;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Http;
 
 
 class CastingController extends Controller
@@ -18,8 +18,18 @@ class CastingController extends Controller
 
     public function index($lang) {
         $seccion = 'Comerciales';
-        $Reel = Reel::first();
-        return view('index', ['seccion' => $seccion, 'Reel' => $Reel]);
+        $Reels = Casting::where('reel', 1)->get();
+
+        count($Reels) > 0 ? $reelFlag = true : $reelFlag = false;
+
+        $castings = Casting::where('seccion', ['Comerciales', 'Mini'])->orderBy('id', 'DESC')->limit(9)->get();
+
+        return view('index', ['castings' => $castings, 'reelFlag' => $reelFlag, 'Reels' => $Reels]);
+    }
+
+    public function comerciales($lang) {
+        $seccion = 'Comerciales';
+        return view('comerciales', ['seccion' => $seccion]);
     }
 
     public function fotografia($lang) {
@@ -68,12 +78,6 @@ class CastingController extends Controller
         return view('panel.fotografias-edit', ['imgs' => $fotografias, 'casting_id' => $id, 'label' => 'Editando Fotografias de '.$casting->nombre, 'table' => 'fotografias', 'directorio' => 'fotos']);
     }
 
-    public function getThumbnail() {
-        $url = 'https://vimeo.com/298168842';
-        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-        dd($response['thumbnail_url']);
-    }
-
     public function player($lang, $slug) {
         if ($slug === "reel") {
             $casting = Reel::first();    
@@ -83,12 +87,15 @@ class CastingController extends Controller
         return view('casting-player', ['casting' => $casting]);
     }
 
-    // public function api() {
-    //     $response = Http::post('https://casting.saigonbuenosaires.com/api/params.php?', [
-    //         'USER' => 'websaigon',
-    //         'PASS' => 'AvrpE36@',
-    //     ]);
-    //     dd($response);
-    // }
+    public function test($lang) {
+        $url = 'https://vimeo.com/298168842';
+        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+        dd(json_decode($response->body()));
+        
+    }
+
+    public function showReel() {
+        return view('panel.show-reel');
+    }
 
 }

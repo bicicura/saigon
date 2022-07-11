@@ -6,7 +6,6 @@
 
 <x-desktop-nav-fixed />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 <style>
     .splide__arrow {
         background: none
@@ -32,7 +31,7 @@
 
 <section data-scroll data-scroll-target class="smooth-scroll px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between lg:gap-0 lg:pb-36 pb-24 lg:fixed">
     
-    <div class="mt-20 space-y-20 lg:space-y-10 lg:mt-28 lg:w-10/12">
+    <div class="mt-20 space-y-20 lg:space-y-10 lg:mt-28 lg:w-9/12">
         @foreach ($castings as $casting)
             <x-fotografia-slider :casting="$casting" />
         @endforeach
@@ -45,11 +44,7 @@
             <br>
             <p>{{__("Nuestros fotógrafos trabajan optimizando recursos - técnicos y creativos - para lograr los objetivos de cada proyecto.")}}</p>
             <br>
-            <p>{{__("Le ponemos los cuerpos los rostros a tus ideas y proyectos.")}}</p>
-            @if (app()->getLocale() === "es")
-                <br>    
-                <p>La luz y el movimiento son el juego y nos encanta jugar.</p>
-            @endif
+            <p>{{__("Le ponemos los cuerpos y los rostros a tus ideas y proyectos.")}}</p>
             <br>
             <div>
                 <p class="uppercase">{{__('Contacto')}}:</p>
@@ -60,13 +55,12 @@
     </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-
 <script>
     document.addEventListener( 'DOMContentLoaded', function() {
         document.querySelectorAll('.splide').forEach(carousel => new Splide( carousel, {
             perPage: 1,
             pagination: false,
+            lazyLoad: 'nearby'
         } ).mount());
     } );
 </script>

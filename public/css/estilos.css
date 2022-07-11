@@ -80,7 +80,7 @@ TEXT
 }
 
 .text-nav-d {
-    font-size: 2rem;
+    font-size: 2.8rem;
     line-height: .9;
 }
 
@@ -238,6 +238,9 @@ MOBILE NAV
     .nav-translate-out {
         transform: translateY(-100%);
     }
+    
+    /* controla nav li de sumate a saigon en mobile */
+    li:nth-of-type(7) p { transition-delay: 1.4s; }
 }
 
 .children-ul > * > p {
@@ -251,7 +254,6 @@ li:nth-of-type(3) p { transition-delay: 1s; }
 li:nth-of-type(4) p { transition-delay: 1.1s; }
 li:nth-of-type(5) p { transition-delay: 1.2s; }
 li:nth-of-type(6) p { transition-delay: 1.3s; }
-li:nth-of-type(7) p { transition-delay: 1.4s; }
 
 li:nth-of-type(1) p a { transition-delay: 0; }
 li:nth-of-type(2) p a { transition-delay: 0; }
