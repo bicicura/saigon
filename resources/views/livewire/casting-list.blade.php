@@ -5,7 +5,8 @@
     @endfor
 
     {{--  chequear ese show $wire.showMoreBtn, creo que no va 👀 --}}
-    @if (!$noMoreOffset)
+    {{--  El no more offset no esta funcando para grandes cantidades de castigns --}}
+    {{-- @if (!$noMoreOffset) --}}
     <div data-scroll data-scroll-speed="1.8" x-data show="$wire.showMoreBtn" class="flex justify-end gap-8 mt-2">
         <button
         wire:click="showMore"
@@ -25,6 +26,6 @@
         </div>
     </div>
 
-    @endif
+    {{-- @endif --}}
 
 </div>

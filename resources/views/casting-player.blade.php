@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="lg:pl-8 lg:w-10/12 player-height pb-20 lg:pb-0 pl-3.5 pr-3.5 lg:pr-0">
-        <iframe src="https://player.vimeo.com/video/560869834" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
+        <iframe src="https://player.vimeo.com/video/{{$casting['url']}}" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
         {{-- @if (Str::contains($casting['url'] , 'vimeo'))
             <iframe src="https://player.vimeo.com/video/560869834" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
         @else

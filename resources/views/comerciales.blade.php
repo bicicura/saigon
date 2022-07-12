@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title') {{ '— ' . 'Mini' }} @endsection
+@section('title') {{ '— ' . 'Comerciales' }} @endsection
 
 @section('content')
 

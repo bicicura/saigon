@@ -39,14 +39,7 @@ class Casting extends Model
         $section = $sections[$this->seccion];
 
         return '/'.app()->getLocale().'/'.$section;
-    }
-
-    // public function getThumbnail() {
-        
-    //     $url = 'https://vimeo.com/581208956';
-    //     $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-    //     return $response['thumbnail_url'];
-    // }
+    } 
 
      /**
      * Return the sluggable configuration array for this model.

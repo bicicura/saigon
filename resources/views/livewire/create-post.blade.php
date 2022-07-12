@@ -68,17 +68,23 @@
                     Thumbnail
                 </label>
                 <div class="flex gap-8 mt-2 sm:mt-0 sm:col-span-2" x-data="{ focused: false }">
-                    <div class="flex items-center gap-3">
-                        <div>
-                            <label for="vimeoThumbnail">Usar Vimeo</label>
-                            <input id="vimeoThumbnail" wire:model="thumbnailProvider" type="radio" value="vimeo">
+                    <div class="flex flex-col justify-center gap-4">
+                        @if ($type === "update")
+                        <div class="flex items-center gap-2">
+                            <input id="mantenerActual" wire:model="thumbnailProvider" class="ring-0 ring-offset-0 focus:ring-0" type="radio" value="">
+                            <label class="text-base cursor-pointer" for="mantenerActual">Mantener actual</label>
                         </div>
-                        <div>
-                            <label for="customThumbnail">Subir uno propio</label>
-                            <input id="customThumbnail" wire:model="thumbnailProvider" type="radio" value="custom">
+                        @endif
+                        <div class="flex items-center justify-start gap-2">
+                            <input id="vimeoThumbnail" wire:model="thumbnailProvider" class="ring-0 ring-offset-0 focus:ring-0" type="radio" value="vimeo">
+                            <label class="text-base cursor-pointer" for="vimeoThumbnail">Usar Vimeo</label>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input id="customThumbnail" wire:model="thumbnailProvider" class="ring-0 ring-offset-0 focus:ring-0" type="radio" value="custom">
+                            <label class="text-base cursor-pointer" for="customThumbnail">Subir uno propio</label>
                         </div>
                     </div>
-                    @if ($thumbnailProvider === "custom")
+                    
                         <div class="flex items-center">
                             <span class="w-20 h-20 overflow-hidden bg-gray-100 rounded-xl">
                                 @if ($newThumbnail)
@@ -92,7 +98,7 @@
                                     </svg>
                                 @endif
                             </span>
-
+                        @if ($thumbnailProvider === "custom")
                             <span class="ml-5 rounded-md shadow-sm">
                                 <label :class=" {'outline-none border-blue-300 shadow-outline-blue' : focused} " for="newThumbnail" class="px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md cursor-pointer hover:text-gray-500 active:bg-gray-50 active:text-gray-800">
                                     Cambiar
@@ -105,8 +111,8 @@
                                     <div></div>
                                 </div>
                             </div>
+                        @endif
                         </div>   
-                    @endif
                 </div>
             </div>
             @endif

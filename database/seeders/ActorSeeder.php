@@ -18,6 +18,6 @@ class ActorSeeder extends Seeder
      */
     public function run()
     {
-        Actor::factory()->count(10)->create();
+    //   Actor::factory()->count(10)->create();
     }
 }

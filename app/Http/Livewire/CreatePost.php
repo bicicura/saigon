@@ -18,7 +18,7 @@ class CreatePost extends Component
 
     public $type;
 
-    public $thumbnailProvider = "vimeo";
+    public $thumbnailProvider;
 
     public $seccion = '';
     public $newThumbnail;
@@ -178,9 +178,13 @@ class CreatePost extends Component
 
         $avatarFileName = $this->avatarActual;
         // si el user actualizo el avatar, se guarda en localmente y se borra el anterior.
-        if ($this->newThumbnail) {
+        if ($this->newThumbnail && $this->thumbnailProvider === "custom") {
             // guardo el avatar nuevo en storage
             $avatarFileName = $this->storeAvatar();
+            // borro el viejo
+            Storage::disk('thumbnails')->delete($this->avatarActual);
+        } elseif ($this->thumbnailProvider === "vimeo") {
+            $avatarFileName = $this->getThumbnailFromProvider();
             // borro el viejo
             Storage::disk('thumbnails')->delete($this->avatarActual);
         }
@@ -240,6 +244,10 @@ class CreatePost extends Component
 
         file_put_contents('thumbnails/'.$fileName, $img);
         return $fileName;
+    }
+
+    public function mount() {
+        $this->type == "save" ? $this->thumbnailProvider = "vimeo" : $this->thumbnailProvider = '';
     }
 
     public function render()
