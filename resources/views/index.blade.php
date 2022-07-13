@@ -87,6 +87,6 @@
     }
 </script>
 
-<script src="/js/intersectionObserver.js?v=9" defer></script>
+<script src="/js/intersectionObserver.js?v=11" defer></script>
 
 @endsection

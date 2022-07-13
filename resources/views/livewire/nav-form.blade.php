@@ -79,7 +79,14 @@
             <x-input.nav-file :inputContent="['label' => 'Foto cuerpo', 'model' => 'cuerpo']" />
             <button 
             x-bind:disabled="formSubmited || skillsFlag"
-            class="w-full p-4 py-2 mt-2 text-black uppercase transition-colors border-2 border-white lg:mt-0 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">{{__('Enviar')}}</button>
+            class="w-full p-4 py-2 mt-2 text-black uppercase transition-colors border-2 flex items-center justify-center border-white lg:mt-0 saigon-bg-white lg:text-sm lg:w-full h-fit hover:bg-transparent hover:text-white">
+                {{__('Enviar')}}
+                <div wire:loading wire:target="submit">
+                    <div class="ml-4 la-ball-clip-rotate">
+                        <div class="saigon-text-blue"></div>
+                    </div>
+                </div>
+            </button>
         </div>
     </div>
     

@@ -14,7 +14,7 @@
 
 <x-desktop-nav-fixed />
 
-<div class="smooth-scroll">
+<div data-scroll data-scroll-target class="smooth-scroll lg:fixed">
     <section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between mb-12 lg:mb-0">
 
         <div class="z-20 flex flex-col items-end gap-4 mt-32 text-right lg:ml-auto lg:gap-8 lg:mt-16">

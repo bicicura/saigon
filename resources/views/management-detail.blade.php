@@ -110,24 +110,17 @@
         <p>Edad: {{ $actor->getAge() }} años</p>
         <p>Nacionalidad: {{ $actor->nacionalidad }}</p>
         <p>Altura: {{ $actor->altura }} cm</p>
-        <p>
-            @if ($actor->imdb)
-                <a href="{{$actor->imdb}}">IMDB | </a>
-            @endif
-            @if ($actor->ig)
-             <a href="https://www.instagram.com/{{$actor->ig}}">IG | </a>
-            @endif
-             @if ($actor->cv)
-             <a href="{{$actor->cv}}">C.V.</a>
-            @endif
-
-        </p>
+        @if ($actor->ig)
+            <p>
+                <a class="hover:underline" target="_blank" href="https://www.instagram.com/{{$actor->ig}}">IG</a>
+            </p>
+        @endif
         <div x-data="{selected:null}">
             <ul>
                 <li class="relative">
                     <button type="button" class="ml-auto text-right w-max" @click="selected !== 1 ? selected = 1 : selected = null">
                         <div class="w-full transition-all">
-                            <span>Bio</span>
+                            <span class="hover:underline">Bio</span>
                         </div>
                     </button>
         
@@ -139,7 +132,7 @@
                 </li>
             </ul>
         </div>
-        <p>Videos</p>
+        <p class="opacity-50">Videos</p>
 
     </div>
 

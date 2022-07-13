@@ -4,7 +4,12 @@
             <label :class=" {'outline-none border-blue-300 shadow-outline-blue' : focused, 'bg-white text-black' : validated == '{{$inputContent["model"]}}' } " for="{{$inputContent['model']}}" class="flex items-center justify-center gap-1 px-3 py-2 text-white uppercase transition duration-150 ease-in-out border-2 border-white cursor-pointer lg:text-sm lg:py-2 hover:text-gray-300 active:bg-gray-500 active:text-gray-800">
                 <span>{{__($inputContent['label'])}}</span>
                 <div class="w-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 rotate-180" viewBox="0 0 27 32" xml:space="preserve"><path fill="none" stroke="#F2F2F2" stroke-width="2" stroke-miterlimit="10" d="m26.3 18-13 13L.4 18M13.4 0v31"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 rotate-180" viewBox="0 0 27 32" xml:space="preserve"><path fill="none" :class="validated? 'stroke-saigon-black' : 'stroke-saigon-white'" stroke-width="2" stroke-miterlimit="10" d="m26.3 18-13 13L.4 18M13.4 0v31"></path></svg>
+                </div>
+                <div wire:loading wire:target="{{$inputContent['model']}}">
+                    <div class="ml-4 la-ball-clip-rotate">
+                        <div class="saigon-text-white"></div>
+                    </div>
                 </div>
             </label>
             <input 

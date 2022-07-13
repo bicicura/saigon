@@ -87,12 +87,21 @@ class CastingController extends Controller
         return view('casting-player', ['casting' => $casting]);
     }
 
-    public function test($lang) {
-        $url = 'https://vimeo.com/298168842';
-        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-        dd(json_decode($response->body()));
-        
-    }
+    // public function test($lang) {
+    //     $thumbnail_width = 640;
+
+    //     $url = 'https://vimeo.com/717912032&width='.$thumbnail_width;
+    //     $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+    //     $thumbnail_url = $response['thumbnail_url'];
+
+    //     $response = Http::get($thumbnail_url);
+
+    //     $img = $response->body();
+    //     $fileName = 'Test.jpg';
+
+    //     file_put_contents('thumbnails/'.$fileName, $img);
+    //     return $fileName;
+    // }
 
     public function showReel() {
         return view('panel.show-reel');

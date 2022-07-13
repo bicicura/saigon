@@ -1,31 +1,43 @@
+<style>
+    video {
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+
 <script>
     document.addEventListener( 'DOMContentLoaded', function() {
         splide = new Splide( '#splide', {
             type   : 'loop',
             arrows: true,
             pagination: false,
+            breakpoints: {
+                800: {
+                    arrows: false,
+                },
+            },
             video: {
                 hideControls: true,
                 disableOverlayUI: true,
                 mute: true,
                 autoplay: true,
+                playerOptions: {
+                    htmlVideo: {
+                        muted: true,
+                        playsInline: true,
+                        autoplay: true,
+                        },
+                } 
             },
-            playerOptions: {
-            htmlVideo: {
-                preload: 'auto',
-                poster: true,
-            },
-  }
         });
 
         splide.on( 'video:ended', function() {
             splide.go( '>' );
         } );
 
-      splide.mount({ Intersection, Video });
-      
+        splide.mount({ Intersection, Video });      
     } );
-  </script>
+</script>
   
 <div class="relative bg-center bg-no-repeat bg-cover saigon-bg-hero rounded-xl lg:mt-16 lg:pt-12" x-intersect:enter.half="reel? '' : logo = false; reel = true; castings = false; $dispatch('indexScrollTo', { vidick: $refs.reel })">
     <div class="splide" id="splide">
@@ -49,3 +61,46 @@
         </div>
     </div>
 </div>
+
+{{-- <style>
+    video {
+        object-fit: cover;
+        object-position: center
+    }
+</style>
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+        splide = new Splide( '#splide', {
+            type   : 'loop',
+            arrows: true,
+            pagination: false,
+            breakpoints: {
+                800: {
+                    arrows: false,
+                },
+            },
+            video: {
+                disableOverlayUI: true,
+                hideControls: true,
+                mute: true,
+                autoplay: true,
+                playerOptions: {
+            htmlVideo: {
+                muted: true,
+                playsInline: true,
+                autoplay: true,
+            },
+            },
+            
+  }
+        });
+
+        splide.on( 'video:ended', function() {
+            splide.go( '>' );
+        } );
+        splide.mount({ Intersection, Video });
+
+      
+    } );
+  </script> --}}

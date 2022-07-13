@@ -233,7 +233,8 @@ class CreatePost extends Component
 
     // para subir thumbnail directo de Vimeo con el id del vid.
     public function getThumbnailFromProvider() {
-        $url = 'https://vimeo.com/'.$this->video_url;
+        $thumbnail_width = 640;
+        $url = 'https://vimeo.com/'.$this->video_url.'&width='.$thumbnail_width;
         $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
         $thumbnail_url = $response['thumbnail_url'];
 

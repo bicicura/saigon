@@ -51,14 +51,14 @@
         </div>
     </div>
     <div class="lg:pl-8 lg:w-10/12 player-height pb-20 lg:pb-0 pl-3.5 pr-3.5 lg:pr-0">
-        <iframe src="https://player.vimeo.com/video/{{$casting['url']}}" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
-        {{-- @if (Str::contains($casting['url'] , 'vimeo'))
-            <iframe src="https://player.vimeo.com/video/560869834" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
-        @else
+        @if ($casting->video_provider == 0)
+            <iframe src="https://player.vimeo.com/video/{{$casting['url']}}" class="w-full aspect-video rounded-2xl" frameborder="0" allow="autoplay; fullscreen" allow></iframe>
+            
+        @elseif ($casting->video_provider == 1)
             <div class="overflow-hidden yt-iframe-container rounded-2xl">
-                <iframe src="{{$casting['url']}}" title="YouTube video player aspect-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/{{$casting['url']}}" title="YouTube video player aspect-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>        
-        @endif --}}
+        @endif
     
     </div>
     

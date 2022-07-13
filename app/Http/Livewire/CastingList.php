@@ -12,8 +12,7 @@ class CastingList extends Component
     public $count = 9;
     public $noMoreOffset = false;
     public $seccion;
-
-    protected $listeners = ['stopInfiniteScrolling'];
+    public $castingsCount;
 
     public function stopInfiniteScrolling() {
         $this->noMoreOffset = true;
@@ -21,10 +20,8 @@ class CastingList extends Component
 
     // me fijo si hay que mostrar el btn de pedir mas castings o no.
     public function mount() {
-        $castingsCount = Casting::where('seccion', $this->seccion)->count();
-        if ($castingsCount <= 9) {
-            $this->stopInfiniteScrolling();
-        }
+        $this->castingsCount = Casting::where('seccion', $this->seccion)->count();
+        if ($this->castingsCount <= 9) { $this->stopInfiniteScrolling(); }
     }
 
 
@@ -33,6 +30,8 @@ class CastingList extends Component
         $this->count += $this->perPage;
         // para actualizar el locoScroll una vez traída más info
         $this->dispatchBrowserEvent('updateLocoScroll');
+        // si la cantidad de castings traidos es >= superior a la cantidad de castings en la db
+        if ($this->count >= $this->castingsCount) { $this->stopInfiniteScrolling(); }
     }
 
     public function render()

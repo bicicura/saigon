@@ -43,6 +43,10 @@ class PanelTable extends Component
         } else {
             $this->deleteThumbnail($Casting['thumbnail']);
         }
+
+        // si tiene un reel, lo borro.
+        $this->handleReel($Casting);
+
         // borro el registro de la tabla de Castings
         $Casting->delete();
         // oculto el modal en el front
@@ -51,6 +55,12 @@ class PanelTable extends Component
         $this->dispatchBrowserEvent('notify', ['message' => '🗑️ Casting eliminado', 'status' => 'error']);
         // refresco el componente.
         $this->emit('refreshTable');
+    }
+
+    public function handleReel($Casting) {
+        if ($Casting->reel) {
+            Storage::disk('reel')->delete($Casting->reel_video);
+        }
     }
 
     public function query() {
