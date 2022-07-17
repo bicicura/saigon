@@ -4,8 +4,12 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use App\Models\Profile;
-use App\Models\Skills;
+use App\Models\Consulta;
+use App\Models\Nacionalidad;
+use App\Models\Skill;
+use App\Models\Talentos;
+use App\Models\Talles;
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 class NavForm extends Component
@@ -23,39 +27,30 @@ class NavForm extends Component
     public $remera = "";
     public $pantalon = "";
     public $calzado = "";
-    public $nacionalidad;
+    public $nacionalidad = "";
     public $skills = [ 'deportes' => [] , 'bailes' => [], 'musica' => []  ];
     public $link;
     public $cara;
     public $cuerpo;
 
+    public $nacionalidades;
+    public $talentos_deportes;
+    public $talentos_music;
+    public $talentos_dance;
+    public $talles_calzado;
+    public $talles_remera;
+    public $talles_pantalon;
+    
+    public $cuitCheckbox;
     public $deportes = true;
     public $bailes = true;
     public $musica = true;
 
-    protected $rules = 
-    [
-        'nombre' => 'required|min:2',
-        'email' => 'required|email',
-        'celular' => 'required|min:6',
-        'nacionalidad' => 'required|min:6',
-        'dni' => 'required|numeric',
-        'cuit' => 'required|numeric',
-        'sexo' => 'required',
-        'nacimiento' => 'required|date',
-        'altura' => 'required|integer|between:100,230',
-        'remera' => 'required',
-        'pantalon' => 'required',
-        'calzado' => 'required',
-        'cara' => 'required',
-        'cuerpo' => 'required',
-    ];
+    public $talles;
 
     public function submit() 
     {
-        // dd($this->storeSkills());
-
-    
+        
         // valido y aviso si hay algún error y salgo de la función
         try {
             $this->validateForm();
@@ -64,53 +59,64 @@ class NavForm extends Component
             $this->validateForm();
         }
 
-        // uplodeo los archivos de CARA y CUERPO y obtengo los nombres.
-        $caraFileName = $this->storeFile($this->cara);
-        $cuerpoFileName = $this->storeFile($this->cuerpo);
-
         // creo una nueva instancia de un nuevo perfil
-        $Profile = new Profile;
+        $Consulta = new Consulta;
 
         // configuro el objeto para la db
-        $Profile->nombre = $this->nombre;
-        $Profile->email = $this->email;
-        $Profile->celular = $this->celular;
-        $Profile->dni = $this->dni;
-        $Profile->nacionalidad = $this->nacionalidad;
-        $Profile->cuit = $this->cuit;
-        $Profile->sexo = $this->sexo;
-        $Profile->date_of_birth = $this->nacimiento;
-        $Profile->altura = $this->altura;
-        $Profile->remera = $this->remera;
-        $Profile->pantalon = $this->pantalon;
-        $Profile->calzado = $this->calzado;
-        // $Profile->skills = $this->skills;
-        $Profile->link = $this->link;
-        $Profile->cara = $caraFileName;
-        $Profile->cuerpo = $cuerpoFileName;
+        $Consulta->nombre = $this->nombre;
+        $Consulta->email = $this->email;
+        $Consulta->celular = $this->celular;
+        $Consulta->dni = $this->dni;
+        $Consulta->nacionalidad = $this->nacionalidad;
+        $Consulta->cuit = $this->cuit;
+        $Consulta->sexo = $this->sexo;
+        $Consulta->date_of_birth = $this->nacimiento;
+        $Consulta->altura = $this->altura;
+        $Consulta->remera = $this->remera;
+        $Consulta->pantalon = $this->pantalon;
+        $Consulta->calzado = $this->calzado;
+        $Consulta->link = $this->link;
+
+        $Consulta->cara = '-';
+        $Consulta->cuerpo = '-';
 
         // lo guardo en db
-        $Profile->save();
+        $Consulta->save();
+
+        // uplodeo los archivos de CARA y CUERPO y obtengo los nombres.
+        $caraFileName = $this->storeFile($this->cara, $Consulta->id, 'foto-cara');
+        $cuerpoFileName = $this->storeFile($this->cuerpo, $Consulta->id, 'foto-cuerpo');
+
+        $Consulta->cara = $caraFileName;
+        $Consulta->cuerpo = $cuerpoFileName;
+
+        // lo guardo en db
+        $Consulta->save();
         
-        $this->storeSkills($Profile->id);
+        
+        $this->storeSkills($Consulta->id);
 
         // notifico al user que se guardó correctamente su petición
         $this->savedNotification();
     }   
 
     public function updatedCara() {
-        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:8000']);
+        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:8000|dimensions:min_width=600,min_height=600']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cara']);
     }
 
+    public function updatedCuitCheckbox($val) {
+        $val? $this->cuit = "-" : $this->cuit = ""; 
+    }
+
     public function updatedCuerpo() {
-        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:8000']);
+        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:8000|dimensions:min_width=600,min_height=600']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cuerpo']);
     }
 
-    public function storeFile($file) {
+    public function storeFile($file, $id, $fileName) {
         // hago el file una instancia del image intervention
         $file = Image::make($file);
         // para que mantenga la orientación correcta y no se rota al aplica resize 
@@ -118,27 +124,79 @@ class NavForm extends Component
         // si es otro formato, lo paso a jpg y bajo la calidad al 80%
         ->encode('jpg', 80)
         // se va a respetar el numero mas grande WxH, el mas chico va a variar para mantener el aspect ratio
-        ->resize(600, 800, function($contraint) {
+        ->resize(1000, 1200, function($contraint) {
             // aplico el aspect ratio
             $contraint->aspectRatio();
             // se previene estirar una img si los parametros son mas grandes q el file original.
             $contraint->upsize();
         });
 
-        // guardo el archivo en el disco que adecuado
-        $file->save(storage_path('app/perfiles/'.$file->filename.'.jpg'));
+        // paso el id/int a string
+        $id = strval($id);
 
-        // devuelvo el nombre del archivo.
-        return $file->basename;
+        // creo el directorio en consultas con el id de la consulta, si ya esta creado, salteo.
+        if(!Storage::exists('consultas/'.$id)) {
+            Storage::makeDirectory('consultas/'.$id); //creates directory
+        }
+
+        // guardo el archivo en el disco que adecuado
+        $file->save(storage_path('app/consultas/'.$id.'/'.$file->filename.'.jpg'));
+
+        // para renombrar los archivos como yo quiero.
+        Storage::move('consultas/'.$id.'/'.$file->filename.'.jpg', 'consultas/'.$id.'/'.$id.'-'.$fileName.'.jpg'); // keep the same folder to just rename 
+
+        // devuelvo el path/nombre del archivo.
+        return $id.'/'.$file->basename;
+    }
+
+    public function getNacionalidades() {
+        return $this->nacionalidades = Nacionalidad::orderBy('comun', 'DESC')->orderBy('nombre', 'ASC')->get();
+    }
+
+    public function getTalles() {
+        $talles = Talles::where('valid', '1')->get();
+
+        $this->talles_calzado = $talles->filter(function ($value, $key) {            
+            return $value['tipo'] == "calzado" ? $value : '';
+        });
+
+        $this->talles_pantalon = $talles->filter(function ($value, $key) {            
+            return $value['tipo'] == "pantalon" ? $value : '';
+        });
+
+        $this->talles_remera = $talles->filter(function ($value, $key) {            
+            return $value['tipo'] == "remera" ? $value : '';
+        });
+
+    }
+    
+    public function getTalentos() {
+
+        $talentos = Talentos::get();
+        
+        $this->talentos_deportes = $talentos->filter(function ($value, $key) {            
+            return $value['seccion'] == "sports" ? $value : '';
+        });
+
+        $this->talentos_music = $talentos->filter(function ($value, $key) {            
+            return $value['seccion'] == "music" ? $value : '';
+        });
+
+        $this->talentos_dance = $talentos->filter(function ($value, $key) {            
+            return $value['seccion'] == "dancing" ? $value : '';
+        });
+
     }
 
     public function storeSkills($id) {
-        $selectedSkills = array_merge($this->skills['deportes'], $this->skills['bailes'], $this->skills['musica']);
-        foreach ($selectedSkills as $skill) {
-            $Skill = new Skills;
-            $Skill->profiles_id = $id;
-            $Skill->skill_nombre = $skill;
-            $Skill->save();
+        foreach ($this->skills as $key => $value) {
+            foreach ($value as $skill) {
+                $Skill = new Skill;
+                $Skill->consulta_id = $id;
+                $Skill->val = $skill;
+                $Skill->skill_tipo = $key;
+                $Skill->save();
+            }
         }
     }
 
@@ -160,11 +218,6 @@ class NavForm extends Component
         empty($skill)? $this->musica = true : $this->musica = false;
     }
 
-    public function render()
-    {   
-        return view('livewire.nav-form');
-    }
-
     public function savedNotification() {
         //cierro el nav form
         $this->dispatchBrowserEvent('close-form');
@@ -176,15 +229,15 @@ class NavForm extends Component
     public function validateForm() {
         $this->validate(
             [
-                'email' => 'required|email', 
                 'nombre' => 'required|min:2',
+                'email' => 'required|email', 
                 'celular' => 'required|min:6',
-                'nacionalidad' => 'required|min:6',
+                'nacionalidad' => 'required',
                 'dni' => 'required|numeric',
-                'cuit' => 'required|numeric',
+                'cuit' => 'required|alpha_dash',
                 'sexo' => 'required',
                 'nacimiento' => 'required|date',
-                'altura' => 'required|numeric|between:100,230',
+                'altura' => 'required|numeric|between:50,250',
                 'remera' => 'required',
                 'pantalon' => 'required',
                 'calzado' => 'required',
@@ -202,4 +255,16 @@ class NavForm extends Component
             ],
         );
     }
+
+    public function mount() {
+        $this->getNacionalidades();
+        $this->getTalentos();
+        $this->getTalles();
+    }
+
+    public function render()
+    {
+        return view('livewire.nav-form');
+    }
+
 }

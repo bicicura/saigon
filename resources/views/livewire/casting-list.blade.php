@@ -1,11 +1,9 @@
 <div class="pb-28">
-    
     @for($offset = 0 ; $offset < $count ; $offset += $perPage)
         <livewire:casting-group :perPage="$perPage" :offset="$offset" :seccion="$seccion"  wire:key="casting-group-{{$offset}} "> 
     @endfor
 
-    {{--  chequear ese show $wire.showMoreBtn, creo que no va 👀 --}}
-    {{--  El no more offset no esta funcando para grandes cantidades de castigns --}}
+
     @if (!$noMoreOffset)
         <div data-scroll data-scroll-speed="1.8" x-data class="flex justify-end gap-8 mt-2">
             <button
@@ -26,5 +24,4 @@
             </div>
         </div>
     @endif
-
 </div>

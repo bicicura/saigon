@@ -46,6 +46,11 @@ Route::group(['prefix' => '{language}'], function () {
     // Reels
     Route::get('/dashboard/reel', [CastingController::class, 'showReel'])->middleware(['auth'])->name('dashboard.reel');
 
+    // Productoras
+    Route::get('/dashboard/productoras', [CastingController::class, 'productoras'])->middleware(['auth'])->name('dashboard.productoras');
+    Route::get('/dashboard/productoras/create', [CastingController::class, 'createProductora'])->middleware(['auth'])->name('dashboard.productoras-create');
+    Route::get('/dashboard/productoras/edit/{id}', [CastingController::class, 'editProductora'])->middleware(['auth'])->name('dashboard.productoras-edit');
+
     // Inbox
     Route::get('/dashboard/inbox', [ProfileController::class, 'showAll'])->middleware(['auth'])->name('dashboard.inbox');
     Route::get('/dashboard/inbox/{id}', [ProfileController::class, 'show'])->middleware(['auth'])->name('dashboard.inbox-detail');

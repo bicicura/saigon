@@ -40,17 +40,22 @@ class CreatePost extends Component
     public function formValidation() {
         
         $inputsToValidate = [
+            'seccion' => 'required',
             'nombre' => 'required',
             'director' => 'required',
             'productora' => 'required',
             // 'categoria' => 'required',
-            // 'video_url' => 'required',
         ];
 
         // si el user esta editando un perfil || si el user esta creando un nuevo perfil.
         if (($this->newThumbnail || !$this->newThumbnail && !$this->avatarActual) && $this->thumbnailProvider === 'custom') {
             $newAvatarValidation = ['newThumbnail' => 'image|max:1000'];
             $inputsToValidate = array_merge($inputsToValidate, $newAvatarValidation);
+        }
+
+        if ($this->seccion !== "Fotografía" && $this->seccion !== "Ficción") {
+            $videoVal = ['video_url' => 'required'];
+            $inputsToValidate = array_merge($inputsToValidate, $videoVal);            
         }
 
         $this->validate($inputsToValidate);
@@ -121,17 +126,19 @@ class CreatePost extends Component
 
         $fileName = null;
         // if ($this->seccion != 'Fotografía') $fileName = $this->storeAvatar();
-        if ($this->thumbnailProvider === "vimeo") {
-            $fileName = $this->getThumbnailFromProvider();
-        } elseif ($this->thumbnailProvider === "custom") {
-            $fileName = $this->storeAvatar();
+        if ($this->seccion !== "Fotografía" && $this->seccion !== "Ficción") {
+            if ($this->thumbnailProvider === "vimeo") {
+                $fileName = $this->getThumbnailFromProvider();
+            } elseif ($this->thumbnailProvider === "custom") {
+                $fileName = $this->storeAvatar();
+            }
         }
         
         $Casting = new Casting;
         
         $CastingId = $this->assignCastingValues($Casting, $fileName);
 
-        if ($this->seccion === "Fotografía") {
+        if ($this->seccion === "Fotografía" || $this->seccion === "Ficción") {
             $this->saveBook($CastingId);
         }
 

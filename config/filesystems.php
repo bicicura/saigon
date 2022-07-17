@@ -82,10 +82,10 @@ return [
         ],
 
 
-        'perfiles' => [
+        'consultas' => [
             'driver' => 'local',
-            'root' => public_path('perfiles'),
-            'url' => env('APP_URL').'/perfiles',
+            'root' => public_path('consultas'),
+            'url' => env('APP_URL').'/consultas',
             'visibility' => 'public',
         ],
 
@@ -103,9 +103,9 @@ return [
     */
 
     'links' => [
-        public_path('reel') => storage_path('app/reel'),
+        // public_path('reel') => storage_path('app/reel'),
         // public_path('fotos') => storage_path('app/fotos'),
-        // public_path('perfiles') => storage_path('app/perfiles'),
+        // public_path('consultas') => storage_path('app/consultas'),
         // public_path('actors') => storage_path('app/actors'),
     ],
 

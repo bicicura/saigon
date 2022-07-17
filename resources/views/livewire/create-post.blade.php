@@ -42,7 +42,7 @@
                 @endif
             @endif
 
-            <x-input.select :inputContent="['label' => 'Sección', 'model' => 'seccion', 'placeholder' => 'Seleccione una sección de la web', 'opciones' => [['value' => 'Comerciales', 'text' => 'Comerciales'], ['value' => 'Fotografía', 'text' => 'Fotografía'], ['value' => 'Mini', 'text' => 'Mini'], ['value' => 'Ficción', 'text' => 'Ficción'], ['value' => 'Street Agency', 'text' => 'Street Agency']]]"/>
+            <x-input.select :inputContent="['label' => 'Sección', 'model' => 'seccion', 'placeholder' => 'Seleccione una sección de la web', 'opciones' => [['value' => 'Comerciales', 'text' => 'Comerciales'], ['value' => 'Fotografía', 'text' => 'Fotografía'], ['value' => 'Mini', 'text' => 'Mini'], ['value' => 'Ficción', 'text' => 'Ficción']]]"/>
 
             <x-input.text-input :inputContent="['label' => 'Nombre', 'model' => 'nombre', 'placeholder' => 'Nombre']"/>
 
@@ -50,16 +50,16 @@
 
             <x-input.text-input :inputContent="['label' => 'Director', 'model' => 'director', 'placeholder' => 'Director/es']"/>
 
-            @if ($seccion !== 'Fotografía')
+            @if ($seccion !== 'Fotografía' && $seccion !== 'Ficción')
             <x-input.select :inputContent="['label' => 'Categoría', 'model' => 'categoria', 'placeholder' => 'Seleccione una categoría', 'opciones' => [['value' => 'Small', 'text' => 'Small'], ['value' => 'Medium', 'text' => 'Medium'], ['value' => 'Large', 'text' => 'Large']]]"/>
 
-            <x-input.text-input :inputContent="['label' => 'Vimeo ID', 'model' => 'video_url', 'placeholder' => '694544533']"/>
+            <x-input.text-input :inputContent="['label' => 'Video ID', 'model' => 'video_url', 'placeholder' => '694544533']"/>
             @endif
                 
 
-            @if ($seccion === 'Fotografía' && $type === 'save')
-            <x-input.filepond wire:model="fotografias" id="fotografias" :label="'Fotografías'" multiple/>
-            @elseif ($seccion === 'Fotografía' && $type === 'update')
+            @if (($seccion === 'Fotografía' || $seccion === 'Ficción') && $type === 'save')
+                <x-input.filepond wire:model="fotografias" id="fotografias" :label="'Fotografías'" multiple/>
+            @elseif (($seccion === 'Fotografía' || $seccion === 'Ficción') && $type === 'update')
             
             <x-input.input-w-edit-btn :label="'Fotografías'" :id="$casting->id"  />
             @else
@@ -77,7 +77,7 @@
                         @endif
                         <div class="flex items-center justify-start gap-2">
                             <input id="vimeoThumbnail" wire:model="thumbnailProvider" class="ring-0 ring-offset-0 focus:ring-0" type="radio" value="vimeo">
-                            <label class="text-base cursor-pointer" for="vimeoThumbnail">Usar Vimeo</label>
+                            <label class="text-base cursor-pointer" for="vimeoThumbnail">Usar Vimeo/Youtube</label>
                         </div>
                         <div class="flex items-center gap-2">
                             <input id="customThumbnail" wire:model="thumbnailProvider" class="ring-0 ring-offset-0 focus:ring-0" type="radio" value="custom">

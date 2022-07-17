@@ -91,7 +91,7 @@
                 <ul class="splide__list">
                 @foreach ($actor->getBook as $item)
                     <li style="" class="w-full h-full splide__slide">
-                        <img class="object-cover w-full h-full cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de {{$actor->nombre}}">
+                        <img class="object-cover w-full h-full transition-opacity duration-150 opacity-0 cursor-grab" data-splide-lazy="/actors/{{$item->img}}" src="/actors/{{$item->img}}"  alt="Fotografía de {{$actor->nombre}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                     </li>
                 @endforeach
                 </ul>
@@ -120,7 +120,7 @@
                 <li class="relative">
                     <button type="button" class="ml-auto text-right w-max" @click="selected !== 1 ? selected = 1 : selected = null">
                         <div class="w-full transition-all">
-                            <span class="hover:underline">Bio</span>
+                            <span class="font-normal hover:underline">Bio</span>
                         </div>
                     </button>
         

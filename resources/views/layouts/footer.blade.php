@@ -44,15 +44,10 @@
         // para actualizar el locoScroll una vez traída más info.
         window.addEventListener('updateLocoScroll', function (e) { locoScroll.update(); }, false);
         
-
-        // window.addEventListener('indexScrollTo', function (e) { 
-        //     locoScroll.scrollTo(e.detail.vidick, 0, 250); 
-        // }, false);
-        
         if (window.innerWidth > 800) {
             if (window.location.hash != "#comerciales") {
                 mandatoryScroll();
-            } 
+            }
             else {
                 setTimeout(() => {
                     mandatoryScroll();
@@ -73,15 +68,13 @@
         }
 
         // cuando carga todo el contenido del DOM le damos a update para que locoScroll tenga en cuenta todo el html a recorrer. 
-        // if (!window.location.pathname.includes('castings-fotografia')) {
-            window.addEventListener('load', () => {
-                locoScroll.update();
-            })
-        // }
-        
-    // locoScroll.scrollTo(document.querySelector('#comerciales'))
-         
-        
+        window.addEventListener('load', () => {
+            locoScroll.update();
+        })
+
+        window.addEventListener('DOMContentLoaded', () => {
+            locoScroll.update();
+        }) 
     }
 </script>
 

@@ -16,15 +16,15 @@
         transform: translate(0%)
     }
 
-    .carusel-img {
-        min-height: 28rem;
-        width: 100%;
-        object-fit: cover
-    }
-
     @media (min-width: 40em) {
         
         .fotografia-text-hero { width: 35rem; }
+
+        .carusel-img {
+            min-height: 28rem;
+            width: 100%;
+            object-fit: cover;
+        }
         
         }
 </style>

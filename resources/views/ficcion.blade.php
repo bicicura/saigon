@@ -67,7 +67,7 @@
 
         <div class="flex flex-col gap-4 mt-32 lg:gap-6 lg:mt-26">
             <h1 class="tracking-tight uppercase saigon-text-5xl saigon-font-thin saigon-title-line-height">{{__("Ficción")}}</h1>
-            <div class="flex flex-col w-full gap-5 lg:text-xl hero-p-w">
+            <div class="flex flex-col w-full gap-5 lg:text-xl hero-p-w saigon-text-300">
                 <div>
                     <p>{{__("Un espacio dedicado al diseño de casting moderno y de dedicación creativa.")}}</p>
                     <p>{{__("Cubrimos el medio audiovisual en su espectro más artístico: cine, series, televisión , voz original, video clip, video arte, fashion film, transmedia.")}}</p>

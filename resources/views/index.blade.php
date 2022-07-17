@@ -45,7 +45,7 @@
                             <h2 class="saigon-text-100 lg:line-clamp-1 ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
                         </div>
                         <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
-                            <img class="object-cover w-full h-full rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="">
+                            <img class="object-cover w-full h-full transition-opacity duration-150 opacity-0 rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                             <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden">
                                 <div class="">
                                     <div class="pt-4 pr-4">
@@ -74,15 +74,18 @@
 
 <script defer>
     if (window.innerWidth < 800) {
+        alert('hola!')
         let setHeroHeight = () => {
             let vh = window.innerHeight;
             let hh = document.querySelector('header').offsetHeight;
             let height = (vh - hh) + 'px';
-            let hero = document.querySelector('.saigon-bg-hero');
+            let reel_slides = document.querySelectorAll('.splide__slide');
             
-            hero.style.height = `calc(${height} - 3rem)`;
+            reel_slides.forEach(slide => {
+                slide.style.height = `calc(${height} - 3rem)`; 
+            });
         }
-
+        
         window.addEventListener('load', setHeroHeight);
     }
 </script>

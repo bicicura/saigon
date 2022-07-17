@@ -14,7 +14,7 @@ class PanelTable extends Component
 
     // public $castings;
 
-    public $active = true;
+    public $active = false;
     public $search;
     public $deleteId;
     public $perfilId = null;
@@ -33,12 +33,25 @@ class PanelTable extends Component
             Storage::disk('fotos')->delete($img->img);
         }
     }
+    
+    public function sticky($id) {
+        $Casting = Casting::find($id);
+
+        if ($Casting->sticky) {
+            $Casting->sticky = 0;
+            $Casting->save();
+            return;
+        }
+
+        $Casting->sticky = 1;
+        $Casting->save();
+    }
 
     public function deleteProfile() {
         // busco el casting en db.
         $Casting = Casting::find($this->perfilId);
         // borro las imgs del disco
-        if ($Casting->seccion === "Fotografía") {
+        if ($Casting->seccion === "Fotografía" || $Casting->seccion === "Ficción") {
             $this->deleteFotografias($Casting);
         } else {
             $this->deleteThumbnail($Casting['thumbnail']);
@@ -71,7 +84,7 @@ class PanelTable extends Component
             return $castings = $query->paginate(20);
         }
 
-        return $castings = $query->paginate(6);
+        return $castings = $query->orderBy('sticky', 'DESC')->orderBy('id', 'DESC')->paginate(6);
     }
 
     public function render()

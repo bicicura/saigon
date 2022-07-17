@@ -36,7 +36,7 @@ return [
     'different' => 'El campo y :other deben ser diferentes.',
     'digits' => 'El campo debe tener :digits dígitos.',
     'digits_between' => 'El campo debe estar entre :min y :max dígitos.',
-    'dimensions' => 'El campo tiene dimensiones de imagen inválidas.',
+    'dimensions' => 'El campo tiene dimensiones de imagen inválidas, debe ser mayor a 600x600px.',
     'distinct' => 'El campo tiene un valor duplicado.',
     'email' => 'El campo debe ser un correo electrónico válido.',
     'exists' => 'El campo seleccionado es inválido.',

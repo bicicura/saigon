@@ -4,14 +4,6 @@
 
 @section('content')
 
-<style>
-    /* @media (min-width: 40em) { .hero-p-w { width: 60%; } } */
-
-    @media(max-width: 800px) {
-        section + section { border-top: none }
-    }
-</style>
-
 <x-desktop-nav-fixed />
 
 <div data-scroll data-scroll-target class="smooth-scroll lg:fixed">

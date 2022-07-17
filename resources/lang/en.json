@@ -51,9 +51,9 @@
     "Otro": "Other",
     "(El número no debe incluír guiones ni puntos. Ej: 302002009)": "(The number can not include dashes or dots. Ex: 302002009)",
 
-    "Futbol": "Football",
-    "Basket": "Basketball",
-    "Tenis": "Tennis",
+    "FUTBOL": "Football",
+    "BASKET": "Basketball",
+    "TENIS": "Tennis",
     "Voley": "Volleyball",
     "Boxeo": "Box",
     "Natacion": "Swimming",
@@ -74,9 +74,9 @@
     "Artes marciales": "Martial Arts",
     "Tiro con arco": "Archery",
 
-    "No hace deportes": "Doesn't apply",
-    "No baila": "Doesn't apply",
-    "No practica musica": "Doesn't apply",
+    "No hace deportes": "No sports",
+    "No baila": "No dancing",
+    "No practica musica": "No music skills",
 
     "Danza": "Dance",
     "Danza aerea": "Aerial dance",

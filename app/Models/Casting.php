@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Fotografia;
+use App\Models\Productora;
 use Illuminate\Support\Facades\Http;
 
 
@@ -39,7 +40,12 @@ class Casting extends Model
         $section = $sections[$this->seccion];
 
         return '/'.app()->getLocale().'/'.$section;
-    } 
+    }
+
+    public function getProductora()
+    {
+        return $this->belongsTo(Productora::class, 'productora_id');
+    }
 
      /**
      * Return the sluggable configuration array for this model.

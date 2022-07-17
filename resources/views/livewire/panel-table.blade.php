@@ -11,10 +11,10 @@
         </a> --}}
         <div class="relative w-full">
             <div class="absolute top-0 bottom-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
+                <svg class="w-5 h-5 fill-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule=""
                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clip-rule="evenodd"></path>
+                        clip-rule=""></path>
                 </svg>
             </div>
             <input wire:model="search"
@@ -24,7 +24,7 @@
             </div>
     </div>
 
-    <div class="relative max-w-xl mx-auto min-w-xl">
+    <div class="relative max-w-2xl mx-auto min-w-xl">
         @if (!$reel)
             <div class="absolute -top-6 -right-8" title="crear nuevo casting">
                 <a href="{{ route('castings.create', app()->getLocale()) }}">
@@ -37,6 +37,11 @@
         <table class="w-full mx-auto bg-gray-200 divide-y rounded-xl h-fit">
             <thead>
               <tr>
+                <th class="w-4 pl-6 text-xs font-bold leading-4 tracking-wider text-left text-gray-500 uppercase">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                      </svg>
+                </th>
                 <th class="px-6 py-3 text-left w-max">
                     <div class="flex items-center">
                         <button class="text-xs font-bold leading-4 tracking-wider text-left text-gray-500 uppercase">NOMBRE</button>
@@ -49,8 +54,11 @@
             <tbody class="bg-white divide-y divide-gray-200">
               @foreach ($castings as $casting)
                 <tr class="">
+                    <td class="flex items-start justify-center py-8 pl-6">
+                        <input wire:click="sticky({{$casting->id}})" {{ $casting->sticky? 'checked' : '' }} type="checkbox" class="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out rounded-full form-checkbox">
+                    </td>
                     <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
-                        <div class="flex items-center">
+                        <div class="flex items-center gap-2">
                             <div class="">
                                 <div class="text-sm font-semibold leading-5 text-gray-900 w-max">
                                     {{$casting->nombre}}
@@ -91,7 +99,7 @@
             </tbody>
             </table>
             <div class="mt-8">
-                {{ $castings->links() }}
+                {{ $castings->onEachSide(0)->links() }}
             </div>
 
             <x-delete-modal />

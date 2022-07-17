@@ -3,6 +3,18 @@
         object-fit: cover;
         object-position: center;
     }
+
+    @media (min-width: 40em) {
+            .splide-height-desktop {
+            height: 80vh;
+            max-height:80vh;
+        }
+
+        .splide-height-desktop video {
+            height: 80vh;
+            max-height:80vh;
+        }
+    }
 </style>
 
 <script>
@@ -53,7 +65,7 @@
         <div class="splide__track rounded-xl">
             <ul class="splide__list">
                 @foreach ($reels as $item)
-                    <li class="splide__slide" x-data=" { click: false } " x-on:click="window.location.href = '/es/player/{{ $item->slug }}'" data-splide-html-video="/reel/{{ $item->reel_video }}" style="min-height:80vh; max-height: 80vh; cursor: pointer;" >
+                    <li class="splide__slide splide-height-desktop" x-data=" { click: false } " x-on:click="window.location.href = '/es/player/{{ $item->slug }}'" data-splide-html-video="/reel/{{ $item->reel_video }}" style="cursor: pointer;" >
                         <img class="object-cover w-full h-full" src="/thumbnails/{{ $item->thumbnail }}">
                     </li>
                 @endforeach

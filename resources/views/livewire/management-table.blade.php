@@ -1,5 +1,5 @@
 <section class="pb-20 space-y-10" x-data=" { deleteModal: @entangle('deleteModal'), perfilNombre: '', perfilId: @entangle('perfilId') } ">
-    <div class="max-w-xl mx-auto min-w-lg">
+    <div class="max-w-2xl mx-auto min-w-lg">
         <div class="relative">
             <div class="absolute top-0 bottom-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="relative max-w-xl mx-auto min-w-xl">
+    <div class="relative max-w-2xl mx-auto min-w-xl">
         <div class="absolute -top-6 -right-8" title="crear nuevo actor">
             <a href="{{ route('dashboard.management-create', app()->getLocale()) }}">
                 <button type="button" class="flex items-center justify-center w-12 h-12 mb-2 mr-2 text-white transition duration-150 ease-in-out bg-green-700 rounded-full hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 hover:-translate-y-2">

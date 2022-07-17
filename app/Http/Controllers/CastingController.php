@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Casting;
 use App\Models\Reel;
+use App\Models\Productora;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 
@@ -17,7 +18,9 @@ class CastingController extends Controller
     }
 
     public function index($lang) {
+
         $seccion = 'Comerciales';
+
         $Reels = Casting::where('reel', 1)->get();
 
         count($Reels) > 0 ? $reelFlag = true : $reelFlag = false;
@@ -33,7 +36,7 @@ class CastingController extends Controller
     }
 
     public function fotografia($lang) {
-        $castings = Casting::with('getFotografias')->where('seccion', 'Fotografía')->get();
+        $castings = Casting::with('getFotografias')->where('seccion', 'Fotografía')->orderBy('created_at', 'DESC')->get();
         return view('fotografia', ['castings' => $castings]);
     }
 
@@ -63,7 +66,7 @@ class CastingController extends Controller
     }
 
     public function edit($lang, $id) {
-        $casting = Casting::find($id);    
+        $casting = Casting::find($id);
         return view('panel.edit', ['casting' => $casting]); 
     }
 
@@ -79,29 +82,24 @@ class CastingController extends Controller
     }
 
     public function player($lang, $slug) {
-        if ($slug === "reel") {
-            $casting = Reel::first();    
-        } else {
-            $casting = Casting::where('slug', $slug)->firstOrFail();
-        }
+        
+        $casting = Casting::where('slug', $slug)->firstOrFail();
+
         return view('casting-player', ['casting' => $casting]);
     }
 
-    // public function test($lang) {
-    //     $thumbnail_width = 640;
+    public function productoras() {
+        return view('panel.productoras');
+    }
 
-    //     $url = 'https://vimeo.com/717912032&width='.$thumbnail_width;
-    //     $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-    //     $thumbnail_url = $response['thumbnail_url'];
+    public function createProductora() {
+        return view('panel.productoras-create', ['type' => 'create', 'label' => 'Crear una nueva Productora']);
+    }
 
-    //     $response = Http::get($thumbnail_url);
-
-    //     $img = $response->body();
-    //     $fileName = 'Test.jpg';
-
-    //     file_put_contents('thumbnails/'.$fileName, $img);
-    //     return $fileName;
-    // }
+    public function editProductora($lang, $id) {
+        $productora = Productora::find($id);
+        return view('panel.productoras-create', ['type' => 'update', 'label' => 'Editar una Productora', 'productora' => $productora]);
+    }
 
     public function showReel() {
         return view('panel.show-reel');

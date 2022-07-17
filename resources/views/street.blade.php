@@ -18,8 +18,8 @@
 
 <section class="px-3.5 lg:pr-16 lg:pl-10 flex flex-col-reverse lg:flex-row justify-between mb-12 lg:mb-0 mt-32 lg:mt-28">
 
-    <div class="mt-4 st-video-container">
-        <video class="object-cover w-full h-full max-w-full rounded-lg" src="/street.webm"  muted playsinline autoplay loop></video>
+    <div class="mt-20 lg:mt-4 st-video-container">
+        <video class="object-cover w-full h-full max-w-full rounded-lg" src="/street.mp4"  muted playsinline autoplay loop></video>
     </div>
 
     <div class="z-20 flex gap-4">
@@ -54,7 +54,6 @@
         }
 
         window.addEventListener('load', setHeroHeight);
-        // window.addEventListener('resize', setHeroHeight, { passive: true });
     }
 </script>
 

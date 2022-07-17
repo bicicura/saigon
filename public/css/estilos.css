@@ -107,6 +107,10 @@ TEXT
         font-size: 1.15rem;
         line-height: 1.2;
     }
+
+    .saigon-bg-black-mobile {
+        background-color: var(--saigon-black);
+    }
 }
 
 .saigon-text-gray {
@@ -295,12 +299,7 @@ MEDIA QUERIES
 
     .w-logo {
         width: 6.2rem;
-    }
-
-    section + section {
-        border-top: 1px solid var(--saigon-black);
-    }
-    
+    }    
     
 }
 
@@ -621,6 +620,17 @@ input[type='radio'] {
     .comerciales-text-container { width: 100%; }
 
     .nav-form-height { height: unset; }
+
+    .saigon-text-400, .saigon-text-300 {
+        font-size: 1.25rem;
+        line-height: 1.15;
+    }
+
+    .casting-gradient-mobile {
+        background: rgb(25,24,24);
+        background: linear-gradient(0deg, rgba(25,24,24,0) 69%, rgba(25,24,25,0.5553571770505077) 100%);
+    }
+
 }
 
 input[type='checkbox'] {
@@ -637,3 +647,4 @@ input[type='checkbox'] {
     width: 1rem;
     height: 1rem;
 }
+

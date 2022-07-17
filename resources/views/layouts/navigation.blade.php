@@ -20,6 +20,9 @@
                     <x-nav-link :href="route('dashboard.reel', app()->getLocale())" :active="request()->routeIs('dashboard.reel')">
                         Reel
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard.productoras', app()->getLocale())" :active="request()->routeIs('dashboard.productoras')">
+                        Productoras
+                    </x-nav-link>
                     <x-nav-link :href="route('dashboard.management', app()->getLocale())" :active="request()->routeIs('dashboard.management')">
                         Management
                     </x-nav-link>

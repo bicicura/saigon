@@ -49,7 +49,7 @@
                     x-intersect.threshold.25="shown = true"
                 >
                     <div class="w-full h-104">
-                        <img class="object-cover object-top w-full h-full rounded-xl" loading="lazy" src="/actors/{{ $actor->getBook[0]->img }}" alt="Fotografía de {{$actor->nombre}}">
+                        <img class="object-cover object-top w-full h-full transition-opacity duration-150 opacity-0 rounded-xl" loading="lazy" src="/actors/{{ $actor->getBook[0]->img }}" alt="Fotografía de {{$actor->nombre}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                     </div>
                     <p class="saigon-text-200" :class="hover? 'underline' : ''">{{ $actor->nombre }}</p>
                     <div class="absolute inset-0 top-0 bottom-0 left-0 right-0 flex items-center justify-center card-play-button">

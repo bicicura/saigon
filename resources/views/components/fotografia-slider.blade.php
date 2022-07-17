@@ -16,7 +16,7 @@
           <ul class="splide__list">
                 @foreach ($casting->getFotografias as $foto)
                 <li class="splide__slide">
-                    <img data-splide-lazy="/fotos/{{ $foto->img }}" loading="lazy" class="object-contain object-center w-full h-full cursor-grab rounded-2xl carusel-img" src="/fotos/{{ $foto->img }}" alt="Fotografía de {{ $casting['nombre'] }} por {{ $casting['director'] }}">
+                    <img data-splide-lazy="/fotos/{{ $foto->img }}" loading="lazy" class="object-cover object-center w-full h-full cursor-grab rounded-2xl carusel-img" src="/fotos/{{ $foto->img }}" alt="Fotografía de {{ $casting['nombre'] }} por {{ $casting['director'] }}">
                 </li>
                 @endforeach
           </ul>
