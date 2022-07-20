@@ -12,6 +12,7 @@ class CreateProductora extends Component
 
     public $nombre;
     public $productoraEditada;
+    public $castings;
 
     protected $rules = 
     [

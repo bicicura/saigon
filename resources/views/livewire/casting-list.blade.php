@@ -1,4 +1,12 @@
-<div class="pb-28">
+<div class="pb-28" 
+     x-data=" { castingCount: $persist(0).using(sessionStorage), scrollToFlag: $persist(false).using(sessionStorage), scrollToId: $persist(0).using(sessionStorage) } " 
+     {{-- evento que emite Livewire para indicar que ya se scroleo para abajo, y cuando se refreshee no hace falta volverlo a hacer, a menos que la flag sea true. --}}
+     @scroll-flag-false.window="scrollToFlag = false;"
+     x-init="flag = scrollToId";
+>
+    <div wire:model="scrollToId" x-init="scrollToFlag? $dispatch('input', scrollToId) : '';"></div>
+    {{-- aca arranca la secuencia de bajar al fondo. Chequeando la data del Storage y seteandola igual al Count de castings que trae la 1era vez. --}}
+    <div wire:model="scrolledCastingCount" x-init="scrollToFlag? $dispatch('input', castingCount) : ''; scrollToFlag? scrollToFlag = false : ''"></div>    
     @for($offset = 0 ; $offset < $count ; $offset += $perPage)
         <livewire:casting-group :perPage="$perPage" :offset="$offset" :seccion="$seccion"  wire:key="casting-group-{{$offset}} "> 
     @endfor

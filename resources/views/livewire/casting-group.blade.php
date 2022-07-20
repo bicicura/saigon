@@ -4,15 +4,15 @@
         <section class="relative pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " x-intersect.threshold.25="shown = true">
             <div wire:click="$emit('castingClicked', {{$item}})" x-data=" { hover: false } " x-on:mouseover="hover = true;" x-on:mouseleave="hover = false;">
                 <div class="hidden gap-2 mb-2 text-saigon-black lg:flex" :class="hover? 'underline' : '' ">
-                    <h2 class="saigon-text-100 lg:line-clamp-1">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
+                    <h2 class="saigon-text-100 lg:line-clamp-1">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item->getProductora->nombre}}</span></h2>
                 </div>
                 <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
-                    <img class="object-cover w-full h-full transition-opacity duration-150 opacity-0 rounded-xl" loading="lazy" src="/fotos/{{$item->getFotografias[0]->img}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
+                    <img class="object-cover w-full h-full transition-opacity duration-150 ease-in-out opacity-0 rounded-xl" loading="lazy" src="/fotos/{{$item->getFotografias[0]->img}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                     <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden casting-gradient-mobile">
                         <div class="">
                             <div class="pt-4 pr-4">
                                 <h2 class="text-3xl uppercse">{{$item['nombre']}}</h2>
-                                <h4 class="">{{$item['director']}} — {{$item['productora']}}</h4>
+                                <h4 class="">{{$item['director']}} — {{$item->getProductora->nombre}}</h4>
                             </div>
                         </div>
                         <div class="w-12 mt-auto mb-6 ml-auto mr-4 lg:hidden">
@@ -31,18 +31,25 @@
         @endforeach
     @else
         @foreach ($castings as $item)
-        <section class="relative pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " x-intersect.threshold.25="shown = true">
+        <section 
+            id="casting-{{$item->id}}"
+            class="relative pt-4 pb-8 text-right transition duration-200 ease-in border-t-2 opacity-0 border-saigon-black text-saigon-white lg:text-left lg:pb-0 lg:pt-0 lg:border-t-0 casting-article" 
+            :class="shown? 'opacity-100 translate-y-0' : 'translate-y-8' " 
+            x-intersect.threshold.25="shown = true"
+            {{-- al clikear un casting, se guarda el offset/count del grupo de castings necesario para cuando regrese el user y el id del casting al que se va a tener q scrollear. --}}
+            x-on:click="castingCount = $refs.sectionCastingCount.value; scrollToId = 'casting-{{$item->id}}'"
+        >
             <a href="{{ route('casting-player', [app()->getLocale(), $item->slug,]) }}" x-data=" { hover: false } " :class="hover? '' : '' " x-on:mouseover="hover = true;" x-on:mouseleave="hover = false;">
                 <div class="hidden gap-2 mb-2 text-saigon-black lg:flex" :class="hover? 'underline' : '' ">
-                    <h2 class="saigon-text-100 lg:line-clamp-1 ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item['productora']}}</span></h2>
+                    <h2 class="saigon-text-100 lg:line-clamp-1 ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item->getProductora->nombre}}</span></h2>
                 </div>
                 <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
-                    <img class="object-cover w-full h-full transition-opacity duration-150 opacity-0 rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
+                    <img class="object-cover w-full h-full transition-opacity duration-150 ease-in-out opacity-0 rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                     <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden casting-gradient-mobile rounded-xl">
                         <div class="">
                             <div class="pt-4 pr-4">
                                 <h2 class="text-3xl uppercase">{{$item['nombre']}}</h2>
-                                <h4 class="">{{$item['director']}} — {{$item['productora']}}</h4>
+                                <h4 class="">{{$item['director']}} — {{$item->getProductora->nombre}}</h4>
                             </div>
                         </div>
                         <div class="w-12 mt-auto mb-6 ml-auto mr-4 lg:hidden">
@@ -58,6 +65,8 @@
                 </div>
             </a>
             <input type="hidden" value="casting-offset-{{$offset}}" wire:ignore>
+            {{-- aqui almaceno el offset/count del grupo de castings. --}}
+            <input x-ref="sectionCastingCount" type="hidden" value="{{$offset}}" wire:ignore>
         </section>
         @endforeach
     @endif

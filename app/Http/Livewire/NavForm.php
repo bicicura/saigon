@@ -48,6 +48,21 @@ class NavForm extends Component
 
     public $talles;
 
+    public $notificacionError = '';
+    public $doneNotification = '';
+
+    public function traducirNotificaciones() {
+        if (app()->getLocale() === 'en') {
+            $this->notificacionError = 'ERROR Check the fields.';
+            $this->doneNotification = 'Form sent successfully!';
+            return;
+        }
+
+        $this->notificacionError = 'ERROR Revise los campos.';
+        $this->doneNotification = 'Formulario enviado exitosamente!';
+    }
+
+
     public function submit() 
     {
         
@@ -55,7 +70,7 @@ class NavForm extends Component
         try {
             $this->validateForm();
         } catch (\Illuminate\Validation\ValidationException $e) {
-            $this->dispatchBrowserEvent('notify', ['message' => 'ERROR Revise los campos.', 'status' => 'error']);
+            $this->dispatchBrowserEvent('notify', ['message' => $this->notificacionError, 'status' => 'error']);
             $this->validateForm();
         }
 
@@ -98,6 +113,10 @@ class NavForm extends Component
 
         // notifico al user que se guardó correctamente su petición
         $this->savedNotification();
+
+        // reseteo los inputs del form
+        $this->resetExcept(['nacionalidades', 'talles_calzado', 'talles_pantalon', 'talles_remera', 'talentos_deportes', 'talentos_music', 'talentos_dance']); 
+
     }   
 
     public function updatedCara() {
@@ -190,12 +209,21 @@ class NavForm extends Component
 
     public function storeSkills($id) {
         foreach ($this->skills as $key => $value) {
-            foreach ($value as $skill) {
+            if (empty($value)) {
                 $Skill = new Skill;
                 $Skill->consulta_id = $id;
-                $Skill->val = $skill;
+                // este val es el que representa que no hace la actividad. Se encuentra en params.json
+                $Skill->val = 1111;
                 $Skill->skill_tipo = $key;
                 $Skill->save();
+            } else {
+                foreach ($value as $skill) {
+                    $Skill = new Skill;
+                    $Skill->consulta_id = $id;
+                    $Skill->val = $skill;
+                    $Skill->skill_tipo = $key;
+                    $Skill->save();
+                }
             }
         }
     }
@@ -222,7 +250,7 @@ class NavForm extends Component
         //cierro el nav form
         $this->dispatchBrowserEvent('close-form');
         // muestro notificacion de enviado
-        $this->dispatchBrowserEvent('notify', ['message' => 'Formulario enviado exitosamente', 'status' => 'success']);
+        $this->dispatchBrowserEvent('notify', ['message' => $this->doneNotification, 'status' => 'success']);
 
     }
 
@@ -257,6 +285,7 @@ class NavForm extends Component
     }
 
     public function mount() {
+        $this->traducirNotificaciones();
         $this->getNacionalidades();
         $this->getTalentos();
         $this->getTalles();

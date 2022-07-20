@@ -12,9 +12,18 @@ class CastingGroup extends Component
     public $offset;
     public $seccion;
 
+    public function querySeccion() {
+        
+        $this->seccion === 'Ficción'? $query = Casting::with(['getProductora', 'getFotografias']) : $query = Casting::with(['getProductora']) ;
+
+        $castings = $query->where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->orderBy('id', 'desc')->get(['id', 'nombre', 'director', 'productora_id', 'thumbnail', 'slug']);
+
+        return $castings;
+    }
+
     public function render()
     {
-        $castings = Casting::where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->orderBy('created_at', 'desc')->get(['id', 'nombre', 'director', 'productora', 'thumbnail', 'slug']);
+        $castings = $this->querySeccion();
         return view('livewire.casting-group', ['castings' => $castings]);
     }
 }

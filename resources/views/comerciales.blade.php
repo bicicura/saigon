@@ -22,15 +22,15 @@
                 <br>
                 <div>
                     <p class="uppercase">{{__('Contacto')}}:</p>
-                    <p><span class="block lg:inline">Andi di Napoli</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">andi@saigonbuenosaires.com</span></p>
-                    <p><span class="block lg:inline">Javier Daniel</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">javier@saigonbuenosaires.com</span></p>
+                    <p><span class="block lg:inline">Andi di Napoli</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline hover:underline"><a href="mailto:andi@saigonbuenosaires.com">andi@saigonbuenosaires.com</a></span></p>
+                    <p><span class="block lg:inline">Javier Daniel</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline hover:underline"><a href="mailto:javier@saigonbuenosaires.com">javier@saigonbuenosaires.com</a></span></p>
                 </div>
             </div>
         
         </div>
     
     </section>
-    
+
     <section class="px-3.5 lg:pr-16 lg:pl-10 lg:pt-8 lg:mt-0">
         @livewire('casting-list', ['seccion' => $seccion])
     </section>

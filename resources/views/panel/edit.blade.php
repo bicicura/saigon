@@ -11,12 +11,14 @@
             'casting' => $casting,
             'seccion' => $casting['seccion'],
             'nombre' => $casting['nombre'],
-            'productora' => $casting['productora'],
+            // 'productora' => $casting['productora'],
             'director' => $casting['director'],
             'categoria' => $casting['categoria'],
             'video_url' => $casting['url'],
             'avatarActual' => $casting['thumbnail'],
             'reel' => $casting['reel'],
             'reelActual' => $casting['reel_video'],
+            'productora_id' => $casting['productora_id'],
+            'productoras' => $productoras
         ]);
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Casting;
 
 class Productora extends Model
 {
@@ -17,10 +18,11 @@ class Productora extends Model
     public function getCastings() 
     {
         return $this->hasMany(
-            Castings::class,
+            Casting::class,
             'productora_id',
             'id'
-        );
+        )->select('id', 'nombre', 'director')->get();
     }
 
+    // ->select(['id', 'nombre'])
 }

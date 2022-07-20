@@ -2,12 +2,12 @@
     <div
         x-cloak
         x-data="{ show: false, message: '', status: ''}"
-        x-on:notify.window="show = true; message = $event.detail.message; status = $event.detail.status; setTimeout(() => { show = false }, 5000)"
+        x-on:notify.window="show = true; message = $event.detail.message; status = $event.detail.status; setTimeout(() => { show = false }, 7000)"
         x-show="show"
         x-description="Notification, show/hide based on alert state."
         x-transition:enter.duration.300ms
         x-transition:leave.duration.200ms
-        :class="status === 'success'? 'bg-white text-black' : 'bg-red-300'"
+        :class="status === 'success'? 'bg-green-300 text-black' : 'bg-red-300'"
         class="w-full max-w-sm mr-10 border border-black shadow-lg pointer-events-auto lg:border-2"
     >
         <div class="overflow-hidden rounded-lg shadow-md">
@@ -16,15 +16,13 @@
                     <div class="flex-shrink-0">
 
 
-                        <svg  x-show="status == 'error'" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 28 28"><path d="M7 4c-.25587 0-.51203.09747-.70703.29297l-2 2c-.391.391-.391 1.02406 0 1.41406L11.58594 15l-7.29297 7.29297c-.391.391-.391 1.02406 0 1.41406l2 2c.391.391 1.02406.391 1.41406 0L15 18.41406l7.29297 7.29297c.39.391 1.02406.391 1.41406 0l2-2c.391-.391.391-1.02406 0-1.41406L18.41406 15l7.29297-7.29297c.391-.39.391-1.02406 0-1.41406l-2-2c-.391-.391-1.02406-.391-1.41406 0L15 11.58594 7.70703 4.29297C7.51153 4.09747 7.25588 4 7 4z"/></svg>
+                        <svg x-show="status == 'error'" class="w-6 h-6" viewBox="0 0 48 48"><path d="M24 34q.7 0 1.175-.475.475-.475.475-1.175 0-.7-.475-1.175Q24.7 30.7 24 30.7q-.7 0-1.175.475-.475.475-.475 1.175 0 .7.475 1.175Q23.3 34 24 34Zm-1.35-7.65h3V13.7h-3ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"/></svg>
+                        
+                        <svg x-show="status == 'success'" class="w-6 h-6" viewBox="0 0 48 48"><path d="M21.05 33.1 35.2 18.95l-2.3-2.25-11.85 11.85-6-6-2.25 2.25ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 24q0-4.15 1.575-7.8 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24 4q4.15 0 7.8 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm0-3q7.1 0 12.05-4.975Q41 31.05 41 24q0-7.1-4.95-12.05Q31.1 7 24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24 41Zm0-17Z"/></svg>
 
-                        <svg x-show="status == 'success'"
-                        class="w-6 h-6" fill="none" viewBox="0 0 24 24">  
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke="#FFF" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
                     </div>
-                    <div class="ml-3 w-0 flex-1 pt-0.5">
-                        <p x-text="message" class="text-sm tracking-wide ff-helvetica-400"
+                    <div class="flex-1 w-0 ml-3">
+                        <p x-text="message" class="text-base saigon-font-semibold"
                         :class="status === 'wishlist'? 'text-white' : 'text-black'"
                         ></p>
                     </div>

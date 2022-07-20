@@ -4,11 +4,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-
-@livewire('casting-carusel', ['seccion' => $seccion])
-
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+@livewire('casting-carusel')
 
 <x-desktop-nav-fixed />
 
@@ -40,13 +36,12 @@
     }
 
     .splide__arrow--prev {
-    left: 0!important
-}
+        left: 0!important
+    }
 
-.splide__arrow--next {
-    right: 0!important
-}
-
+    .splide__arrow--next {
+        right: 0!important
+    }
 
     @media (min-width: 40em) { 
         
@@ -85,7 +80,7 @@
                 </div>
                 <div>
                     <p class="uppercase">{{__('Contacto')}}:</p>
-                    <p><span class="block lg:inline">Pablo Lapa</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">lapa@saigonbuenosaires.com</span></p>
+                    <p><span class="block lg:inline">Pablo Lapa</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline hover:underline"><a href="mailto:lapa@saigonbuenosaires.com">lapa@saigonbuenosaires.com</a></span>
                 </div>
             </div>
         </div>
@@ -99,9 +94,8 @@
 </div>
 
 <script defer>
-    window.addEventListener('build', function (e) { 
-        console.log('se disparo')
-        var splide = new Splide( '.splide', {
+    window.addEventListener('build', function (e) {
+        let splide = new Splide( '.splide-popup', {
             perPage: 1,
             arrows: true,
             pagination: false,

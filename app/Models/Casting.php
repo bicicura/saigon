@@ -44,7 +44,7 @@ class Casting extends Model
 
     public function getProductora()
     {
-        return $this->belongsTo(Productora::class, 'productora_id');
+        return $this->belongsTo(Productora::class, 'productora_id')->select(['id', 'nombre']);
     }
 
      /**

@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Productora;
+use App\Models\Casting;
 
 class ProductorasTable extends Component
 {
@@ -22,12 +23,20 @@ class ProductorasTable extends Component
     public function deleteProfile() {
         // busco el perfil en db.
         $perfil = Productora::find($this->perfilId);
+
+        $casting = Casting::where('productora_id', $this->perfilId)->first();
+
+        if ($casting !== null) {
+            $this->dispatchBrowserEvent('notify', ['message' => '❌ ERROR. Hay Casting/s que pertenecen a esta Productora.', 'status' => 'error']);
+            return;
+        }
+
         // borro el registro de la tabla de perfiles
         $perfil->delete();
         // oculto el modal en el front
         $this->deleteModal = false;
         // emito la notificación de perfil guardado.
-        $this->dispatchBrowserEvent('notify', ['message' => '🗑️ Productora eliminada', 'status' => 'error']);
+        $this->dispatchBrowserEvent('notify', ['message' => '🗑️ Productora eliminada exitosamente!', 'status' => 'success']);
         // refresco el componente.
         $this->emit('refreshTable');
     }
@@ -38,7 +47,8 @@ class ProductorasTable extends Component
         return view('livewire.productoras-table', [
             'productoras' => Productora::
             where('nombre', 'like', '%'.$this->search.'%')
-            ->paginate(5)
+            ->orderBy('created_at', "DESC")
+            ->paginate(6)
         ]);
     }
 

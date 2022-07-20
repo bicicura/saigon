@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Casting;
 
 class CastingCarusel extends Component
 {
@@ -14,22 +13,22 @@ class CastingCarusel extends Component
     protected $listeners = ['castingClicked' => 'assignCastingValue'];
 
     public function assignCastingValue($Casting) {
-        $Casting = Casting::find($Casting['id']);
+        $this->CastingSelected = $Casting;
         $this->open = true;
         $this->dispatchBrowserEvent('build');
-        return $this->CastingSelected = $Casting;
+        return $this->CastingSelected;
     }
 
     public function close() {
         return $this->open = false;
     }
 
-    public function hydrate()
-{
-    if ($this->open) {
-        return $this->dispatchBrowserEvent('build');
+    public function updatedOpen()
+    {
+        if ($this->open) {
+            return $this->dispatchBrowserEvent('build');
+        }
     }
-}
 
     public function updated() {
         

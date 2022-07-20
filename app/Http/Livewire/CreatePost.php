@@ -14,16 +14,19 @@ use Image;
 class CreatePost extends Component
 {
 
+    
     use WithFileUploads;
 
     public $type;
+    public $productoras;
 
     public $thumbnailProvider;
 
     public $seccion = '';
     public $newThumbnail;
     public $nombre;
-    public $productora;
+    // public $productora;
+    public $productora_id = "";
     public $director;
     public $categoria = '';
     public $video_url;
@@ -36,15 +39,14 @@ class CreatePost extends Component
     public $casting;
     public $avatarActual;
     public $reelActual;
-
+    
     public function formValidation() {
         
         $inputsToValidate = [
             'seccion' => 'required',
             'nombre' => 'required',
             'director' => 'required',
-            'productora' => 'required',
-            // 'categoria' => 'required',
+            'productora_id' => 'required',
         ];
 
         // si el user esta editando un perfil || si el user esta creando un nuevo perfil.
@@ -66,9 +68,9 @@ class CreatePost extends Component
         
         $inputsToValidate = [
             'nombre' => 'required',
-            'productora' => 'required',
+            // 'productora' => 'required',
+            'productora_id' => 'required',
             'director' => 'required',
-            // 'categoria' => 'required',
         ];
 
         $this->validate($inputsToValidate);
@@ -226,7 +228,8 @@ class CreatePost extends Component
         // por si cambió el nombre del casting.
         $Casting->slug = null;
         $Casting->director = $this->director;
-        $Casting->productora = $this->productora;
+        // $Casting->productora = $this->productora;
+        $Casting->productora_id = $this->productora_id;
         $Casting->thumbnail = $avatarFileName;
         $Casting->categoria = $this->categoria;
         $Casting->url = $this->video_url;

@@ -70,7 +70,7 @@
             </tbody>
             </table>
             <div class="mt-8">
-                {{ $actors->links() }}
+                {{ $actors->onEachSide(0)->links() }}
             </div>
 
             <x-delete-modal />

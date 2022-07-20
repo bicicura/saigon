@@ -52,6 +52,7 @@ class ManagementTable extends Component
         return view('livewire.management-table', [
             'actors' => Actor::
             where('nombre', 'like', '%'.$this->search.'%')
+            ->orderBy('created_at', 'DESC')
             ->paginate(5)
         ]);
     }

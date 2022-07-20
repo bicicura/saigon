@@ -29,6 +29,9 @@
                     <x-nav-link :href="route('dashboard.inbox', app()->getLocale())" :active="request()->routeIs('dashboard.inbox')">
                         Inbox
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard.newsletter', app()->getLocale())" :active="request()->routeIs('dashboard.newsletter')">
+                        Newsletter
+                    </x-nav-link>
                 </div>
             </div>
 

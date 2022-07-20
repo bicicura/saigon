@@ -40,9 +40,9 @@
         <x-nav.links />
 
         <div :class="openForm? 'opacity-0 pointer-events-none' : 'opacity-100' " class="mt-auto text-right lg:text-left lg:mt-0 saigon-transition-opacity lg:space-y-1 lg:pb-8">
-            <p>Bonpland 2362, Palermo, Buenos Aires.</p>
-            <p>4776-4070</p>
-            <p>info@saigonbuenosaires.com</p>
+            <p class="hover:underline"><a href="https://goo.gl/maps/A4zVVJKth3oGkJx37" target="_blank">Bonpland 2362, Palermo, Buenos Aires.</a></p>
+            <p>+54 11 4776·4070</p>
+            <p class="hover:underline"><a href="mailto:info@saigonbuenosaires.com">info@saigonbuenosaires.com</a></p>
             <p>saigonbuenosaires.com</p>
         </div>
     </div>

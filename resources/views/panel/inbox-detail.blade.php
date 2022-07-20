@@ -87,11 +87,11 @@
                     
                                 <div class="relative overflow-hidden text-gray-500 transition-all duration-700 max-h-0" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
                                     <div>
-                                        <ul class="border border-gray-300 rounded-lg">
+                                        {{-- <ul class="border border-gray-300 rounded-lg">
                                             @foreach ($interesado->getSkills as $skill)
                                                 <li>{{$skill->skill_nombre}}</li>
                                             @endforeach
-                                        </ul>
+                                        </ul> --}}
                                     </div>
                                 </div>
                             </li>
@@ -132,10 +132,10 @@
             <h3 class="text-2xl font-bold leading-7 text-black">Vista previa de imágenes</h3>
             <div class="flex justify-between">
                 <div class="w-96">
-                    <img class="object-cover object-center w-full h-full max-w-full rounded-lg" src="/perfiles/{{$interesado->cara}}" alt="">
+                    <img class="object-cover object-center w-full h-full max-w-full rounded-lg" src="consultas/{{$interesado->cara}}" alt="">
                 </div>
                 <div class="w-96">
-                    <img class="object-cover object-center w-full h-full max-w-full rounded-lg" src="/perfiles/{{$interesado->cuerpo}}" alt="">
+                    <img class="object-cover object-center w-full h-full max-w-full rounded-lg" src="consultas/{{$interesado->cuerpo}}" alt="">
                 </div>
             </div>
         </div>

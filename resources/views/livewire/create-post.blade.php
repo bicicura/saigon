@@ -46,7 +46,9 @@
 
             <x-input.text-input :inputContent="['label' => 'Nombre', 'model' => 'nombre', 'placeholder' => 'Nombre']"/>
 
-            <x-input.text-input :inputContent="['label' => 'Productora', 'model' => 'productora', 'placeholder' => 'Productora']"/>
+            {{-- <x-input.text-input :inputContent="['label' => 'Productora', 'model' => 'productora', 'placeholder' => 'Productora']"/> --}}
+
+            <x-input.select-productora :inputContent="['label' => 'Productora', 'model' => 'productora_id', 'placeholder' => 'Seleccione una productora']" :productoras="$productoras" />
 
             <x-input.text-input :inputContent="['label' => 'Director', 'model' => 'director', 'placeholder' => 'Director/es']"/>
 

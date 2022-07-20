@@ -143,6 +143,12 @@ TEXT
     font-style: normal;
 }
 
+.saigon-font-semibold {
+    font-family: degular, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 /* 
 ==========
 FILL (SVG)
@@ -626,11 +632,11 @@ input[type='radio'] {
         line-height: 1.15;
     }
 
-    .casting-gradient-mobile {
-        background: rgb(25,24,24);
-        background: linear-gradient(0deg, rgba(25,24,24,0) 69%, rgba(25,24,25,0.5553571770505077) 100%);
-    }
+}
 
+.casting-gradient-mobile {
+    background: rgb(25,24,24);
+    background: linear-gradient(0deg, rgba(25,24,24,0) 69%, rgba(25,24,25,0.5553571770505077) 100%);
 }
 
 input[type='checkbox'] {

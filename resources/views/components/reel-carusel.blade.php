@@ -65,7 +65,15 @@
         <div class="splide__track rounded-xl">
             <ul class="splide__list">
                 @foreach ($reels as $item)
-                    <li class="splide__slide splide-height-desktop" x-data=" { click: false } " x-on:click="window.location.href = '/es/player/{{ $item->slug }}'" data-splide-html-video="/reel/{{ $item->reel_video }}" style="cursor: pointer;" >
+                    <li class="relative splide__slide splide-height-desktop" x-data=" { click: false } " x-on:click="window.location.href = '/{{app()->getLocale()}}/player/{{ $item->slug }}'" data-splide-html-video="/reel/{{ $item->reel_video }}" style="cursor: pointer;" >
+                        <div class="absolute top-0 left-0 right-0 z-50 flex flex-col justify-between w-full h-full pl-8 casting-gradient-mobile rounded-xl">
+                            <div class="">
+                                <div class="pt-4 pr-4">
+                                    <h2 class="text-3xl uppercase">{{$item['nombre']}}</h2>
+                                    <h4 class="">{{$item['director']}} — {{$item['productora']}}</h4>
+                                </div>
+                            </div>
+                        </div>
                         <img class="object-cover w-full h-full" src="/thumbnails/{{ $item->thumbnail }}">
                     </li>
                 @endforeach

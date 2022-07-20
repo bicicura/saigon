@@ -14,6 +14,16 @@ class CastingList extends Component
     public $seccion;
     public $castingsCount;
 
+    public $scrollToId;
+    public $scrolledCastingCount;
+
+    public function updatedscrolledCastingCount() {
+        $this->count = $this->scrolledCastingCount + 9;
+        $this->dispatchBrowserEvent('updateLocoScroll');
+        $this->dispatchBrowserEvent('goBottom', ['scrollToId' => $this->scrollToId]);
+        $this->dispatchBrowserEvent('scroll-flag-false');
+    }
+
     public function stopInfiniteScrolling() {
         $this->noMoreOffset = true;
     }

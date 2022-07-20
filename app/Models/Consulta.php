@@ -22,7 +22,7 @@ class Consulta extends Model
             Skill::class,
             'profiles_id',
             'id'
-        );
+        )->get();
     }
 
     public function getAge() {

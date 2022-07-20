@@ -1,9 +1,9 @@
 <form wire:submit.prevent="submit" class="w-full pb-12 space-y-6 text-xl text-white saigon-text-200 lg:pb-0 lg:space-y-0 lg:flex lg:justify-between lg:flex-col saigon-font-thin px-7 lg:px-0 lg:mt-12 lg:pr-16 lg:w-full nav-form-height">
 
-    <div class="absolute hidden -top-12 right-24 lg:block">
-        <button type="button" class="relative p-4 focus:outline-none" @click="open = false; openForm = false; openBurger = false; $dispatch('close-skills'); $dispatch('skills-close-flag');">
+    <div class="absolute hidden -top-12 right-16 lg:block">
+        <button type="button" class="relative p-6 focus:outline-none" @click="open = false; openForm = false; openBurger = false; $dispatch('close-skills'); $dispatch('skills-close-flag');">
             <span class="sr-only">Cerrar formulario de contacto</span>
-            <div class="absolute block w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+            <div class="absolute block w-5 transform -translate-x-full -translate-y-full left-1/2 top-1/2">
                 <span aria-hidden="true" class="block absolute h-0.5 w-12 bg-current transform transition duration-500 ease-in-out rotate-45"></span>
                 <span aria-hidden="true" class="block absolute  h-0.5 w-12 bg-current transform  transition duration-500 ease-in-out -rotate-45"></span>
             </div>
@@ -21,12 +21,12 @@
         
         <div class="lg:w-full h-fit">
             <div class="relative flex items-center gap-4 mb-2">
-                <label class="ml-auto uppercase cursor-pointer lg:ml-0" for="nacionalidad">Nacionalidad</label>
+                <label class="ml-auto uppercase cursor-pointer lg:ml-0" for="nacionalidad">{{__('Nacionalidad')}}</label>
                 @error('nacionalidad') <div class="absolute right-0 mt-1 text-sm font-bold text-red-500 lg:right-auto lg:left-0 lg:mt-0 -bottom-4">{{ $message }}</div> @enderror
             </div>
             <div class="relative">
                 <select wire:model="nacionalidad" class="w-full uppercase bg-transparent border-none border-saigon-white text-saigon-white focus:ring-0">
-                    <option class="" value="" disabled>Seleciona una Nacionalidad</option>
+                    <option class="" value="" disabled>{{__('Seleccione una Nacionalidad')}}</option>
                     @foreach ($nacionalidades as $item)
                     <option class="text-saigon-black" value="{{$item->val}}">{{{$item->nombre}}}</option>
                     @endforeach

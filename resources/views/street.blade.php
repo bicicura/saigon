@@ -34,7 +34,7 @@
                 <br>
                 <div>
                     <p class="uppercase">{{__('Contacto')}}:</p>
-                    <p><span class="block lg:inline">Josefina Cúneo</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">jose@streetagency.xyz</span></p>
+                    <p><span class="block lg:inline">Josefina Cúneo</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline hover:underline"><a href="mailto:jose@streetagency.xyz">jose@streetagency.xyz</a></span></p>
                 </div>
             </div>
         </div>

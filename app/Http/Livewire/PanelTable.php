@@ -77,7 +77,7 @@ class PanelTable extends Component
     }
 
     public function query() {
-        $query = Casting::where('nombre', 'like', '%'.$this->search.'%');
+        $query = Casting::with('getProductora')->where('nombre', 'like', '%'.$this->search.'%');
 
         if ($this->reel) {
             $query->where('reel', 1);

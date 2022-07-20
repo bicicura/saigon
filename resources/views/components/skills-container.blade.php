@@ -29,7 +29,7 @@
                     <button
                     x-on:click="$dispatch('skills-flag'); open = false"
                     type="button"
-                    class="w-full p-4 py-4 mt-3 text-black transition-colors border-2 border-white lg:py-2 lg:max-w-xs lg:mt-2 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">Listo</button>
+                    class="w-full p-4 py-4 mt-3 text-black transition-colors border-2 border-white lg:py-2 lg:max-w-xs lg:mt-2 saigon-bg-white lg:text-sm lg:block lg:w-full h-fit hover:bg-transparent hover:text-white">{{__('Listo')}}</button>
                 </div>
             </div>
         </div>

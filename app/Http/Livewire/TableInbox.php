@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Profile;
+use App\Models\Consulta;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +21,7 @@ class TableInbox extends Component
 
     public function deleteProfile() {
         // busco el perfil en db.
-        $perfil = Profile::find($this->perfilId);
+        $perfil = Consulta::find($this->perfilId);
         // borro las imgs del disco
         $this->deleteAvatar($perfil['cara'], $perfil['cuerpo']);
         // borro el registro de la tabla de perfiles
@@ -35,15 +35,15 @@ class TableInbox extends Component
     }
 
     public function deleteAvatar($cara, $cuerpo) {
-        Storage::disk('perfiles')->delete($cara);
-        Storage::disk('perfiles')->delete($cuerpo);
+        Storage::disk('consultas')->delete($cara);
+        Storage::disk('consultas')->delete($cuerpo);
     }
 
 
     public function render()
     {
         return view('livewire.table-inbox', [
-            'interesados' => Profile::
+            'interesados' => Consulta::
             where('nombre', 'like', '%'.$this->search.'%')
             ->paginate(5)
         ]);

@@ -82,8 +82,8 @@
                         </span>
                     </td>
                     <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
-                        <span class="inline-flex text-xs font-semibold leading-5 text-gray-500 rounded-full">
-                            {{$casting->productora}}
+                        <span class="inline-flex text-xs font-semibold leading-5 text-gray-500 rounded-full line-clamp-1">
+                            {{$casting->getProductora->nombre}}
                         </span>
                     </td>
                     <td class="flex items-center justify-end gap-6 px-6 py-6">

@@ -58,7 +58,7 @@
             </tbody>
             </table>
             <div class="mt-8">
-                {{ $productoras->links() }}
+                {{ $productoras->onEachSide(0)->links() }}
             </div>
 
             <x-delete-modal />

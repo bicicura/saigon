@@ -28,4 +28,25 @@
             </div>
         </div>
     </form>
+
+    @if ($type === "update")
+        <div class="mt-8 border-t border-gray-200">
+            <p class="mt-8 mb-4">Listado de Castings de la productora: <span class="font-bold">{{$nombre}}</span> ({{$castings->count()}})</p>
+            <ul class="flex flex-col list-disc list-inside divide-y-2 justify-baseline w-max">
+                @if ($castings->count() === 0)
+                    <p class="italic">Ups! No hay Castings cargados para esta Productora.</p>
+                @else
+                    @foreach ($castings as $casting)
+                    <li class="py-2 hover:underline">
+                        <a href="{{ route('castings.edit', [app()->getLocale(), $casting->id]) }}">
+                            <span>{{ $casting->nombre }}</span>
+                            —
+                            <span>{{ $casting->director }}</span>
+                        </a>
+                    </li>
+                    @endforeach
+                @endif
+            </ul>
+        </div>
+    @endif    
 </div>

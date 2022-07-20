@@ -30,7 +30,7 @@
                 <br>
                 <div>
                     <p class="uppercase">{{__('Contacto')}}:</p>
-                    <p><span class="block lg:inline">Julian Krakov</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline">julian@saigonbuenosaires.com</span></p>
+                    <p><span class="block lg:inline">Julian Krakov</span><span class="hidden lg:inline lg:mx-1">  |  </span><span class="block lg:inline hover:underline"><a href="mailto:julian@saigonbuenosaires.com">julian@saigonbuenosaires.com</a></span></p>
                 </div>
             </div>
         </div>

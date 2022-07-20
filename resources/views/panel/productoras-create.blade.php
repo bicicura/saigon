@@ -8,7 +8,7 @@
     @if ($type === "create")
         <livewire:create-productora :type="$type" />
     @else
-        <livewire:create-productora :type="$type" :nombre="$productora->nombre" :productoraEditada="$productora" />
+        <livewire:create-productora :type="$type" :nombre="$productora->nombre" :productoraEditada="$productora" :castings="$productora->getCastings()" />
     @endif
     
 </x-app-layout>

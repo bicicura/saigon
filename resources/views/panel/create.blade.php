@@ -5,5 +5,5 @@
         </h2>
     </x-slot>
 
-    <livewire:create-post :type="'save'" />
+    <livewire:create-post :type="'save'" :productoras="$productoras" />
 </x-app-layout>

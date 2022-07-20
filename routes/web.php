@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Casting;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\CastingController;
 use App\Http\Controllers\ActorController;
+use App\Http\Controllers\NewsletterController;
 
 // Para redirigir a un lenguage predeterminado.
 Route::redirect('/', '/es');
@@ -26,6 +27,8 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/management', [ActorController::class, 'index'])->name('management');
     Route::get('/management/{slug}', [ActorController::class, 'detail'])->name('management.detail');
+
+    Route::get('/desuscribir', [NewsletterController::class, 'desuscribir'])->middleware(['auth'])->name('desuscribir');
 
     // Route::get('/', [CastingController::class, 'api'])->name('api');
 
@@ -52,8 +55,11 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/dashboard/productoras/edit/{id}', [CastingController::class, 'editProductora'])->middleware(['auth'])->name('dashboard.productoras-edit');
 
     // Inbox
-    Route::get('/dashboard/inbox', [ProfileController::class, 'showAll'])->middleware(['auth'])->name('dashboard.inbox');
-    Route::get('/dashboard/inbox/{id}', [ProfileController::class, 'show'])->middleware(['auth'])->name('dashboard.inbox-detail');
+    Route::get('/dashboard/inbox', [ConsultaController::class, 'showAll'])->middleware(['auth'])->name('dashboard.inbox');
+    Route::get('/dashboard/inbox/{id}', [ConsultaController::class, 'show'])->middleware(['auth'])->name('dashboard.inbox-detail');
+
+    // Newsletter
+    Route::get('/dashboard/newsletter', [NewsletterController::class, 'index'])->middleware(['auth'])->name('dashboard.newsletter');
 
     // Management
     Route::get('dashboard/management', [ActorController::class, 'showAll'])->middleware(['auth'])->name('dashboard.management');
@@ -65,4 +71,4 @@ Route::group(['prefix' => '{language}'], function () {
 
 });
 
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';;

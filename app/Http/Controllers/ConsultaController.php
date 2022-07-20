@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Profile;
-use Carbon\Carbon;
+use App\Models\Consulta;
 
-class ProfileController extends Controller
+class ConsultaController extends Controller
 {
 
     public function showAll() {
@@ -15,7 +14,7 @@ class ProfileController extends Controller
 
     public function show($language, $id)
     {
-        $interesado = Profile::find($id);
+        $interesado = Consulta::find($id);
         return view('panel.inbox-detail', ['interesado' => $interesado]); 
     }
 

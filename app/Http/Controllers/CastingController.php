@@ -25,7 +25,7 @@ class CastingController extends Controller
 
         count($Reels) > 0 ? $reelFlag = true : $reelFlag = false;
 
-        $castings = Casting::where('seccion', ['Comerciales', 'Mini'])->orderBy('id', 'DESC')->limit(9)->get();
+        $castings = Casting::with('getProductora')->where('seccion', 'Comerciales')->orderBy('id', 'DESC')->limit(9)->get();
 
         return view('index', ['castings' => $castings, 'reelFlag' => $reelFlag, 'Reels' => $Reels]);
     }
@@ -36,7 +36,7 @@ class CastingController extends Controller
     }
 
     public function fotografia($lang) {
-        $castings = Casting::with('getFotografias')->where('seccion', 'Fotografía')->orderBy('created_at', 'DESC')->get();
+        $castings = Casting::with(['getFotografias', 'getProductora'])->where('seccion', 'Fotografía')->orderBy('created_at', 'DESC')->get();
         return view('fotografia', ['castings' => $castings]);
     }
 
@@ -62,12 +62,16 @@ class CastingController extends Controller
 
     public function create()
     {
-        return view('panel.create'); 
+        $productoras = Productora::orderBy('nombre', 'ASC')->get();
+
+        return view('panel.create', ['productoras' => $productoras]); 
     }
 
     public function edit($lang, $id) {
         $casting = Casting::find($id);
-        return view('panel.edit', ['casting' => $casting]); 
+        $productoras = Productora::orderBy('nombre', 'ASC')->get();
+
+        return view('panel.edit', ['casting' => $casting, 'productoras' => $productoras]); 
     }
 
     public function reel($lang) {
