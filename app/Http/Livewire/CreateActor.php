@@ -25,12 +25,12 @@ class CreateActor extends Component
     public $cv;
     public $videos;
     public $bio;
-    public $newThumbnail;
+    // public $newThumbnail;
     public $book = [];
 
     // para cuando editas un casting.
     public $actor;
-    public $avatarActual;
+    // public $avatarActual;
 
     protected $rules = 
     [
@@ -58,23 +58,23 @@ class CreateActor extends Component
         return $file->filename.'.jpg'; 
     }
     
-    public function storeThumbnail() {
+    // public function storeThumbnail() {
 
-        $file = Image::make($this->newThumbnail);
-        // hago q mantenga su orientacion original
-        $file->orientate()
-        // la convertimos a jpg y reducimos la calidad al 80
-        ->encode('jpg', 80)
-        // la resizeamos, manteniendo el aspect ratio y prevenir que se amplíe.
-        ->resize(600, 800, function($contraint) {
-            $contraint->aspectRatio();
-            $contraint->upsize();
-        });
-        //guardamos en directorio
-        $file->save(storage_path('app/actors/'.$file->filename.'.jpg'));
+    //     $file = Image::make($this->newThumbnail);
+    //     // hago q mantenga su orientacion original
+    //     $file->orientate()
+    //     // la convertimos a jpg y reducimos la calidad al 80
+    //     ->encode('jpg', 80)
+    //     // la resizeamos, manteniendo el aspect ratio y prevenir que se amplíe.
+    //     ->resize(600, 800, function($contraint) {
+    //         $contraint->aspectRatio();
+    //         $contraint->upsize();
+    //     });
+    //     //guardamos en directorio
+    //     $file->save(storage_path('app/actors/'.$file->filename.'.jpg'));
 
-        return $file->filename.'.jpg';
-    }
+    //     return $file->filename.'.jpg';
+    // }
 
     public function saveBook($ActorId) {
         $n = 0;
@@ -106,13 +106,13 @@ class CreateActor extends Component
         }
 
         // fileName
-        $fileName = $this->saveFile($this->newThumbnail);
+        // $fileName = $this->saveFile($this->newThumbnail);
 
         // Crear instancia de Actor
         $Actor = new Actor;
 
         // Asigno al objeto los atributos del form
-        $ActorId = $this->assignActorValues($Actor, $fileName);
+        $ActorId = $this->assignActorValues($Actor);
 
         // Guardo el book
         $this->saveBook($ActorId);
@@ -128,18 +128,24 @@ class CreateActor extends Component
 
     public function update() {
 
-        // $this->executeValidation();
-
-        $avatarFileName = $this->avatarActual;
-        // si el user actualizo el avatar, se guarda en localmente y se borra el anterior.
-        if ($this->newThumbnail) {
-            // guardo el avatar nuevo en storage
-            $avatarFileName = $this->saveFile($this->newThumbnail);
-            // borro el viejo
-            Storage::disk('actors')->delete($this->avatarActual);
+        // validar
+        try {
+            $this->validate();
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->dispatchBrowserEvent('notify', ['message' => '❌ ERROR Revise los campos.', 'status' => 'error']);
+            $this->validate();
         }
 
-        $this->assignActorValues($this->actor, $avatarFileName);
+        // $avatarFileName = $this->avatarActual;
+        // si el user actualizo el avatar, se guarda en localmente y se borra el anterior.
+        // if ($this->newThumbnail) {
+        //     // guardo el avatar nuevo en storage
+        //     $avatarFileName = $this->saveFile($this->newThumbnail);
+        //     // borro el viejo
+        //     Storage::disk('actors')->delete($this->avatarActual);
+        // }
+
+        $this->assignActorValues($this->actor);
 
         // notificación de éxito
         session()->flash('success', 'Perfil editado exitosamente! ❤️');
@@ -150,7 +156,7 @@ class CreateActor extends Component
 
     }
 
-    public function assignActorValues($Actor, $avatarFileName) {
+    public function assignActorValues($Actor) {
         $Actor->nombre = $this->nombre;
         $Actor->date_of_birth = $this->date_of_birth;
         $Actor->nacionalidad = $this->nacionalidad;
@@ -161,7 +167,6 @@ class CreateActor extends Component
         $Actor->cv = $this->cv;
         $Actor->videos = $this->videos;
         $Actor->bio = $this->bio;
-        $Actor->thumbnail = $avatarFileName;
 
         $Actor->save();
 

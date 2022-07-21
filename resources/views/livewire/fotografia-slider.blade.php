@@ -2,7 +2,7 @@
     @foreach ($castings as $casting)
         <div class="splide-fotografia splide">
             <div class="flex items-center justify-between mb-2 saigon-text-300 splide__arrows">
-                <p wire:click="$emit('castingClicked', {{$casting}})" class="leading-none hover:underline transition cursor-pointer lg:line-clamp-1 lg:hover:line-clamp-none py-0.5"><span class="uppercase">{{$casting['nombre']}}</span><span> — {{$casting['director']}}</span><span> | {{$casting->getProductora->nombre}}</span></p>
+                <p wire:click="$emit('castingClicked', {{$casting}})" class="leading-none hover:underline transition cursor-pointer line-clamp-1 py-0.5"><span class="uppercase">{{$casting['nombre']}}</span><span> — {{$casting['director']}}</span><span> | {{$casting->getProductora->nombre}}</span></p>
                 <div class="flex ml-auto w-max">
                     <button style="position: static" class="splide__arrow splide__arrow--prev saigon-font-light">
                         <

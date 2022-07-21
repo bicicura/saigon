@@ -5,7 +5,7 @@
 
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class="flex max-w-lg rounded-md shadow-sm">
-            <input {{ isset($attributes['x-mask']) ? 'x-data x-mask=9999/99/99 placeholder=AAAA/MM/DD' : '' }} wire:model.defer="{{$inputContent['model']}}" id="{{$inputContent['model']}}" placeholder="{{$inputContent['placeholder']}}" class="flex-1 block w-full p-2 font-normal transition duration-150 ease-in-out rounded-none form-input rounded-r-md sm:text-sm sm:leading-5" />
+            <textarea class="flex-1 block w-full p-2 font-normal transition duration-150 ease-in-out rounded-none form-input rounded-r-md sm:text-sm sm:leading-5" placeholder="{{$inputContent['placeholder']}}" wire:model.defer="{{$inputContent['model']}}" id="{{$inputContent['model']}}" class="w-full" rows="5"></textarea>
         </div>
         @error($inputContent['model']) <div class="mt-1 text-sm text-red-500">{{ $message }}</div> @enderror
     </div>

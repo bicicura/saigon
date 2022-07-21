@@ -43,7 +43,7 @@
                 <div class="hidden gap-2 mb-2 text-saigon-black lg:flex" :class="hover? 'underline' : '' ">
                     <h2 class="saigon-text-100 lg:line-clamp-1 ">{{$item['nombre']}} <span>— {{$item['director']}}</span> <span> | {{$item->getProductora->nombre}}</span></h2>
                 </div>
-                <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
+                <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer {{ ( $item->categoria == 'Small' ) ? "h-80" : ( ( $item->categoria == 'Medium' ) ? "h-104" : "h-128") }} lg:h-fit lg:aspect-video">
                     <img class="object-cover w-full h-full transition-opacity duration-150 ease-in-out opacity-0 rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
                     <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden casting-gradient-mobile rounded-xl">
                         <div class="">

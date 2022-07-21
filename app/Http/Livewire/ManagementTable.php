@@ -23,7 +23,7 @@ class ManagementTable extends Component
         // busco el perfil en db.
         $perfil = Actor::find($this->perfilId);
         // borro las imgs del disco
-        $this->deleteAvatar($perfil['thumbnail']);
+        // $this->deleteAvatar($perfil['thumbnail']);
         $this->deleteBook($perfil);
         // borro el registro de la tabla de perfiles
         $perfil->delete();
@@ -35,9 +35,9 @@ class ManagementTable extends Component
         $this->emit('refreshTable');
     }
 
-    public function deleteAvatar($cara) {
-        Storage::disk('actors')->delete($cara);
-    }
+    // public function deleteAvatar($cara) {
+    //     Storage::disk('actors')->delete($cara);
+    // }
 
     public function deleteBook($perfil) {
         $imgs = $perfil->getBook;

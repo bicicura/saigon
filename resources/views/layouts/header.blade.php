@@ -17,19 +17,18 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/css/app.css?v=11') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css?v=14') }}">
     <link rel="stylesheet" href="https://use.typekit.net/lkn8zik.css">
-    <link rel="stylesheet" href="{{ asset('css/loader.css?v=11') }}">
-    <link rel="stylesheet" href="/css/estilos.css?v=11">
+    <link rel="stylesheet" href="{{ asset('css/loader.css?v=14') }}">
+    <link rel="stylesheet" href="/css/estilos.css?v=14">
     @livewireStyles
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     
     <!-- Scripts -->
-    {{-- <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script> --}}
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
-    <script src="{{ asset('js/app.js?v=11') }}" defer></script>
-    <script src="/js/nav.js?v=11"></script>
+    <script src="{{ asset('js/app.js?v=14') }}" defer></script>
+    <script src="/js/nav.js?v=14"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 

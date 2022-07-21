@@ -11,15 +11,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=11') }}">
-        <link rel="stylesheet" href="{{ asset('css/loader.css?v=11') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css?v=14') }}">
+        <link rel="stylesheet" href="{{ asset('css/loader.css?v=14') }}">
         <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
         @livewireStyles
 
         <!-- Scripts -->
         <script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
-        <script src="{{ asset('js/app.js?v=11') }}" defer></script>
+        <script src="{{ asset('js/app.js?v=14') }}" defer></script>
         
     </head>
     <body class="font-sans antialiased">
@@ -46,7 +45,6 @@
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
-        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
         <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
         <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
     </body>

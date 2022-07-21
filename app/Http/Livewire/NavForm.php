@@ -120,7 +120,7 @@ class NavForm extends Component
     }   
 
     public function updatedCara() {
-        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:8000|dimensions:min_width=600,min_height=600']);
+        $this->validate(['cara' => 'mimes:webp,jpg,jpeg,png|max:10000|dimensions:min_width=600,min_height=600']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cara']);
     }
@@ -130,7 +130,7 @@ class NavForm extends Component
     }
 
     public function updatedCuerpo() {
-        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:8000|dimensions:min_width=600,min_height=600']);
+        $this->validate(['cuerpo' => 'mimes:webp,jpg,jpeg,png|max:10000|dimensions:min_width=600,min_height=600']);
         // Si el File se valido correctamente, se emite el evento para darle aviso al user que se ha cargado correctamente.
         $this->dispatchBrowserEvent('file-validated', ['type' => 'cuerpo']);
     }

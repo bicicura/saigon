@@ -9,7 +9,6 @@
             FilePond.registerPlugin(
                 {{-- FilePondPluginImageExifOrientation, --}}
                 FilePondPluginFileValidateSize,
-                {{ isset($attributes['data-preview']) ? 'FilePondPluginImagePreview,' : '' }}
                 );
             pond = FilePond.create($refs.input);
             pond.setOptions({

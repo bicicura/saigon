@@ -49,13 +49,13 @@
         </div>
     </div>
 
-    <div class="flex items-center gap-4 lg:w-max">
+    <div class="relative flex items-center gap-4 lg:w-max">
         <div class="flex items-center justify-between w-full gap-6 pt-2 lg:pt-0 lg:justify-start lg:gap-12">
             <x-input.nav-checkbox :reverse="'flex-row-reverse lg:flex-row'" :inputContent="['label' => 'Femenino', 'model' => 'sexo']" inputType="radio" />
             <x-input.nav-checkbox :reverse="'flex-row-reverse lg:flex-row'" :inputContent="['label' => 'Masculino', 'model' => 'sexo']" inputType="radio" />
             <x-input.nav-checkbox :reverse="'flex-row-reverse lg:flex-row'" :inputContent="['label' => 'Otro', 'model' => 'sexo']" inputType="radio" />
         </div>
-        @error('sexo') <div class="w-full text-sm font-bold text-red-500 rounded-full">{{ $message }}</div> @enderror
+        @error('sexo') <div class="absolute w-full text-sm font-bold text-red-500 rounded-full -bottom-4 lg:static">{{ $message }}</div> @enderror
     </div>
 
     <div class="space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-12">

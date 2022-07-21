@@ -9,53 +9,18 @@
 
             <x-input.text-input :inputContent="['label' => 'Altura', 'model' => 'altura', 'placeholder' => 'Altura']"/>
 
-            <x-input.text-input :inputContent="['label' => 'Imdb', 'model' => 'imdb', 'placeholder' => 'Imdb']"/>
+            {{-- <x-input.text-input :inputContent="['label' => 'Imdb', 'model' => 'imdb', 'placeholder' => 'Imdb']"/> --}}
 
             <x-input.text-input :inputContent="['label' => 'Instagram', 'model' => 'ig', 'placeholder' => 'Instagram']"/>
 
-            <x-input.text-input :inputContent="['label' => 'C.V.', 'model' => 'cv', 'placeholder' => 'C.V.']"/>
+            {{-- <x-input.text-input :inputContent="['label' => 'C.V.', 'model' => 'cv', 'placeholder' => 'C.V.']"/> --}}
 
-            <x-input.text-input :inputContent="['label' => 'Videos', 'model' => 'videos', 'placeholder' => 'videos']"/>
+            {{-- <x-input.text-input :inputContent="['label' => 'Videos', 'model' => 'videos', 'placeholder' => 'videos']"/> --}}
 
-            <x-input.text-input :inputContent="['label' => 'Bio', 'model' => 'bio', 'placeholder' => 'Bio']"/>
-
-            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-center sm:border-t sm:border-gray-200 sm:pt-5">
-                <label for="photo" class="block text-sm font-semibold leading-5 text-gray-700">
-                    Avatar
-                </label>
-                <div class="mt-2 sm:mt-0 sm:col-span-2" x-data="{ focused: false }">
-                    <div class="flex items-center">
-                        <span class="w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
-                            @if ($newThumbnail)
-                                <img class="object-cover object-center w-full h-full" src="{{$newThumbnail->temporaryUrl()}}">
-                            @elseif ($avatarActual)
-                                <img class="object-cover object-center w-full h-full" src="/actors/{{$avatarActual}}">
-                                <input type="hidden" wire:model="avatarActual">
-                            @else
-                                <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                            @endif
-                        </span>
-
-                        <span class="ml-5 rounded-md shadow-sm">
-                            <label :class=" {'outline-none border-blue-300 shadow-outline-blue' : focused} " for="newThumbnail" class="px-3 py-2 text-sm font-semibold leading-4 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md cursor-pointer hover:text-gray-500 active:bg-gray-50 active:text-gray-800">
-                                Cambiar
-                            </label>
-                            <input @focus="focused = true" @blur="focused = false" type="file" class="sr-only" id="newThumbnail" wire:model="newThumbnail">
-                            @error('newThumbnail') <div class="mt-1 text-sm text-red-500">{{ $message }}</div> @enderror
-                        </span>
-                        <div wire:loading wire:target="newThumbnail">
-                            <div class="ml-3 la-ball-clip-rotate">
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <x-input.text-area :inputContent="['label' => 'Bio', 'model' => 'bio', 'placeholder' => 'Bio']"/>
 
             @if ($type === 'create')
-            <x-input.filepond wire:model="book" id="book" :label="'Book'" multiple/>
+            <x-input.filepond wire:model="book" id="book" :label="'Fotografías'" multiple/>
             @else
             <x-input.input-w-edit-btn :label="'Book'" :id="$actor->id"  />
             @endif

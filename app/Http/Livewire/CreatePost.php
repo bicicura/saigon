@@ -32,6 +32,7 @@ class CreatePost extends Component
     public $video_url;
     public $reel = 0;
     public $newReelVideo;
+    public $video_provider;
 
     public $fotografias = [];
 
@@ -56,7 +57,8 @@ class CreatePost extends Component
         }
 
         if ($this->seccion !== "Fotografía" && $this->seccion !== "Ficción") {
-            $videoVal = ['video_url' => 'required'];
+            $videoVal = ['video_url' => 'required', 'categoria' => 'required', ];
+            
             $inputsToValidate = array_merge($inputsToValidate, $videoVal);            
         }
 
@@ -123,13 +125,14 @@ class CreatePost extends Component
     }
 
     public function save() {
-
+    
         $this->executeValidation();
 
         $fileName = null;
         // if ($this->seccion != 'Fotografía') $fileName = $this->storeAvatar();
         if ($this->seccion !== "Fotografía" && $this->seccion !== "Ficción") {
             if ($this->thumbnailProvider === "vimeo") {
+                $this->checkProviderId();
                 $fileName = $this->getThumbnailFromProvider();
             } elseif ($this->thumbnailProvider === "custom") {
                 $fileName = $this->storeAvatar();
@@ -185,6 +188,11 @@ class CreatePost extends Component
 
         $this->executeValidation();
 
+        // determino si el vid actualizado viene de vimeo o yt
+        if ($this->seccion === "Comerciales" || $this->seccion === "Mini") {
+            $this->checkProviderId();
+        }
+
         $avatarFileName = $this->avatarActual;
         // si el user actualizo el avatar, se guarda en localmente y se borra el anterior.
         if ($this->newThumbnail && $this->thumbnailProvider === "custom") {
@@ -193,6 +201,7 @@ class CreatePost extends Component
             // borro el viejo
             Storage::disk('thumbnails')->delete($this->avatarActual);
         } elseif ($this->thumbnailProvider === "vimeo") {
+            // si el thumbnail cambio, agarro el thumbnail q corresponde segun id y provider
             $avatarFileName = $this->getThumbnailFromProvider();
             // borro el viejo
             Storage::disk('thumbnails')->delete($this->avatarActual);
@@ -233,6 +242,7 @@ class CreatePost extends Component
         $Casting->thumbnail = $avatarFileName;
         $Casting->categoria = $this->categoria;
         $Casting->url = $this->video_url;
+        $Casting->video_provider = $this->video_provider;
         $Casting->reel = $this->reel;
         $Casting->reel_video = $reelName;
 
@@ -241,16 +251,38 @@ class CreatePost extends Component
         return $Casting->id;
     }
 
-    // para subir thumbnail directo de Vimeo con el id del vid.
+    public function checkProviderId() {
+        // valido si es youtube o vimeo
+        if (preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $this->video_url) || preg_match('/[A-Za-z]/', $this->video_url)){
+            // youtube
+            return $this->video_provider = 1;
+        }
+            // vimeo
+            return $this->video_provider = 0;
+    }
+
+    // para subir thumbnail directo de Vimeo/Yotube con el id del vid.
     public function getThumbnailFromProvider() {
-        $thumbnail_width = 640;
-        $url = 'https://vimeo.com/'.$this->video_url.'&width='.$thumbnail_width;
-        $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
-        $thumbnail_url = $response['thumbnail_url'];
+        // para vimeo
+        if ($this->video_provider === 0) {
+            $thumbnail_width = 640;
+            $url = 'https://vimeo.com/'.$this->video_url.'&width='.$thumbnail_width;
+            $response = Http::get('https://vimeo.com/api/oembed.json?url='.$url);
+            $thumbnail_url = $response['thumbnail_url'];
 
-        $response = Http::get($thumbnail_url);
+            $response = Http::get($thumbnail_url);
 
+            $img = $response->body();
+            $fileName = Str::random(50).'.jpg';
+
+            file_put_contents('thumbnails/'.$fileName, $img);
+            return $fileName;
+        }
+        // para youtube.
+        $url = 'https://i.ytimg.com/vi/'.$this->video_url.'/hqdefault.jpg';
+        $response = Http::get($url);
         $img = $response->body();
+        
         $fileName = Str::random(50).'.jpg';
 
         file_put_contents('thumbnails/'.$fileName, $img);

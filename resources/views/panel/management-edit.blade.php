@@ -18,6 +18,6 @@
             'cv' => $Actor['cv'],
             'bio' => $Actor['bio'],
             'videos' => $Actor['videos'],
-            'avatarActual' => $Actor['thumbnail'],
+            // 'avatarActual' => $Actor['thumbnail'],
         ]);
 </x-app-layout>

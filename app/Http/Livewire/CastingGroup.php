@@ -16,7 +16,7 @@ class CastingGroup extends Component
         
         $this->seccion === 'Ficción'? $query = Casting::with(['getProductora', 'getFotografias']) : $query = Casting::with(['getProductora']) ;
 
-        $castings = $query->where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->orderBy('id', 'desc')->get(['id', 'nombre', 'director', 'productora_id', 'thumbnail', 'slug']);
+        $castings = $query->where('seccion', $this->seccion)->limit($this->perPage)->offset($this->offset)->orderBy('sticky', 'desc')->orderBy('id', 'desc')->get(['id', 'nombre', 'director', 'productora_id', 'thumbnail', 'slug', 'categoria']);
 
         return $castings;
     }

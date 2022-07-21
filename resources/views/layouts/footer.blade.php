@@ -12,7 +12,7 @@
         <p>For castings send your photos,<br>videos & material to:</p>
         <p class="underline"><a href="mailto:info@saigonbuenosaires.com">info@saigonbuenosaires.com</a>
     </div>
-    <div class="space-y-8">
+    <div>
         <p>Follow us for specific castings:</p>
         <div class="flex gap-6">
             <span class="underline"><a target="_blank" href="https://www.instagram.com/saigonbuenosaires/">IG</a></span>

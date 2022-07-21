@@ -1,10 +1,10 @@
 <div>
     @if ($open)
     <div style="z-index: 9999" class="fixed top-0 px-3.5 lg:px-0 left-0 flex items-center justify-center w-full min-h-screen bg-saigon-black bg-opacity-90 text-saigon-white">
-        <div class="lg:max-w-4xl">
+        <div class="relative lg:max-w-4xl lg:static">
             <div class="relative z-50 items-start gap-4 lg:gap-6 lg:flex-col lg:space-y-0 lg:flex splide splide-popup">
-                <div class="px-3.5 lg:px-0 flex flex-row-reverse lg:justify-center lg:gap-24 lg:items-center justify-between w-full leading-tight lg:w-full">
-                    <div wire:click="close" class="mb-4">
+                <div class="flex flex-row-reverse items-center justify-between w-10/12 mx-auto leading-tight lg:justify-center lg:gap-24 lg:w-full lg:mx-0">
+                    <div wire:click="close" class="absolute mb-4 right-4 lg:static -top-10">
                         <button type="button" class="relative p-4 transition-colors duration-100 ease-in-out focus:outline-none hover:text-gray-500">
                             <div class="absolute block w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
                                 <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-current transform transition duration-500 ease-in-out rotate-45"></span>
@@ -12,11 +12,11 @@
                             </div>
                         </button>
                     </div>
-                    <div>
+                    <div class="w-full mb-6 lg:mb-0">
                         <p class="uppercase saigon-text-500 w-max">{{$CastingSelected['nombre']}}</p>
-                        <div class="items-center gap-2 lg:flex">
+                        <div class="flex flex-wrap items-center gap-x-2">
                             <p class="saigon-text-200 w-max">{{$CastingSelected['director']}} </p>
-                             — 
+                             —
                             <p class="saigon-text-200 w-max">{{$CastingSelected['get_productora']['nombre']}}</p>
                         </div>
                     </div>

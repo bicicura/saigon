@@ -100,16 +100,16 @@
         
     </div>
 
-    <div class="flex flex-col items-end text-right">
-        <div class="mb-4 ml-auto">
+    <div class="flex flex-col items-end text-right gap-y-1 lg:gap-0">
+        <div class="mb-2 ml-auto lg:mb-4">
             <a x-ref="backBtn" href="{{ route('management', app()->getLocale()) }}" class="text-transparent hover:text-saigon-black">
                 <svg class="w-4.5 h-4.5 transition-colors duration-150 ease-in cursor-pointer" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve"><path fill="currentColor" class="stroke-saigon-black hover:stroke-saigon-white" stroke-miterlimit="10" d="M.5.5h22.45v22.45H.5zM16.91 16.91 6.54 6.54M6.54 16.91 16.91 6.54"/></svg>
             </a>
         </div>
         <p>{{ $actor->nombre }}</p>
-        <p>Edad: {{ $actor->getAge() }} años</p>
-        <p>Nacionalidad: {{ $actor->nacionalidad }}</p>
-        <p>Altura: {{ $actor->altura }} cm</p>
+        <p>{{__('Edad')}}: {{ $actor->getAge() }} {{__('años')}}</p>
+        <p>{{__('Nacionalidad')}}: {{ $actor->nacionalidad }}</p>
+        <p>{{__('Altura')}}: {{ $actor->altura }} cm</p>
         @if ($actor->ig)
             <p>
                 <a class="hover:underline" target="_blank" href="https://www.instagram.com/{{$actor->ig}}">IG</a>

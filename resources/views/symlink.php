@@ -1,21 +1,20 @@
 <?php
 
-// $targetFolder = '/home/u980941338/domains/bicicura.com/streetapp/storage/app/avatars';
-// $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/avatars';
-// symlink($targetFolder,$linkFolder);
+$targetFolder1 = '/home/u980941338/domains/antonelladeferrari.com/saigonApp/storage/app/consultas';
+$linkFolder1 = $_SERVER['DOCUMENT_ROOT'].'/consultas';
+symlink($targetFolder1, $linkFolder1);
 
-$targetFolder1 = '/home/u980941338/domains/antonelladeferrari.com/streetapp/storage/app/reel';
+$targetFolder1 = '/home/u980941338/domains/antonelladeferrari.com/saigonApp/storage/app/fotos';
+$linkFolder1 = $_SERVER['DOCUMENT_ROOT'].'/fotos';
+symlink($targetFolder1, $linkFolder1);
+
+$targetFolder1 = '/home/u980941338/domains/antonelladeferrari.com/saigonApp/storage/app/reel';
 $linkFolder1 = $_SERVER['DOCUMENT_ROOT'].'/reel';
 symlink($targetFolder1, $linkFolder1);
 
-// $targetFolder2 = '/home/u980941338/domains/bicicura.com/streetapp/storage/app/extras';
-// $linkFolder2 = $_SERVER['DOCUMENT_ROOT'].'/book';
-// symlink($targetFolder2, $linkFolder2);
+$targetFolder1 = '/home/u980941338/domains/antonelladeferrari.com/saigonApp/storage/app/thumbnails';
+$linkFolder1 = $_SERVER['DOCUMENT_ROOT'].'/thumbnails';
+symlink($targetFolder1, $linkFolder1);
 
-// $targetFolder3 = '/home/u980941338/domains/bicicura.com/streetapp/storage/app/polaroids';
-// $linkFolder3 = $_SERVER['DOCUMENT_ROOT'].'/polaroids';
-// symlink($targetFolder3, $linkFolder3);
-
-echo 'Symlink process successfully completed';
 
 ?>

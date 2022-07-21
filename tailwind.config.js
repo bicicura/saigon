@@ -25,6 +25,7 @@ module.exports = {
                 '5.5': '1.35rem',
                 '26': '6.9rem',
                 '104' : '26rem',
+                '128': '32rem',
               },
             screens: {
                 '3xl': '1600px',

@@ -46,7 +46,7 @@
                         </div>
                         <div class="relative flex flex-col justify-between bg-center bg-no-repeat bg-cover cursor-pointer h-104 lg:h-fit lg:aspect-video">
                             <img class="object-cover w-full h-full transition-opacity duration-150 opacity-0 rounded-xl" loading="lazy" src="/thumbnails/{{$item['thumbnail']}}" alt="Thumbnail de {{$item['nombre']}}" onload="this.classList.add('opacity-100'); this.classList.remove('opacity-0')">
-                            <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden">
+                            <div class="absolute left-0 right-0 flex flex-col justify-between h-full lg:hidden casting-gradient-mobile rounded-xl">
                                 <div class="">
                                     <div class="pt-4 pr-4">
                                         <h2 class="text-3xl uppercase">{{$item['nombre']}}</h2>
@@ -89,6 +89,6 @@
     }
 </script>
 
-<script src="/js/intersectionObserver.js?v=11" defer></script>
+<script src="/js/intersectionObserver.js?v=14" defer></script>
 
 @endsection

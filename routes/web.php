@@ -7,6 +7,8 @@ use App\Http\Controllers\CastingController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\NewsletterController;
 
+// Route::get('/symlink', function () { return view('symlink'); });
+
 // Para redirigir a un lenguage predeterminado.
 Route::redirect('/', '/es');
 Route::redirect('/login', '/es/login');

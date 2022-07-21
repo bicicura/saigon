@@ -5,7 +5,7 @@
 
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class="flex max-w-lg rounded-md shadow-sm">
-            <select  wire:model="{{$inputContent['model']}}" id="{{$inputContent['model']}}" class="flex-1 block w-full p-2 font-normal transition duration-150 ease-in-out border-0 rounded-none outline-none form-input rounded-r-md sm:text-sm sm:leading-5">
+            <select  wire:model.defer="{{$inputContent['model']}}" id="{{$inputContent['model']}}" class="flex-1 block w-full p-2 font-normal transition duration-150 ease-in-out border-0 rounded-none outline-none form-input rounded-r-md sm:text-sm sm:leading-5">
                 <option class="p-4" disabled value="">{{$inputContent['placeholder']}}</option>
                 @foreach ($inputContent['opciones'] as $opcion)
                 <option class="p-4" {{ $opcion['value'] == $inputContent['model']? 'selected' : '' }} value="{{$opcion['value']}}">{{$opcion['text']}}</option>
